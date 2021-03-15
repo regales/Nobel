@@ -4,6 +4,7 @@
   "main": "index.js",
   "dependencies": {
     "discord.js": "^12.3.1",
+    "eslint": "^7.22.0",
     "ffmpeg": "^0.0.4",
     "ffmpeg-static": "^4.2.7",
     "lyrics-finder": "^21.4.0",
@@ -14,10 +15,13 @@
     "ytdl-core-discord": "^1.2.3"
   },
   "scripts": {
-    "start": "node --experimental-worker index.js",
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Regales",
   "license": "ISC",
-  "description": "Music Bot"
+  "description": "Music Bot",
+  "devDependencies": {
+    "lint": "^0.7.0"
+  }
 }

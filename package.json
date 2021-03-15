@@ -1,0 +1,23 @@
+{
+  "name": "nobel",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "discord.js": "^12.3.1",
+    "ffmpeg": "^0.0.4",
+    "ffmpeg-static": "^4.2.7",
+    "lyrics-finder": "^21.4.0",
+    "opusscript": "^0.0.7",
+    "random-puppy": "^1.1.0",
+    "scrape-yt": "^1.4.3",
+    "ytdl-core": "^4.5.0",
+    "ytdl-core-discord": "^1.2.3"
+  },
+  "scripts": {
+    "start": "node --experimental-worker index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Regales",
+  "license": "ISC",
+  "description": "Music Bot"
+}

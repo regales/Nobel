@@ -1,0 +1,14 @@
+
+<h1 align="center">Novel Music Bot</h1>
+
+
+
+This music bot is programmed in the way that it will scrape the youtube website directly, which means No more annoying youtube-api-key is needed!
+
+A few "fun" commands are included but more to come.
+
+Keep in mind that i am not an advanced developer.
+
+## CREDITS
+[@icrawl](https://github.com/iCrawl)
+Thanks to icrawl, queue system is partially adapted from icrawl's [Music Bot Repo](https://github.com/iCrawl/discord-music-bot)

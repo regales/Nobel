@@ -14,7 +14,7 @@
     "ytdl-core-discord": "^1.2.3"
   },
   "scripts": {
-    "start": "node --experimental-worker index.js",
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Regales",

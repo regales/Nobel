@@ -14,7 +14,7 @@
 - A few "fun" commands are included but more to come.
 
 ## NOTICE
-- Keep in mind that i am not an advanced developer.
+- Keep in mind that i am not actually a legit developer.
 
 ## CREDITS
 [@icrawl](https://github.com/iCrawl)

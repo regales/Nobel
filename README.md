@@ -1,8 +1,10 @@
 
-<h1 align="center">Novel Music Bot</h1>
+<h1 align="center">
+  Novel Music Bot
+</h1>
 
 <p align="center">
-<img src="https://imgur.com/a/kIUSPFF" />
+  <img src="https://imgur.com/a/kIUSPFF" />
 </p>
 
 

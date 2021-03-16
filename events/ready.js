@@ -9,6 +9,6 @@ module.exports = (client) => {
       url: "https://www.twitch.tv/chillhopmusic"
     });
 
-    client.user.setActivity('*help | codes', { type: 'LISTENING' })
-  }, 6000)
+    client.user.setActivity('*help', { type: 'LISTENING' })
+  }, 10000)
 }

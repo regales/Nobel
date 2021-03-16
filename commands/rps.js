@@ -1,14 +1,15 @@
 const discord = require('discord.js')
 module.exports = {
 	name: "rps",
-	description: "plays a game of rock, paper and scissors",
+	description: "Plays a game of rock, paper and scissors",
 	run: async(client, message, args) => {
 		let embed = new discord.MessageEmbed()
-		.setTitle("R P S ")
-		.setDescription("React to play!")
-        .setColor("BLUE")
+		.setTitle("ROCK PAPER SCISSORS ")
+		.setDescription("React [🗻|✂|📰] to play!")
+        .setColor("GREEN")
+		.setImage("https://imgur.com/ihjlGqo")
 		.setTimestamp()
-		let msg = await message.channel.send(embed)
+		let msg = await message.reply(embed)
 		await msg.react("🗻")
 		await msg.react("✂")
 		await msg.react("📰")
@@ -26,7 +27,8 @@ module.exports = {
         		.setTitle("RESULT")
         		.addField("Your choice", `${reaction.emoji.name}`)
         		.addField("My choice", `${me}`)
-				.setColor("BLUE")
+				.setColor("GREEN")
+				.setImage("https://imgur.com/ihjlGqo")
 			await msg.edit(result)
         		if ((me === "🗻" && reaction.emoji.name === "✂") ||
                 (me === "📰" && reaction.emoji.name === "🗻") ||

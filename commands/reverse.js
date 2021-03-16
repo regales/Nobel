@@ -7,6 +7,6 @@ module.exports = {
         let Rarray = text.split("")
         let reverseArray = Rarray.reverse()
         let result = reverseArray.join("")
-        message.channel.send(result)
+        message.reply(result)
     }
 }

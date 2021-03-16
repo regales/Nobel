@@ -9,6 +9,7 @@
     "eslint": "^7.22.0",
     "ffmpeg": "^0.0.4",
     "ffmpeg-static": "^4.2.7",
+    "images-scraper": "^6.1.1",
     "lyrics-finder": "^21.4.0",
     "opusscript": "^0.0.7",
     "random-puppy": "^1.1.0",

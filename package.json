@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "dependencies": {
+    "axios": "^0.21.1",
+    "dankmemes": "^1.0.0",
     "discord.js": "^12.5.1",
     "eslint": "^7.22.0",
     "ffmpeg": "^0.0.4",

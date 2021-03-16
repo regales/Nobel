@@ -14,6 +14,7 @@ exports.run = async(client, message) => {
             ***#coinflip*** - flips a coin
             ***#rps*** - plays a game of rock, paper and scissors
             ***#reverse*** - reverses a text 
+            ***#8ball*** - gives you an answer for those essential questions
             `,
             color: 'RED'
         }

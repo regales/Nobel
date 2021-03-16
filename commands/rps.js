@@ -26,6 +26,7 @@ module.exports = {
         		.setTitle("RESULT")
         		.addField("Your choice", `${reaction.emoji.name}`)
         		.addField("My choice", `${me}`)
+				.setColor("BLUE")
 			await msg.edit(result)
         		if ((me === "🗻" && reaction.emoji.name === "✂") ||
                 (me === "📰" && reaction.emoji.name === "🗻") ||

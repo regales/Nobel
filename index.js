@@ -3,7 +3,7 @@ const fs = require("fs");
 
 
 const client = new Discord.Client();
-const config = require("./config.js");
+const config = require("./config.json");
 client.config = config;
 client.queue = new Map()
 prefix = config.prefix
@@ -31,4 +31,4 @@ fs.readdir("./commands/", (err, files) => {
 });
 
 
-client.login(process.env.TOKEN)
+client.login(config.token)

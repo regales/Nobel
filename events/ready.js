@@ -1,11 +1,15 @@
 module.exports = (client) => {
   console.log(`${client.user.username} ✅`)
 
-  setInterval(function () {
+  console.log(`${bot.user.username} is online`)
+  setInterval(function() {
     // bot activity
-    client.user.setActivity('*help', { type: 'WATCHINNG' })
+    client.user.setActivity('Live Music', { type: 'LISTENING' })
 
     client.user.setActivity('Live Music', { type: 'LISTENING' })
-  }, 5000)
+
+    client.user.setActivity('Over *help', { type: 'WATCHING' })
+
+  },10000)
 }
 

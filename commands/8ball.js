@@ -1,6 +1,8 @@
 var fortunes = [
   "yes",
+  "totally",
   "no",
+  "strongly decline",
   "maybe",
   "dont know, try again"
 ];

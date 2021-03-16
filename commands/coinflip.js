@@ -9,6 +9,7 @@ module.exports = {
         .setTitle("Coinflip!")
         .setDescription(`You flipped a **${choice}**!`)
         .setColor("BLUE")
-        message.channel.send(embed)
+        .setImage("https://media.giphy.com/media/DvDGtCpnP3r4A/source.gif")
+        message.reply(embed)
     }
 }

@@ -7,7 +7,7 @@ module.exports = {
 		.setTitle("ROCK PAPER SCISSORS ")
 		.setDescription("React [🗻|✂|📰] to play!")
         .setColor("GREEN")
-		.setImage("https://imgur.com/ihjlGqo")
+		.setImage("https://media.giphy.com/media/3ohzdGnD5vAud1NCZW/source.gif")
 		.setTimestamp()
 		let msg = await message.reply(embed)
 		await msg.react("🗻")
@@ -28,7 +28,7 @@ module.exports = {
         		.addField("Your choice", `${reaction.emoji.name}`)
         		.addField("My choice", `${me}`)
 				.setColor("GREEN")
-				.setImage("https://imgur.com/ihjlGqo")
+				.setImage("https://media.giphy.com/media/3ohzdGnD5vAud1NCZW/source.gif")
 			await msg.edit(result)
         		if ((me === "🗻" && reaction.emoji.name === "✂") ||
                 (me === "📰" && reaction.emoji.name === "🗻") ||

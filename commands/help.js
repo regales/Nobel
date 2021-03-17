@@ -9,7 +9,7 @@ exports.run = async(client, message) => {
             ****np*** - Get now playing song's info
             ****skip*** - Skip to next song
             ****stop*** - Stop playing music
-            ****volume <value>*** - adjust volume of the music
+            ****volume <value>*** - adjust volume of the music from 1-10 
             ****queue*** - to see the full song queue
             ****coinflip*** - flips a coin
             ****rps*** - plays a game of rock, paper and scissors

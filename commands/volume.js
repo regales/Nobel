@@ -11,6 +11,7 @@ exports.run = async(client, message, args) => {
     })
 
     if(args[0] > 10) return message.channel.send('Well lets hope we meet in heaven :grin:')
+    if(args[0] > `<0>`)return message.channel.send(`You don't need to literally put <1-10> :grin:`)
 
     queue.connection.dispatcher.setVolumeLogarithmic(args[0] / 5);
     queue.volume = args[0]

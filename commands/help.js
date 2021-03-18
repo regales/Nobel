@@ -12,7 +12,7 @@ exports.run = async(client, message) => {
             ****stop*** - Stop playing music
             ****volume <value>*** - adjust volume of the music from 1-10 
             ****queue*** - to see the full song queue
-            ****lyrics*** - lyrics for th ecurrent song playing in queue
+            ****lyrics*** - lyrics for the current song playing in queue
 
             **__Fun__**
             ****coinflip*** - flips a coin

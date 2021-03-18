@@ -9,9 +9,9 @@ exports.run = async(client, message, args) => {
 
     try {
       lyrics = await lyricsFinder(queue.songs[0].title, "");
-      if (!lyrics) lyrics = `No lyrics found for ${queue.songs[0].title} :(`;
+      if (!lyrics) lyrics = `No lyrics found for ${queue.songs[0].title} `;
     } catch (error) {
-      lyrics = `No lyrics found for ${queue.songs[0].title} :(`;
+      lyrics = `No lyrics found for ${queue.songs[0].title} `;
     }
 
     let lyricsEmbed = new MessageEmbed()

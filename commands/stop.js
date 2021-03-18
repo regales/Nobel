@@ -5,7 +5,7 @@ exports.run = async(client, message) => {
     if(!queue) return message.channel.send({
         embed: {
             description: 'There is nothing playing to be stopped!',
-            color: 'BLACK'
+            color: 'RANDOM'
         }
     })
     message.react('✅')

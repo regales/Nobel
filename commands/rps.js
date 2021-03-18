@@ -27,7 +27,7 @@ module.exports = {
         		.setTitle("RESULT")
         		.addField("Your choice", `${reaction.emoji.name}`)
         		.addField("My choice", `${me}`)
-				.setColor("GREEN")
+				.setColor("RANDOM")
 				.setImage("https://media.giphy.com/media/3ohzdGnD5vAud1NCZW/source.gif")
 			await msg.edit(result)
         		if ((me === "🗻" && reaction.emoji.name === "✂") ||

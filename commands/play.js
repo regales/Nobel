@@ -37,7 +37,7 @@ exports.run = async (client, message, args) => {
         console.log(server.songs);
         let embed = new discord.MessageEmbed()
         .setTitle('Added to queue!')
-        .setColor('#00fff1')
+        .setColor('RANDOM')
         .addField('Name', song.title, true)
         .setThumbnail(song.thumbnail)
         .addField('Views', song.views, true)

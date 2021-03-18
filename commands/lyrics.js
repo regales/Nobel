@@ -17,7 +17,7 @@ exports.run = async(client, message, args) => {
     let lyricsEmbed = new MessageEmbed()
       .setTitle(`Lyrics For ${queue.songs[0].title}`)
       .setDescription(lyrics)
-      .setColor("GREEN")
+      .setColor("RANDOM")
       .setTimestamp();
 
     if (lyricsEmbed.description.length >= 2048)

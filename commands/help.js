@@ -16,7 +16,7 @@ exports.run = async(client, message) => {
             ****reverse*** - reverses a text 
             ****8ball*** - gives you an answer for those essential questions
             `,
-            color: 'RED'
+            color: 'RANDOM'
         }
     })
     message.react('✅')

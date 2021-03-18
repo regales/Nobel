@@ -5,14 +5,15 @@ exports.run = async(client, message) => {
     let queue = message.client.queue.get(message.guild.id)
     if(!queue) return message.channel.send({
         embed:{
-            title: 'There is nothing playing right now!'
+            title: 'There is nothing playing right now!',
+            color: 'RANDOM'
         }
     })
     message.channel.send({
         embed:{
             title: 'Now Playing',
             description: queue.songs[0].title + ' Requested By: ' + '<@' + queue.songs[0].requester + '>',
-            color: 'YELLOW',
+            color: 'RANDOM',
             thumbnail: queue.songs[0].thumbnail
         }
     })

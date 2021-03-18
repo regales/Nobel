@@ -8,7 +8,7 @@ module.exports = {
         let embed = new MessageEmbed()
         .setTitle("Coinflip!")
         .setDescription(`You flipped a **${choice}**!`)
-        .setColor("BLUE")
+        .setColor("RANDOM")
         .setImage("https://media.giphy.com/media/DvDGtCpnP3r4A/source.gif")
         message.reply(embed)
     }

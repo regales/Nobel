@@ -5,7 +5,7 @@ exports.run = async(client, message) => {
     if(!queue){ return message.channel.send({
         embed: {
             description: 'There is nothing in the queue right now! add using `+play <songName>`',
-            color: 'BLACK'
+            color: 'RANDOM'
         }
     })
 }

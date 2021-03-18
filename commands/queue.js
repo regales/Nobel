@@ -14,7 +14,7 @@ exports.run = async (client, message) => {
     let embed = new MessageEmbed()
     .setTitle('Queue')
     .setThumbnail(thumbnail)
-    .setColor('GREEN')
+    .setColor('RANDOM')
     .addField('Now Playing', np, true)
     .setDescription(status)
     message.channel.send(embed)

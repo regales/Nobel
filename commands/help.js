@@ -20,6 +20,7 @@ exports.run = async(client, message) => {
             ****reverse*** - reverses a text 
             ****8ball*** - gives you an answer for those essential questions
             ****meme*** - scavenges reddit for currently top memes
+            ****owo*** - sends an OwO in chat
             `,
             color: 'RANDOM'
         }

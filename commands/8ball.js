@@ -13,7 +13,7 @@ exports.run = (bot, msg, params) => {
     return msg.reply(":x: " + "| Please Enter A Question You Would Like Answered")
   }
   if (params[0]) msg.reply(fortunes[Math.floor(Math.random() * fortunes.length)]);
-  else msg.reply(":x: " + "| I Wasnt Able To Read That :(");
+  else msg.reply(":x: " + "| I Wasnt Able To Read That ");
 
 };
 

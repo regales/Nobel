@@ -3,7 +3,7 @@ const lyricsFinder = require("lyrics-finder");
 
 exports.run = async(client, message, args) => {
     const queue = message.client.queue.get(message.guild.id);
-    if (!queue) return message.channel.send("There is nothing playing.").catch(console.error);
+    if (!queue) return message.channel.send(":x: | There is nothing playing.").catch(console.error);
 
     let lyrics = null;
 

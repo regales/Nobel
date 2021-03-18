@@ -4,12 +4,12 @@ const discord = require('discord.js')
 
 exports.run = async (client, message, args) => {
 
-    if(!args[0]) return message.channel.send('You didn\'t provide a song to play!')
+    if(!args[0]) return message.channel.send(':x: | You didn\'t provide a song to play!')
     let channel = message.member.voice.channel;
-    if(!channel) return message.channel.send('You need to join a voice channel to play a music!')
+    if(!channel) return message.channel.send(':x: | You need to join a voice channel to play a music!')
 
-    if (!channel.permissionsFor(message.client.user).has("CONNECT")) return message.channel.send('I don\'t have permission to join the voice channel')
-    if (!channel.permissionsFor(message.client.user).has("SPEAK"))return message.channel.send('I don\'t have permission to speak in the voice channel')
+    if (!channel.permissionsFor(message.client.user).has("CONNECT")) return message.channel.send(':x: | I don\'t have permission to join the voice channel')
+    if (!channel.permissionsFor(message.client.user).has("SPEAK"))return message.channel.send(':x: | I don\'t have permission to speak in the voice channel')
 
 
     const server = message.client.queue.get(message.guild.id);
@@ -63,7 +63,7 @@ exports.run = async (client, message, args) => {
         if (!song) {
             queue.voiceChannel.leave();
             message.client.queue.delete(message.guild.id);
-            message.channel.send('There are no songs in queue, I\'m leaving the voice channel!')
+            message.channel.send(':x: | There are no songs in queue, I\'m leaving the voice channel!')
             return;
         }
 
@@ -96,9 +96,9 @@ exports.run = async (client, message, args) => {
         queueConstruct.connection = connection;
         play(queueConstruct.songs[0]);
     } catch (error) {
-        console.error(`I could not join the voice channel`);
+        console.error(`:x: | I could not join the voice channel`);
         message.client.queue.delete(message.guild.id);
         await channel.leave();
-        return message.channel.send(`I could not join the voice channel: ${error}`);
+        return message.channel.send(`:x: | I could not join the voice channel: ${error}`);
     }
 }

@@ -41,7 +41,7 @@ module.exports = {
             }
         })
         .catch(collected => {
-                message.reply('Process has been cancelled since you did not respond in time!');
+                message.reply(':x: | Process has been cancelled since you did not respond in time!');
             })
 }
 }

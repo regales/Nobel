@@ -1,6 +1,6 @@
 exports.run = async(client, message, args) => {
     const channel = message.member.voice.channel;
-    if (!channel) return message.channel.send('You should join a voice channel before using this command!');
+    if (!channel) return message.channel.send(':x: | You should join a voice channel before using this command!');
 
     let queue = message.client.queue.get(message.guild.id)
 
@@ -11,8 +11,8 @@ exports.run = async(client, message, args) => {
         }
     })
 
-    if(args[0] > 10) return message.channel.send('Well lets hope we meet in heaven Value: 1-10 :grin:')
-    if(args[0] > `<0>`)return message.channel.send(`You don't need to literally put <1-10> just 1-10 will do :grin:`)
+    if(args[0] > 10) return message.channel.send(':x: | Please enter a value from 1-10')
+    if(args[0] > `<0>`)return message.channel.send(`:x: | You don't need to literally put <1-10> just 1-10 will do `)
 
     queue.connection.dispatcher.setVolumeLogarithmic(args[0] / 5);
     queue.volume = args[0]

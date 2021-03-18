@@ -4,7 +4,7 @@ module.exports = (client) => {
     `Music Videos`,
     `*help`,
     `With Regales`,
-    `Support Server =====> discord.gg/ZJevrUQ46Q`
+    `Support Server ====> discord.gg/ZJevrUQ46Q`
   ];
   
   let i = 0;

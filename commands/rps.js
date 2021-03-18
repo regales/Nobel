@@ -6,7 +6,7 @@ module.exports = {
 		let embed = new discord.MessageEmbed()
 		.setTitle("ROCK PAPER SCISSORS ")
 		.setDescription("React [🗻|✂|📰] to play!")
-        .setColor("GREEN")
+        .setColor("RANDOM")
 		.setImage("https://media.giphy.com/media/3ohzdGnD5vAud1NCZW/source.gif")
 		.setTimestamp()
 		let msg = await message.reply(embed)

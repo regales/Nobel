@@ -4,7 +4,8 @@ exports.run = async(client, message) => {
     let queue = message.client.queue.get(message.guild.id)
     if(!queue) return message.channel.send({
         embed: {
-            description: 'There is nothing playing right now to pause!'
+            description: 'There is nothing playing right now to pause!',
+            color: 'RANDOM'
         }
     })
     if(queue.playing !== false)

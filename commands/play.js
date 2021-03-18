@@ -82,7 +82,7 @@ exports.run = async (client, message, args) => {
         let noiceEmbed = new discord.MessageEmbed()
         .setTitle('Started Playing')
         .setThumbnail(song.thumbnail)
-        .setColor('GREEN')
+        .setColor('RANDOM')
         .addField('Name', song.title, true)
         .addField('Requested By', song.requester, true)
         .addField('Views', song.views, true)

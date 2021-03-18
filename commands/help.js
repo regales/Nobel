@@ -21,6 +21,9 @@ exports.run = async(client, message) => {
             ****8ball*** - gives you an answer for those essential questions
             ****meme*** - scavenges reddit for currently top memes
             ****owo*** - sends an OwO in chat
+
+            **__Utility__**
+            ****ping*** - returns latency and API ping
             `,
             color: 'RANDOM'
         }

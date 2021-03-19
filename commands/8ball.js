@@ -1,27 +1,30 @@
-var fortunes = [
-  "yes",
-  "totally",
-  "no",
-  "strongly decline",
-  "maybe",
-  "dont know, try again"
-];
+const { MessageEmbed } = require('discord.js');
 
-exports.run = (bot, msg, params) => {
+module.exports = {
+  name: '8ball',
+  run: async(client, message, args) => {
 
-  if(!params[0]){
-    return msg.reply(":x: " + "| Please Enter A Question You Would Like Answered")
+    const question = args.join(' ')
+    if (!question) return message.reply(':x: | Please specify a question.')
+
+    const answers = [
+
+      'Yes', 'No', 'Maybe', 'Never', 'Totally!'
+
+
+    ];
+    const a = answers[Math.floor(Math.random() * answers.length)];
+
+    return message.channel.send(
+      new MessageEmbed()
+        .setAuthor('🎱 The 8Ball Rolls')
+        .setDescription(
+          `Question: 
+          ${question}
+          \nAnswer:
+          ${a}`
+        )
+        .setColor('RANDOM')
+    );
   }
-  if (params[0]) msg.reply(fortunes[Math.floor(Math.random() * fortunes.length)]);
-  else msg.reply(":x: " + "| I Wasnt Able To Read That ");
-
-};
-
-exports.conf = {
-  enabled: true,
-  guildOnly: false,
-  aliases: ['ball'],
-  permLevel: 0
-};
-
-
+}

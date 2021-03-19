@@ -100,7 +100,7 @@ module.exports = {
 
             .setThumbnail(message.guild.iconURL({ dynamic: true }))
 
-            .setColor('#f3f3f3')
+            .setColor('RANDOM')
 
             .setTitle(`${message.guild.name} server stats`)
 

@@ -7,9 +7,9 @@ exports.run = async(client, message) => {
             ****play <songName>*** - Play a song from youtube
             ****pause*** - pause music
             ****resume*** - resume music
-            ****np*** - Get now playing song's info
-            ****skip*** - Skip to next song
-            ****stop*** - Stop playing music
+            ****np*** - get now playing song's info
+            ****skip*** - skip to next song
+            ****stop*** - stop playing music
             ****volume <value>*** - adjust volume of the music from 1-10 
             ****queue*** - to see the full song queue
             ****lyrics*** - lyrics for the current song playing in queue
@@ -21,9 +21,14 @@ exports.run = async(client, message) => {
             ****8ball*** - gives you an answer for those essential questions
             ****meme*** - scavenges reddit for currently top memes
             ****owo*** - sends an OwO in chat
+            ****deepfry*** - deepfries a user's profile picture
+            ****trivia*** - oh yeah, it's big brain time
 
             **__Utility__**
             ****ping*** - returns latency and API ping
+            ****avatar*** - displays someone's avatar!
+            ****mjl*** - Member Joined LeaderBoard!
+            ****serverinfo*** - information regarding current server 
             `,
             color: 'RANDOM'
         }

@@ -4,7 +4,7 @@ exports.run = async(client, message) => {
     if (message.content === "*owo") {
         const embed = new Discord.MessageEmbed()
         .setDescription(`<a:oo:813972974243414056><a:ww:813973748133789697><a:oo:813972974243414056>`)
-        .setImage('https://cdn2.scratch.mit.edu/get_image/gallery/25844046_170x100.png')
+        .setImage('https://steamuserimages-a.akamaihd.net/ugc/919175113694613329/38E37B4D65D93124E34CAB18A80D367364A70C61/')
         .setColor('RANDOM')
         
         message.reply(embed); 

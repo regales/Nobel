@@ -3,7 +3,7 @@ exports.run = async(client, message) => {
         embed: {
             title: '🎸__Help Page For Nobel__🎸',
             description: `
-            **__Music__**
+            **:musical_note: __Music__ :musical_note:**
             ****play <songName>*** - Play a song from youtube
             ****pause*** - pause music
             ****resume*** - resume music
@@ -14,7 +14,7 @@ exports.run = async(client, message) => {
             ****queue*** - to see the full song queue
             ****lyrics*** - lyrics for the current song playing in queue
 
-            **__Fun__**
+            **:japanese_goblin: __Fun__ :japanese_goblin: **
             ****coinflip*** - flips a coin
             ****rps*** - plays a game of rock, paper and scissors
             ****reverse*** - reverses a text 
@@ -24,7 +24,7 @@ exports.run = async(client, message) => {
             ****deepfry*** - deepfries a user's profile picture
             ****trivia*** - oh yeah, it's big brain time
 
-            **__Utility__**
+            **:gear: __Utility__ :gear: **
             ****ping*** - returns latency and API ping
             ****avatar*** - displays someone's avatar!
             ****mjl*** - Member Joined LeaderBoard!

@@ -29,6 +29,7 @@ exports.run = async(client, message) => {
             ****avatar*** - displays someone's avatar!
             ****mjl*** - Member Joined LeaderBoard!
             ****serverinfo*** - information regarding current server 
+            ****support*** - link for inviting Nobel or support server
             `,
             color: 'RANDOM'
         }

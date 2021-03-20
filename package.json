@@ -21,6 +21,7 @@
     "reconlx": "^1.2.31",
     "request": "^2.88.2",
     "scrape-yt": "^1.4.3",
+    "weather-js": "^2.0.0",
     "ytdl-core": "^4.5.0",
     "ytdl-core-discord": "^1.2.3"
   },

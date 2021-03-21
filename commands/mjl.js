@@ -26,6 +26,7 @@ module.exports = {
                     new MessageEmbed()
                         .setTitle('Join Leaderboard in ' + message.guild.name)
                         .setDescription(description)
+                        .addField('Requested By:', message.author)
                         .setColor('RANDOM')
                 )
             }
@@ -36,6 +37,7 @@ module.exports = {
                 new MessageEmbed()
                     .setTitle('Join Leaderboard in ' + message.guild.name)
                     .setDescription(description)
+                    .addField('Requested By:', message.author)
                     .setColor('RANDOM')
             )
         }

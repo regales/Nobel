@@ -13,8 +13,8 @@ exports.run = async(client, message) => {
         embed:{
             title: 'Now Playing',
             description: queue.songs[0].title + ' Requested By: ' + '<@' + queue.songs[0].requester + '>',
+            thumbnail: queue.songs[0].thumbnail,
             color: 'RANDOM',
-            thumbnail: queue.songs[0].thumbnail
         }
     })
 }

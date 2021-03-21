@@ -9,6 +9,7 @@ module.exports = {
         .setTitle("Avatar")
         .setImage(avatar)
         .setTimestamp()
+        .addField('Requested By:', message.author)
         .setColor("RANDOM")
         message.channel.send(embed)
     }

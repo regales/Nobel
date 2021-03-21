@@ -1,21 +1,33 @@
 
-<h1 align="center">
-  Novel Music Bot
-</h1>
 
-<p align="center">
-  <img src="https://imgur.com/a/kIUSPFF" />
-</p>
+# What Makes Nobel Special 
 
 
+* No queue limit
 
-- This music bot is programmed in the way that it will scrape the youtube website directly, which means No more annoying youtube-api-key is needed!
+* No max duration for songs (Ex. You can play those 10 hour version of songs or live music on youtube, the bot wont leave the voice channel even though there is no one until someone has to command *stop and it will leave) 
 
-- A few "fun" commands are included but more to come.
+---
 
-## NOTICE
-- Keep in mind that i am not actually a legit developer.
+### Prefix For Nobel
 
-## CREDITS
-[@icrawl](https://github.com/iCrawl)
-Thanks to icrawl, queue system is partially adapted from icrawl's [Music Bot Repo](https://github.com/iCrawl/discord-music-bot)
+* Prefix = *
+
+---
+  
+
+
+### Help Page For Nobel
+
+![Nobel Help Page](https://i.imgur.com/KPJEthi.png)
+
+---
+
+
+### Note
+
+* If the volume is too low in default, use *volume 5 !
+
+* You don't have to literally put <5>
+
+---

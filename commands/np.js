@@ -9,12 +9,33 @@ exports.run = async(client, message) => {
             color: 'RANDOM'
         }
     })
-    message.channel.send({
-        embed:{
-            title: 'Now Playing',
-            description: queue.songs[0].title + ' Requested By: ' + '<@' + queue.songs[0].requester + '>',
-            thumbnail: queue.songs[0].thumbnail,
-            color: 'RANDOM',
-        }
-    })
+    const embed = new MessageEmbed()
+            .setTitle('Now Playing')
+            .setColor('RANDOM')
+            .setThumbnail(queue.songs[0].thumbnail)
+            .addFields(
+                {
+                    name: "Song Name:",
+
+                    value: queue.songs[0].title,
+
+                    inline: true
+
+                },
+
+                
+            )
+
+            .addFields(
+            {
+                name: "Requested By:",
+
+                value: '<@' + queue.songs[0].requester + '>',
+
+                inline: true
+
+            },
+        )
+            
+    message.channel.send(embed)
 }

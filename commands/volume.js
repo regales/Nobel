@@ -6,7 +6,7 @@ exports.run = async(client, message, args) => {
 
     if(!args[0]) return message.channel.send({
         embed: {
-            description: 'The current volume is set to: ' + queue.volume ,
+            description: 'The current volume is set to ' + queue.volume + '/10',
             color: 'RANDOM'
         }
     })
@@ -18,7 +18,7 @@ exports.run = async(client, message, args) => {
     queue.volume = args[0]
     message.channel.send({
         embed: {
-            description: 'Volume is set to ' + args[0] ,
+            description: 'Volume is set to ' + args[0] + '/10' ,
             color: 'RANDOM'
         }
     })

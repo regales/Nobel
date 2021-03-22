@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 const fs = require("fs");
-
+const weather = require("weather-js");
+const recon = require('reconlx');
 
 const client = new Discord.Client();
 const got = require('got');

@@ -3,12 +3,15 @@
   "version": "1.0.0",
   "main": "index.js",
   "dependencies": {
+    "@listcord/js": "^1.1.2",
+    "ascii": "^1.0.0",
     "ascii-table": "^0.0.9",
     "atob": "^2.1.2",
     "axios": "^0.21.1",
     "cheerio": "^1.0.0-rc.5",
     "dankmemes": "^1.0.0",
     "discord.js": "^12.5.1",
+    "distube": "^2.8.12",
     "eslint": "^7.22.0",
     "ffmpeg": "^0.0.4",
     "ffmpeg-static": "^4.2.7",
@@ -21,6 +24,7 @@
     "reconlx": "^1.2.31",
     "request": "^2.88.2",
     "scrape-yt": "^1.4.3",
+    "table": "^6.0.7",
     "weather-js": "^2.0.0",
     "ytdl-core": "^4.5.0",
     "ytdl-core-discord": "^1.2.3"

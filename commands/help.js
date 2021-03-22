@@ -20,7 +20,7 @@ module.exports = {
             ****volume*** - Adjusts volume of the music from 1-10 
             ****queue*** - To see the full song queue
             ****lyrics*** - Lyrics for the current song playing in queue`)
-            
+            .setFooter('Developed By Regales#0320')
                 
             
 
@@ -41,7 +41,7 @@ module.exports = {
             ****trivia*** - Oh yeah, it's big brain time
             ****weather*** - Weather for mentioned cities (not countries)
             ****wiki*** - Searches wiki for top tier answers`)
-            
+            .setFooter('Developed By Regales#0320')
 
         const embed3 = new Discord.MessageEmbed()
             .setColor('RANDOM')
@@ -55,6 +55,7 @@ module.exports = {
             ****serverinfo*** - Information regarding current server
             ****nobelinfo*** - Information regarding Nobel
             ****support*** - Link for inviting Nobel or support server`)
+            .setFooter('Developed By Regales#0320')
         
                 
                 

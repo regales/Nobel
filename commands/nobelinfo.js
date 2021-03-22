@@ -10,7 +10,10 @@ exports.run = async(client, message) => {
         
              **Users Nobel Is Currrently Serving**:
              ${client.users.cache.size} users`)
+        
+             
         .setColor('RANDOM')
+        .setFooter('Developed By Regales#0320')
         
         message.reply(embed); 
     } 

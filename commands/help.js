@@ -5,7 +5,7 @@ const Discord = require("discord.js");
 
 module.exports = {
     run: async(client, message, args) => {
-        const embed1 = new Discord.MessageEmbed()
+        const embed = new Discord.MessageEmbed()
             .setColor('RANDOM')
             .setTitle('🎸__Help Page For Nobel__🎸')
             .setDescription(`
@@ -19,15 +19,8 @@ module.exports = {
             ****stop*** - Stops playing music
             ****volume*** - Adjusts volume of the music from 1-10 
             ****queue*** - To see the full song queue
-            ****lyrics*** - Lyrics for the current song playing in queue`)
-            .setFooter('Developed By Regales#0320')
-                
+            ****lyrics*** - Lyrics for the current song playing in queue
             
-
-        const embed2 = new Discord.MessageEmbed()
-            .setColor('RANDOM')
-            .setTitle('🎸__Help Page For Nobel__🎸')
-            .setDescription(`
             **:video_game:  __Fun__ :video_game:  **
 
             ****rps*** - Plays a game of rock, paper and scissors
@@ -40,13 +33,8 @@ module.exports = {
             ****deepfry*** - Deepfries a user's profile picture
             ****trivia*** - Oh yeah, it's big brain time
             ****weather*** - Weather for mentioned cities (not countries)
-            ****wiki*** - Searches wiki for top tier answers`)
-            .setFooter('Developed By Regales#0320')
-
-        const embed3 = new Discord.MessageEmbed()
-            .setColor('RANDOM')
-            .setTitle('🎸__Help Page For Nobel__🎸')
-            .setDescription(`
+            ****wiki*** - Searches wiki for top tier answers
+            
             **:gear: __Utility__ :gear: **
 
             ****ping*** - Returns latency and API ping
@@ -57,28 +45,9 @@ module.exports = {
             ****support*** - Link for inviting Nobel or support server`)
             .setFooter('Developed By Regales#0320')
         
-                
-                
-        
-
-        
-
-        const pages = [embed1, embed2, embed3];
-        const emojis = ['◀', '▶'];
-
-        ReactionPages(message, pages, true, emojis);
+        message.channel.send(embed)
         message.react('✅')
     }
     
 }
 
-//                { name: '', value: '' },
-//                { name: '', value: '' },
-//                { name: '', value: '' },
-//                { name: '', value: '' },
-//                { name: '', value: '' },
-//                { name: '', value: '' },
-//                { name: '', value: '' }, 
-//                { name: '', value: '' },
-//                { name: '', value: '' },
-//                { name: '', value: '' },

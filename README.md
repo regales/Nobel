@@ -19,9 +19,8 @@
 
 ### Help Page For Nobel
 
-![Nobel Help Page](https://i.imgur.com/Tojvm6t.png)
-![Nobel Help Page](https://i.imgur.com/97R2bfB.png)
-![Nobel Help Page](https://i.imgur.com/3KSHmNH.png)
+![Nobel Help Page](https://i.imgur.com/nTgTsBK.png)
+
 ---
 
 

@@ -39,7 +39,7 @@ exports.run = async (client, message, args) => {
         .setTitle('Added to queue!')
         .setColor('RANDOM')
         .addField('Name', song.title, true)
-        .setImage(song.thumbnail)
+        .setThumbnail(song.thumbnail)
         .addField('Views', song.views, true)
         .addField('Reqeusted By', song.requester, true)
         .addField('Duration', timeString, true)
@@ -81,7 +81,7 @@ exports.run = async (client, message, args) => {
         dispatcher.setVolumeLogarithmic(queue.volume / 5);
         let noiceEmbed = new discord.MessageEmbed()
         .setTitle('Started Playing')
-        .setImage(song.thumbnail)
+        .setThumbnail(song.thumbnail)
         .setColor('RANDOM')
         .addField('Name', song.title, true)
         .addField('Requested By', song.requester, true)

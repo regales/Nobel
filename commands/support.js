@@ -8,7 +8,10 @@ exports.run = async(client, message) => {
             https://bit.ly/3tF4azp
 
             **Link For Support Server**
-            https://discord.gg/Zv2haAtKyc`
+            https://discord.gg/Zv2haAtKyc
+            
+            **Link For Social Media Account**
+            https://www.instagram.com/nobel.support/`
         )
         
         .setFooter(`Problems? Please Dm Me At Regales#0320`)

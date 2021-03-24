@@ -26,6 +26,7 @@
     "scrape-yt": "^1.4.3",
     "table": "^6.0.7",
     "weather-js": "^2.0.0",
+    "wikijs": "^6.0.1",
     "ytdl-core": "^4.5.0",
     "ytdl-core-discord": "^1.2.3"
   },

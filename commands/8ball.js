@@ -5,7 +5,11 @@ module.exports = {
   run: async(client, message, args) => {
 
     const question = args.join(' ')
-    if (!question) return message.reply(':x: | Please specify a question.')
+    const embed = new MessageEmbed()
+        .setColor('RANDOM')
+        .setTitle(':x: | Please specify a question')
+            
+    if (!question) return message.reply(embed)
 
     const answers = [
 

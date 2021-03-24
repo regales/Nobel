@@ -6,7 +6,10 @@ module.exports = {
     run: async(client, message, args) => {
 
         const wiki = args.slice().join(' ')
-        if(!wiki) return message.reply(':x: | Provide A Query To Search.')
+        const embed = new MessageEmbed()
+            .setColor('RANDOM')
+            .setTitle('Please provide a valid query')
+        if(!wiki) return message.reply(embed)
         const url = `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(wiki)}`
 
         let response
@@ -14,7 +17,12 @@ module.exports = {
             response = await fetch(url).then(res => res.json())
         }      
         catch (e) {
-            return message.send(':x: | An Error Occured, Try Again.')
+            const embed = new MessageEmbed()
+            .setColor('RANDOM')
+            .setTitle('What was that again?')
+            .setDescription(`Even Wikipedia doesn't seem to know what you're talking about.`)
+            .setFooter("Check for typos or try searching for something else!")
+            message.channel.send(embed)
         }
 
         try {
@@ -40,7 +48,11 @@ module.exports = {
             }
         }
         catch {
-            return message.reply(':x: | Provide A Valid Query To Search.')
+            const embed = new MessageEmbed()
+            .setColor('RANDOM')
+            .setTitle('What was that again?')
+            .setDescription(`Even Wikipedia doesn't seem to know what you're talking about.`)
+            .setFooter("Check for typos or try searching for something else!")
+            message.channel.send(embed)
         }
-    }
-}
+}}

@@ -11,7 +11,10 @@ exports.run = async(client, message, args) => {
         }
     })
 
-    if(args[0] > 10) return message.channel.send(':x: | Please enter a value from 1-10')
+    const deek = args[0]
+
+    if(deek > 10) return message.channel.send(':x: | Please enter a value from 1-10')
+    if(deek < 0) return message.channel.send(':x: | Please enter a value from 1-10')
     if(args[0] > `<0>`)return message.channel.send(`:x: | You don't need to literally put <1-10> just 1-10 will do `)
 
     queue.connection.dispatcher.setVolumeLogarithmic(args[0] / 5);

@@ -3,7 +3,7 @@ module.exports = (client) => {
   const activities = [
     `Music Videos`,
     `*help`,
-    `With ${client.users.cache.size} Users`,
+    `In ${client.guilds.cache.size} Servers`,
     `Support Server ====> discord.gg/ZJevrUQ46Q`
   ];
   

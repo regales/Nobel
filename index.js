@@ -15,9 +15,12 @@ client.on('message', async message => {
   if (/<@!820939172491427840>|<@820939172491427840>/.test(message.content)) {
       const embed = new Discord.MessageEmbed()
           .setTitle("You Pinged Me!")
-          .setDescription(`
-            My Prefix Is *
-            To Learn How To Use Me, use ****help*** ! `)
+          .addFields(
+            { name: '**Prefix**', value: 'My Prefix Is *' },
+            
+            { name: '**Help Page**', value: 'To Learn How To Use Me, Type *help', inline: true },
+            
+          )
           .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
           .setTimestamp()
           .setColor('RANDOM')

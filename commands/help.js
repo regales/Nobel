@@ -42,6 +42,7 @@ module.exports = {
             ****ping*** - Returns latency and API ping
             ****help*** - Displays all commands for Nobel
             ****mjl*** - Member Joined LeaderBoard
+            ****userinfo*** - Information regarding a user
             ****serverinfo*** - Information regarding current server
             ****nobelinfo*** - Information regarding Nobel
             ****support*** - Link for inviting Nobel or support server

@@ -11,7 +11,12 @@ exports.run = async(client, message) => {
             https://discord.gg/Zv2haAtKyc
             
             **Link For Social Media Account**
-            https://www.instagram.com/nobel.support/`
+            https://www.instagram.com/nobel.support/
+            
+            **Privacy Policy**
+            https://bit.ly/3rsrtLv`
+
+            
         )
         
         .setFooter(`Problems? Please Dm Me At Regales#0320`)

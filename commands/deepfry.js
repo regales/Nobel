@@ -13,6 +13,7 @@ module.exports = {
             let embed = new MessageEmbed()
             .setTitle("Deepfried!")
             .setImage(data.message)
+            .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
             .setTimestamp()
             .setColor("RANDOM")
             message.channel.send(embed)

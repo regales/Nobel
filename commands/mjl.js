@@ -26,7 +26,8 @@ module.exports = {
                     new MessageEmbed()
                         .setTitle('Join Leaderboard in ' + message.guild.name)
                         .setDescription(description)
-                        .addField('Requested By:', message.author)
+                        .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
+                        .setTimestamp()
                         .setColor('RANDOM')
                 )
             }
@@ -37,7 +38,8 @@ module.exports = {
                 new MessageEmbed()
                     .setTitle('Join Leaderboard in ' + message.guild.name)
                     .setDescription(description)
-                    .addField('Requested By:', message.author)
+                    .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
+                    .setTimestamp()
                     .setColor('RANDOM')
             )
         }

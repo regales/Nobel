@@ -46,7 +46,8 @@ module.exports = {
             ****nobelinfo*** - Information regarding Nobel
             ****support*** - Link for inviting Nobel or support server
             ****uptime*** - How long Nobel has been online`)
-            .setFooter('Developed By Regales#0320')
+            .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
+            .setTimestamp()
         
         message.channel.send(embed)
         message.react('✅')

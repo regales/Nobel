@@ -10,6 +10,8 @@ module.exports = {
         .setDescription(`You flipped a **${choice}**!`)
         .setColor("RANDOM")
         .setImage("https://media.giphy.com/media/DvDGtCpnP3r4A/source.gif")
+        .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
+        .setTimestamp()
         message.reply(embed)
     }
 }

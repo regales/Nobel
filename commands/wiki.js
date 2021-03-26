@@ -35,6 +35,8 @@ module.exports = {
                 **Multiple Results Found**
 
                 Results For Topic You Searched : [Link](${response.content_urls.desktop.page}).`])
+                .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
+                .setTimestamp()
                 message.channel.send(embed)
             }
             else { 
@@ -44,6 +46,8 @@ module.exports = {
                 .setThumbnail(response.thumbnail.source)
                 .setURL(response.content_urls.desktop.page)
                 .setDescription(response.extract)
+                .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
+                .setTimestamp()
                 message.channel.send(embed)
             }
         }

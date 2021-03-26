@@ -29,6 +29,8 @@ module.exports = {
         .addField('**Alert**', `${current.alert}`, true) 
         .addField('**Observation Time**', current.observationtime, true)
         .addField('**Observation Point**', current.observationpoint, true)
+        .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
+        .setTimestamp()
 
 
         message.channel.send(weatherinfo)

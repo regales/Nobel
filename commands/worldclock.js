@@ -36,6 +36,8 @@ module.exports = {
       .addField(':flag_kr: Korean (KST)', `${kst}\n(GMT+9)`, true)
       .addField(':flag_in: India (IST)', `${ist}\n(GMT+05:30)`, true)
       .addField(':flag_my: Kuala Lumpur (MST)',`${awst}\n(GMT+8)`, true)
+      .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
+      .setTimestamp()
 
       .setColor('RANDOM');
     message.channel.send(worldClock);

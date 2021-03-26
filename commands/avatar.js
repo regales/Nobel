@@ -8,8 +8,8 @@ module.exports = {
         let embed = new MessageEmbed()
         .setTitle("Avatar")
         .setImage(avatar)
+        .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
         .setTimestamp()
-        .addField('Requested By:', message.author)
         .setColor("RANDOM")
         message.channel.send(embed)
     }

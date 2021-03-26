@@ -207,6 +207,10 @@ module.exports = {
                 }
 
             )
+            .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
+            .setTimestamp()
+
+            
 
         await message.channel.send(embed)
 

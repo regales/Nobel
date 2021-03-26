@@ -26,6 +26,7 @@ module.exports = {
             ****rps*** - Plays a game of rock, paper and scissors
             ****reverse*** - Reverses a text
             ****8ball*** - Gives you an answer for those essential questions
+            ****text*** - Rewrites a text in Ascii art
             ****tictactoe*** - Plays Tic Tac Toe with another user
             ****meme*** - Scavenges reddit for currently top memes
             ****owo*** - Sends an OwO in chat
@@ -34,6 +35,7 @@ module.exports = {
             ****trivia*** - Oh yeah, it's big brain time
             ****weather*** - Weather for mentioned cities (not countries)
             ****wiki*** - Searches wiki for top tier answers
+            ****worldclock*** - Time all around the world
             
             **:gear: __Utility__ :gear: **
 
@@ -42,7 +44,8 @@ module.exports = {
             ****mjl*** - Member Joined LeaderBoard
             ****serverinfo*** - Information regarding current server
             ****nobelinfo*** - Information regarding Nobel
-            ****support*** - Link for inviting Nobel or support server`)
+            ****support*** - Link for inviting Nobel or support server
+            ****uptime*** - How long Nobel has been online`)
             .setFooter('Developed By Regales#0320')
         
         message.channel.send(embed)

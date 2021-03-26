@@ -10,6 +10,21 @@ client.config = config;
 client.queue = new Map()
 prefix = config.prefix
 
+client.on('message', async message => {
+    
+  if (/<@!820939172491427840>|<@820939172491427840>/.test(message.content)) {
+      const embed = new Discord.MessageEmbed()
+          .setTitle("You Pinged Me!")
+          .setDescription(`
+            My Prefix Is *
+            To Learn How To Use Me, use ****help*** ! `)
+          .addField('Requested By:', message.author)
+          .setColor('RANDOM')
+          .setThumbnail('https://cdn.discordapp.com/avatars/820939172491427840/f174bcc62d9e2665806d2b63236c25fb.webp')
+      message.channel.send(embed)
+  }
+},
+
 fs.readdir("./events/", (err, files) => {
   if (err) return console.error(err);
   files.forEach(file => {
@@ -17,7 +32,7 @@ fs.readdir("./events/", (err, files) => {
     let eventName = file.split(".")[0];
     client.on(eventName, event.bind(null, client));
   });
-});
+}))
 
 client.commands = new Discord.Collection()
 
@@ -31,6 +46,7 @@ fs.readdir("./commands/", (err, files) => {
     client.commands.set(commandName, props);
   });
 });
+
 
 
 

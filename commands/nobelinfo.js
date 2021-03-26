@@ -1,7 +1,7 @@
 const Discord = require('discord.js')
 
 exports.run = async(client, message) => {
-    if (message.content === "*nobelinfo") {
+    {
         const embed = new Discord.MessageEmbed()
         .setAuthor(`Information About Nobel`)
         .setDescription(

@@ -1,7 +1,7 @@
 const Discord = require('discord.js')
 
 exports.run = async(client, message) => {
-    if (message.content === "*support") {
+    {
         const embed = new Discord.MessageEmbed()
         .setDescription(
             `**Link For Inviting Nobel**

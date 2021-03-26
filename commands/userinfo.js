@@ -1,9 +1,13 @@
-
-const { MessageEmbed } = require('discord.js');
 const moment = require('moment');
-
-const flags = {
-	DISCORD_EMPLOYEE: 'Discord Employee',
+const Discord = require('discord.js');
+const DEVICES = {
+    web: "🌐",
+    desktop: "💻",
+    mobile: "📱"
+};
+ 
+const BADGES = {
+    DISCORD_EMPLOYEE: 'Discord Employee',
 	DISCORD_PARTNER: 'Discord Partner',
 	BUGHUNTER_LEVEL_1: 'Bug Hunter (Level 1)',
 	BUGHUNTER_LEVEL_2: 'Bug Hunter (Level 2)',
@@ -18,41 +22,89 @@ const flags = {
 	VERIFIED_DEVELOPER: 'Verified Bot Developer'
 };
 
-module.exports =  {
+const STATUSES = {
+    "online": `<:online:825069525170520135>`,
+    "idle": `<:idle:825069524201373707>`,
+    "dnd": `<:dnd:825069525044428810>`,
+    "streaming": `<:streaming:825070918313312286>`,
+    "offline": `<:offline:825069524574535762>`
+};
+ 
 
-	
-	run: async(client, message, [target]) => {
-		const member = message.mentions.members.last() || message.guild.members.cache.get(target) || message.member;
-		const roles = member.roles.cache
-			.sort((a, b) => b.position - a.position)
-			.map(role => role.toString())
-			.slice(0, -1);
-		const userFlags = member.user.flags.toArray();
-		const embed = new MessageEmbed()
-			.setThumbnail(member.user.displayAvatarURL({ dynamic: true, size: 512 }))
-            .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
-            .setTimestamp()
-			.setColor(member.displayHexColor || 'BLUE')
-			.addField( `**${member.user.username}'s Information**`, [
-				`**❯ Username:** ${member.user.username}`,
-				`**❯ Discriminator:** ${member.user.discriminator}`,
-				`**❯ ID:** ${member.id}`,
-				`**❯ Flags:** ${userFlags.length ? userFlags.map(flag => flags[flag]).join(', ') : 'None'}`,
-				`**❯ Avatar:** [Link to avatar](${member.user.displayAvatarURL({ dynamic: true })})`,
-				`**❯ Time Created:** ${moment(member.user.createdTimestamp).format('LT')}, ${moment(member.user.createdTimestamp).format('LL')}, ${moment(member.user.createdTimestamp).fromNow()}`,
-				`**❯ Status:** ${member.user.presence.status}`,
-				`**❯ Game:** ${member.user.presence.game || 'Not playing a game.'}`,
-				`\u200b`
-			])
-			.addField('Member', [
-				`**❯ Highest Role:** ${member.roles.highest.id === message.guild.id ? 'None' : member.roles.highest.name}`,
-				`**❯ Server Join Date:** ${moment(member.joinedAt).format('LL LTS')}`,
-				`**❯ Hoist Role:** ${member.roles.hoist ? member.roles.hoist.name : 'None'}`,
-				`**❯ Roles [${roles.length}]:** ${roles.length < 10 ? roles.join(', ') : roles.length > 10 ? this.client.utils.trimArray(roles) : 'None'}`,
-				`\u200b`
-            
-			]);
-		return message.channel.send(embed);
-	}
-
+ 
+module.exports = {
+    
+    run: async(client, message, args) => {
+        const member = message.mentions.members.last() || message.guild.members.cache.get(args[0]) || message.member;
+ 
+        const trimArray = (arr, maxLen = 10) => {
+            if (arr.length > maxLen) {
+                const len = arr.length - maxLen;
+                arr = arr.slice(0, maxLen);
+                arr.push(` and ${len} more roles...`);
+            }
+            return arr;
+        };
+ 
+        const upperCase = str => {
+            return str.toUpperCase().replace(/_/g, " ").split(" ")
+                .join(" ");
+        };
+ 
+        const titleCase = str => {
+            return str.toLowerCase().split(" ")
+                .map(word => `${word.charAt(0).toUpperCase()}${word.slice(1)}`)
+                .join(" ");
+        };
+ 
+        let roles = member.roles.cache
+            .sort((a, b) => b.position - a.position)
+            .map(role => role.toString())
+            .slice(0, -1);
+ 
+        let userFlags;
+        if (member.user.flags === null) {
+            userFlags = '';
+        } else {
+            userFlags = member.user.flags.toArray();
+        }
+        if (member.user.presence.status == "offline") { userDevice = ""; } else if (!member.user.bot) { userDevice = DEVICES[Object.keys(member.user.presence.clientStatus)[0]]; } else if (member.user.bot) { userDevice = ""; }
+        if (!member.user.bot) { userInfo = "Not"; } else if (member.user.bot) { userInfo = "Yes"; }
+        if (member.user.presence.status == "dnd") { status = "DND"; } else status = titleCase(member.user.presence.status);
+        if (roles.length < 10) {
+            roles = roles.join(", ");
+        } else if (roles.length > 10) {
+            roles = trimArray(roles).join(", ");
+        }
+        if (roles.length === 0) {
+            roles = "None";
+        }
+ 
+        let hasNitro;
+        if (member.user.displayAvatarURL({ dynamic: true }).endsWith('.gif')) {
+            hasNitro = "Yes";
+        } else if (!member.user.displayAvatarURL({ dynamic: true }).endsWith('.gif')) {
+            hasNitro = "None";
+        }
+        const embed = new Discord.MessageEmbed()
+            .setAuthor(`${member.user.tag} ${userDevice}`, member.user.displayAvatarURL({ dynamic: true, size: 512 }))
+            .setThumbnail(member.user.displayAvatarURL({ dynamic: true, size: 512 }))
+            .addFields(
+                { name: "**User Badges:**", value: `${userFlags.length ? userFlags.map(flag => BADGES[flag]).join("") : "None"}`, inline: false },
+                { name: "**Joined Discord:**", value: `${moment(member.user.createdTimestamp).format("DD MMM YYYY")}`, inline: true },
+                { name: "**Joined Server:**", value: `${moment(member.joinedAt).format("DD MMM YYYY")}`, inline: true },
+                { name: "**Nickname:**", value: `${member.displayName}` || "None", inline: true },
+                { name: "**Discriminator:**", value: `${member.user.discriminator}`, inline: true },
+                { name: "**Bot:**", value: `${userInfo}`, inline: true },
+                { name: "**Nitro:**", value: `${hasNitro}`, inline: true },
+                { name: "**Status:**", value: `${status}${STATUSES[member.user.presence.status]}`, inline: true },
+                { name: "**User Colour:**", value: `${upperCase(member.displayHexColor)}`, inline: true },
+                { name: "**User ID:**", value: `${member.user.id}`, inline: true },
+                { name: "**Highest Role:**", value: `${member.roles.highest.id === message.guild.id ? "None" : member.roles.highest}`, inline: true },
+                { name: "**Roles:**", value: `${roles}` }
+            )
+            .setColor(`RANDOM`);
+        message.channel.send(embed);
+    }
+ 
 };

@@ -29,10 +29,12 @@ module.exports = {
             ****text*** - Rewrites a text in Ascii art
             ****tictactoe*** - Plays Tic Tac Toe with another user
             ****meme*** - Scavenges reddit for currently top memes
+            ****hack*** - Hacks a user
             ****owo*** - Sends an OwO in chat
             ****avatar*** - Displays someone's avatar
             ****deepfry*** - Deepfries a user's profile picture
             ****trivia*** - Oh yeah, it's big brain time
+            ****sp*** - Displays what a user is currently listening to on Spotify
             ****weather*** - Weather for mentioned cities (not countries)
             ****wiki*** - Searches wiki for top tier answers
             ****worldclock*** - Time all around the world

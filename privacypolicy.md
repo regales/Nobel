@@ -11,6 +11,11 @@ Personal Data may be freely provided by the User, or, in case of Usage Data, col
 * Users are free not to communicate this Data without consequences to the availability or the functioning of the Service.
 * Users who are uncertain about which Personal Data is mandatory are welcome to contact the Owner.
 
+#### How To Contact Owner 
+* My Discord Id is Regales#0320 and any problems faced can be DM'ed to me.
+
+* If you need any extra help , you can join Nobel's surport server at https://discord.gg/ZJevrUQ46Q
+
 #### How “Do Not Track” requests are handled?
 
 * This bot does not support “Do Not Track” requests.
@@ -22,3 +27,4 @@ Personal Data may be freely provided by the User, or, in case of Usage Data, col
 * It is strongly recommended to check this message often, referring to the date of the last modification listed at the bottom.
 
 ###### In last you're all Data is safe with us 
+###### Privacy Policy Last Updated At 27/3/2021

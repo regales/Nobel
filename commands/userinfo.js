@@ -23,11 +23,11 @@ const BADGES = {
 };
 
 const STATUSES = {
-    "online": `<:online:825069525170520135>`,
-    "idle": `<:idle:825069524201373707>`,
-    "dnd": `<:dnd:825069525044428810>`,
-    "streaming": `<:streaming:825070918313312286>`,
-    "offline": `<:offline:825069524574535762>`
+    "online": `  <:online:825069525170520135>`,
+    "idle": `  <:idle:825069524201373707>`,
+    "dnd": `  <:dnd:825069525044428810>`,
+    "streaming": `  <:streaming:825070918313312286>`,
+    "offline": `  <:offline:825069524574535762>`
 };
  
 

@@ -38,6 +38,7 @@ module.exports = {
             ****weather*** - Weather for mentioned cities (not countries)
             ****wiki*** - Searches wiki for top tier answers
             ****worldclock*** - Time all around the world
+            ****nsfw*** - Only works in nsfw channels
             
             \`Utility Commands\`
 

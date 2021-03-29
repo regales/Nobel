@@ -1,8 +1,8 @@
 exports.run = async(client, message, args) => {
     const channel = message.member.voice.channel;
-    if (!channel) return message.channel.send(':x: | You should join a voice channel before using this command!');
+    if (!channel) return message.channel.send('<:xmark:314349398824058880> You should join a voice channel before using this command!');
     const queue = message.client.queue.get(message.guild.id)
-    if(!queue) return message.channel.send(':x: | There are no songs in queue to shuffle')
+    if(!queue) return message.channel.send('<:xmark:314349398824058880> There are no songs in queue to shuffle')
     let songs = queue.songs;
     for (let i = songs.length - 1; i > 1; i--) {
       let j = 1 + Math.floor(Math.random() * i);
@@ -10,5 +10,5 @@ exports.run = async(client, message, args) => {
     }
     queue.songs = songs;
     message.client.queue.set(message.guild.id, queue);
-    message.channel.send(`Shuffled the current queue 🔀`).catch(console.error);
+    message.channel.send(`<a:music:738887962754023445> Shuffled the current queue 🔀`).catch(console.error);
 }

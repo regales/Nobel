@@ -7,7 +7,7 @@ module.exports = {
     const question = args.join(' ')
     const embed = new MessageEmbed()
         .setColor('RANDOM')
-        .setTitle(':x: | Please specify a question')
+        .setTitle('<:xmark:314349398824058880> Please specify a question')
             
     if (!question) return message.reply(embed)
 

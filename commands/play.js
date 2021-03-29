@@ -4,12 +4,12 @@ const discord = require('discord.js')
 
 exports.run = async (client, message, args) => {
 
-    if(!args[0]) return message.channel.send(':x: | You didn\'t provide a song to play!')
+    if(!args[0]) return message.channel.send('<:xmark:314349398824058880> You didn\'t provide a song to play!')
     let channel = message.member.voice.channel;
-    if(!channel) return message.channel.send(':x: | You need to join a voice channel to play a music!')
+    if(!channel) return message.channel.send('<:xmark:314349398824058880> You need to join a voice channel to play a music!')
 
-    if (!channel.permissionsFor(message.client.user).has("CONNECT")) return message.channel.send(':x: | I don\'t have permission to join the voice channel')
-    if (!channel.permissionsFor(message.client.user).has("SPEAK"))return message.channel.send(':x: | I don\'t have permission to speak in the voice channel')
+    if (!channel.permissionsFor(message.client.user).has("CONNECT")) return message.channel.send('<:xmark:314349398824058880> I don\'t have permission to join the voice channel')
+    if (!channel.permissionsFor(message.client.user).has("SPEAK"))return message.channel.send('<:xmark:314349398824058880> I don\'t have permission to speak in the voice channel')
 
 
     const server = message.client.queue.get(message.guild.id);
@@ -36,7 +36,7 @@ exports.run = async (client, message, args) => {
         server.songs.push(song);
         console.log(server.songs);
         let embed = new discord.MessageEmbed()
-        .setTitle('Added to queue!')
+        .setTitle(`<a:music:738887962754023445> Added to queue! <a:music:738887962754023445>`)
         .setColor('RANDOM')
         .addField('Name', song.title, true)
         .setThumbnail(song.thumbnail)
@@ -63,7 +63,7 @@ exports.run = async (client, message, args) => {
         if (!song) {
             queue.voiceChannel.leave();
             message.client.queue.delete(message.guild.id);
-            message.channel.send(':x: | There are no songs in queue, I\'m leaving the voice channel!')
+            message.channel.send('<:xmark:314349398824058880> There are no songs in queue, I\'m leaving the voice channel!')
             return;
         }
 
@@ -80,7 +80,7 @@ exports.run = async (client, message, args) => {
             .on('error', error => console.error(error));
         dispatcher.setVolumeLogarithmic(queue.volume / 5);
         let noiceEmbed = new discord.MessageEmbed()
-        .setTitle('Started Playing')
+        .setTitle(`<a:music:738887962754023445> Started Playing <a:music:738887962754023445>`)
         .setThumbnail(song.thumbnail)
         .setColor('RANDOM')
         .addField('Name', song.title, true)
@@ -96,9 +96,9 @@ exports.run = async (client, message, args) => {
         queueConstruct.connection = connection;
         play(queueConstruct.songs[0]);
     } catch (error) {
-        console.error(`:x: | I could not join the voice channel`);
+        console.error(`<:xmark:314349398824058880> I could not join the voice channel`);
         message.client.queue.delete(message.guild.id);
         await channel.leave();
-        return message.channel.send(`:x: | I could not join the voice channel: ${error}`);
+        return message.channel.send(`<:xmark:314349398824058880> I could not join the voice channel: ${error}`);
     }
 }

@@ -7,9 +7,9 @@ module.exports = {
     run: async(client, message, args) => {
         const embed = new Discord.MessageEmbed()
             .setColor('RANDOM')
-            .setTitle('🎸__Help Page For Nobel__🎸')
+            .setTitle('<a:music:738887962754023445>\`\`\`Help Page For Nobel\`\`\`<a:music:738887962754023445>')
             .setDescription(`
-            **:musical_note: __Music__ :musical_note:**
+            \`Music Commands\`
 
             ****play*** - Plays a song from youtube
             ****pause*** - Pauses music
@@ -21,7 +21,7 @@ module.exports = {
             ****queue*** - To see the full song queue
             ****lyrics*** - Lyrics for the current song playing in queue
             
-            **:video_game:  __Fun__ :video_game:  **
+            \`Fun Commands\`
 
             ****rps*** - Plays a game of rock, paper and scissors
             ****reverse*** - Reverses a text
@@ -39,7 +39,7 @@ module.exports = {
             ****wiki*** - Searches wiki for top tier answers
             ****worldclock*** - Time all around the world
             
-            **:gear: __Utility__ :gear: **
+            \`Utility Commands\`
 
             ****ping*** - Returns latency and API ping
             ****help*** - Displays all commands for Nobel
@@ -53,7 +53,7 @@ module.exports = {
             .setTimestamp()
         
         message.channel.send(embed)
-        message.react('✅')
+        message.react('<a:water_green_Okay:825929495164223528>')
     }
     
 }

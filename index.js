@@ -14,11 +14,11 @@ client.on('message', async message => {
     
   if (/<@!820939172491427840>|<@820939172491427840>/.test(message.content)) {
       const embed = new Discord.MessageEmbed()
-          .setTitle("You Pinged Me!")
+          .setTitle("You Pinged Me! <a:WavingBlob:825931440402595840>")
           .addFields(
-            { name: '**Prefix**', value: 'My Prefix Is *' },
+            { name: '**Prefix**', value: '\`My Prefix Is *\`' },
             
-            { name: '**Help Page**', value: 'To Learn How To Use Me, Type *help', inline: true },
+            { name: '**Help Page**', value: '\`To Learn How To Use Me, Type *help\`', inline: true },
             
           )
           .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))

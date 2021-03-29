@@ -8,7 +8,7 @@ module.exports = {
         weather.find({search: args.join(" "), degreeType: 'C'}, function (error, result){
         // 'C' can be changed to 'F' for farneheit results
         if(error) return message.channel.send(error);
-        if(!args[0]) return message.channel.send(':x: | Please specify a location')
+        if(!args[0]) return message.channel.send('<:xmark:314349398824058880> Please specify a location')
         
         if(result === undefined || result.length === 0) return message.channel.send('**Invalid** location');
 

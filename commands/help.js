@@ -5,7 +5,7 @@ const Discord = require("discord.js");
 
 module.exports = {
     run: async(client, message, args) => {
-        const embed = new Discord.MessageEmbed()
+        const embed1 = new Discord.MessageEmbed()
             .setColor('RANDOM')
             .setTitle('<a:music:738887962754023445>\`\`\`Help Page For Nobel\`\`\`<a:music:738887962754023445>')
             .setDescription(`
@@ -38,9 +38,27 @@ module.exports = {
             ****sp*** - Displays what a user is currently listening to on Spotify
             ****weather*** - Weather for mentioned cities (not countries)
             ****wiki*** - Searches wiki for top tier answers
-            ****worldclock*** - Time all around the world
-            ****nsfw*** - Only works in nsfw channels
-            
+            ****worldclock*** - Time all around the world`)
+    
+            .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
+            .setTimestamp()
+        
+        const embed2 = new Discord.MessageEmbed()
+            .setColor('RANDOM')
+            .setTitle('<a:music:738887962754023445>\`\`\`Help Page For Nobel\`\`\`<a:music:738887962754023445>')
+            .setDescription(`
+            \`NSFW Commands\`
+
+            \`All NSFW Commands Require NSFW Channels\`
+            ****hentai*** - Images of anime and manga pornography
+            ****ahegao*** - Images of anime girls for fucked silly
+            ****neko*** - Images of NSFW nekomimi
+            ****pantsu*** - Images of panty shots
+            ****oppai*** - Images of big tiddies
+            ****bondage*** - Images of extreme sex-plays
+            ****ecchi*** - Images of borderline SFW hentai
+            ****futa*** - Images of 2-in-1 packages
+
             \`Utility Commands\`
 
             ****ping*** - Returns latency and API ping
@@ -51,10 +69,10 @@ module.exports = {
             ****nobelinfo*** - Information regarding Nobel
             ****support*** - Link for inviting Nobel or support server
             ****uptime*** - How long Nobel has been online`)
-            .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
-            .setTimestamp()
-        
-        message.channel.send(embed)
+        const pages = [embed1, embed2];
+        const emojis = ['◀', '▶'];
+    
+        ReactionPages(message, pages, true, emojis);
         message.react('<a:water_green_Okay:825929495164223528>')
     }
     

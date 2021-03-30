@@ -5,11 +5,9 @@ module.exports = {
   run: async(client, message, args) => {
 
     const question = args.join(' ')
-    const embed = new MessageEmbed()
-        .setColor('RANDOM')
-        .setTitle('<:xmark:314349398824058880> Please specify a question')
+ 
             
-    if (!question) return message.reply(embed)
+    if (!question) return message.channel.send(`<:xmark:314349398824058880> Please specify a question!`)
 
     const answers = [
 

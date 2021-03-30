@@ -33,6 +33,7 @@ module.exports = {
             ****owo*** - Sends an OwO in chat
             ****avatar*** - Displays someone's avatar
             ****deepfry*** - Deepfries a user's profile picture
+            ****tweet*** - Tweets something on twitter
             ****trivia*** - Oh yeah, it's big brain time
             ****sp*** - Displays what a user is currently listening to on Spotify
             ****weather*** - Weather for mentioned cities (not countries)

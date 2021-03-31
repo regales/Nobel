@@ -51,7 +51,7 @@ module.exports = {
 
             \`All NSFW Commands Require NSFW Channels\`
             ****hentai*** - Images of anime and manga pornography
-            ****ahegao*** - Images of anime girls for fucked silly
+            ****ahegao*** - Images of anime girls being fucked silly
             ****neko*** - Images of NSFW nekomimi
             ****pantsu*** - Images of panty shots
             ****oppai*** - Images of big tiddies

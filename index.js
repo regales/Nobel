@@ -51,7 +51,20 @@ fs.readdir("./commands/", (err, files) => {
   });
 });
 
-
+client.on('message', async message => { 
+  if(message.channel.name == 'nb-chat' && !message.author.bot){
+    client.guilds.cache.forEach(guild=>{
+      if(guild == message.guild) return;
+      let channel = guild.channels.cache.find(ch=>ch.name === 'nb-chat');
+      if(!channel) return;
+      let embed = new Discord.MessageEmbed()
+      .setAuthor(message.author.tag +" ", message.author.displayAvatarURL())
+      .setColor("RANDOM")
+      .setDescription(message.content)
+      channel.send(embed)
+    })
+  }
+ })
 
 
 

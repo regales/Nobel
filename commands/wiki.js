@@ -6,10 +6,8 @@ module.exports = {
     run: async(client, message, args) => {
 
         const wiki = args.slice().join(' ')
-        const embed = new MessageEmbed()
-            .setColor('RANDOM')
-            .setTitle('Please provide a valid query')
-        if(!wiki) return message.reply(embed)
+       
+        if(!wiki) return message.channel.send(`<:xmark:314349398824058880> Please provide a valid query`)
         const url = `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(wiki)}`
 
         let response

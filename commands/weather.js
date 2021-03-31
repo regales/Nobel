@@ -6,11 +6,11 @@ module.exports = {
     run: async(client, message, args) => {
     
         weather.find({search: args.join(" "), degreeType: 'C'}, function (error, result){
-        // 'C' can be changed to 'F' for farneheit results
-        if(error) return message.channel.send(error);
+       
+        if(error) return message.channel.send('<:xmark:314349398824058880> Please specify a location');
         if(!args[0]) return message.channel.send('<:xmark:314349398824058880> Please specify a location')
         
-        if(result === undefined || result.length === 0) return message.channel.send('**Invalid** location');
+        if(result === undefined || result.length === 0) return message.channel.send('<:xmark:314349398824058880> **Invalid** location');
 
         var current = result[0].current;
         var location = result[0].location;

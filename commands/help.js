@@ -38,7 +38,8 @@ module.exports = {
             ****sp*** - Displays what a user is currently listening to on Spotify
             ****weather*** - Weather for mentioned cities (not countries)
             ****wiki*** - Searches wiki for top tier answers
-            ****worldclock*** - Time all around the world`)
+            ****worldclock*** - Time all around the world
+            ****translate*** - Translates a text`)
     
             .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
             .setTimestamp()

@@ -69,7 +69,8 @@ module.exports = {
             ****serverinfo*** - Information regarding current server
             ****nobelinfo*** - Information regarding Nobel
             ****support*** - Link for inviting Nobel or support server
-            ****uptime*** - How long Nobel has been online`)
+            ****uptime*** - How long Nobel has been online
+            ****globalchat*** - Help on how to set up Nobel's global chat`)
         const pages = [embed1, embed2];
         const emojis = ['◀', '▶'];
     

@@ -61,7 +61,7 @@ client.on('message', async message => {
       .setAuthor(message.author.tag +" ", message.author.displayAvatarURL())
       .setColor("RANDOM")
       .setDescription(message.content)
-      .setFooter("**Server:**" + message.guild.name)
+      .setFooter("Server:" + message.guild.name)
       .setTimestamp()
       channel.send(embed)
     })

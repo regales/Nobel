@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "dependencies": {
+    "@freezegold/anime.js": "^2.0.5-beta",
     "@iamtraction/google-translate": "^1.1.2",
     "@listcord/js": "^1.1.2",
     "ascii": "^1.0.0",
@@ -25,6 +26,7 @@
     "lyrics-finder": "^21.7.0",
     "moment": "^2.29.1",
     "node-fetch": "^2.6.1",
+    "novelcovid": "^3.0.0",
     "opusscript": "^0.0.7",
     "random-puppy": "^1.1.0",
     "reconlx": "^1.2.31",

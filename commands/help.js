@@ -39,7 +39,8 @@ module.exports = {
             ****weather*** - Weather for mentioned cities (not countries)
             ****wiki*** - Searches wiki for top tier answers
             ****worldclock*** - Time all around the world
-            ****translate*** - Translates a text`)
+            ****translate*** - Translates a text
+            ****anime*** - Searches information of an anime series`)
     
             .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
             .setTimestamp()
@@ -70,7 +71,8 @@ module.exports = {
             ****nobelinfo*** - Information regarding Nobel
             ****support*** - Link for inviting Nobel or support server
             ****uptime*** - How long Nobel has been online
-            ****globalchat*** - Help on how to set up Nobel's global chat`)
+            ****globalchat*** - Help on how to set up Nobel's global chat
+            ****covid*** - Information regarding the COVID-19 pandemic`)
         const pages = [embed1, embed2];
         const emojis = ['◀', '▶'];
     

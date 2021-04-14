@@ -1,5 +1,7 @@
 const { Client, Message, MessageEmbed } = require("discord.js");
 const { searchAnime } = require("@freezegold/anime.js");
+const { replace } = require("ffmpeg-static");
+
 
 
 module.exports = {
@@ -12,21 +14,25 @@ module.exports = {
    */
   run: async (client, message, args) => {
     const query = args.join(" ");
-    if (!query) return message.inlineReply("<:xmark:314349398824058880> Please type a name of an anime!");
+    if (!query) return message.channel.send("<:xmark:314349398824058880> Please type a name of an anime!");
     const anime = await searchAnime(query, 1).then((res) => {
       return res[0];
     });
     function trim(input) {
       return input.length > 1024 ? `${input.slice(0, 1015)} [...]` : input;
     }
+    const Undefined = anime.titles.english;
+    
 
     const embed = new MessageEmbed()
+    
+    
       .setColor("PURPLE")
       .setAuthor(
-        anime.titles.english,
+        "𝓐𝓷𝓲𝓶𝓮",
         "https://cdn.myanimelist.net/img/sp/icon/apple-touch-icon-256.png"
       )
-      .setTitle("\`Anime\`")
+      
       .addFields(
         {
           name: "\`Titles\` ",

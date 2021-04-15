@@ -3,6 +3,7 @@ const fs = require("fs");
 const weather = require("weather-js");
 const recon = require('reconlx');
 
+
 const client = new Discord.Client();
 const got = require('got');
 const config = require("./config.json");
@@ -67,7 +68,7 @@ client.on('message', async message => {
     })
   }
  })
-
-
+ const AutoPoster = require('topgg-autoposter');
+ const poster = AutoPoster('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjgyMDkzOTE3MjQ5MTQyNzg0MCIsImJvdCI6dHJ1ZSwiaWF0IjoxNjE4NDc0NTkzfQ.xUA47WBV0GHYK3cWDWHCTsbjoVswD-dIEQRF_ARz8GQ', client);
 
 client.login(process.env.TOKEN)

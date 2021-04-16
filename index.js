@@ -67,8 +67,29 @@ client.on('message', async message => {
       channel.send(embed)
     })
   }
- })
+})
+
  const AutoPoster = require('topgg-autoposter');
  const poster = AutoPoster('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjgyMDkzOTE3MjQ5MTQyNzg0MCIsImJvdCI6dHJ1ZSwiaWF0IjoxNjE4NDc0NTkzfQ.xUA47WBV0GHYK3cWDWHCTsbjoVswD-dIEQRF_ARz8GQ', client);
 
+client.on('guildCreate', guild => {
+  
+  const embed = new Discord.MessageEmbed()
+  .setAuthor(
+    "ռօɮɛʟ",
+    "https://i.pinimg.com/236x/d5/e2/c5/d5e2c5c0315e6b1f3cc30189f9dccd82.jpg")
+  .setTitle(`Hey There, I'm Nobel. Thanks For Inviting Me To ${guild.name}! <a:WavingBlob:825931440402595840>`)
+  
+  .addFields(
+    { name: '**Prefix**', value: '\`\`\`My Prefix Is *\`\`\`' },
+          
+    { name: '**Help Page**', value: '\`\`\`For All Of My Commands, Type *help\`\`\`', inline: true },
+          
+  )
+  .setThumbnail(guild.iconURL({ dynamic: true }))
+  .setTimestamp()
+  .setColor('PURPLE')
+  
+guild.systemChannel.send(embed) 
+});
 client.login(process.env.TOKEN)

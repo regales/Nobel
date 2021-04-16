@@ -45,8 +45,8 @@ class Game {
                     this.question_id = id_list[i].id
                 }
             }
-            if (dif.toLowerCase() != 'easy' && dif.toLowerCase() != 'medium' && dif.toLowerCase() != 'hard' && dif.toLowerCase() != 'any') return this.message.channel.send('Please enter a valid Difficulty\nUse .trivia categories to view a list of categories and difficulties');
-            if (!this.question_id) return this.message.channel.send('Please enter a valid Category\nUse .trivia categories to view a list of categories and difficulties');
+            if (dif.toLowerCase() != 'easy' && dif.toLowerCase() != 'medium' && dif.toLowerCase() != 'hard' && dif.toLowerCase() != 'any') return this.message.channel.send('\`Please enter a valid Difficulty\`');
+            if (!this.question_id) return this.message.channel.send('\`Please enter a valid Category\`');
             if (dif.toLowerCase() == 'any') {
                 await fetch('https://opentdb.com/api.php?amount=1&category=' + this.question_id + '&encode=base64')
                 .then(response => response.json())
@@ -138,29 +138,29 @@ class Game {
             if (this.reaction == '🇨') this.input_answer = 3
             if (this.reaction == '🇩') this.input_answer = 4
             if (this.input_answer == this.correct_answer) {
-                this.answer_array[this.input_answer - 1] = this.answer_array[this.input_answer - 1] + ' ✅'
+                this.answer_array[this.input_answer - 1] = this.answer_array[this.input_answer - 1] + ' <a:water_green_Okay:825929495164223528>'
                 this.question_embed = new discord.MessageEmbed()
                 .setColor('#0099ff')
                 .setTitle(atob(this.question.results[0].question))
                 .setDescription(this.answer_array)
                 .setFooter('Category - ' + atob(this.question.results[0].category) + ', Difficulty - ' + atob(this.question.results[0].difficulty))
                 this.question_message.edit(this.question_embed)
-                this.question_message.edit('You got it correct! :smile:')
+                this.question_message.edit('You got it correct! <a:water_green_Okay:825929495164223528>')
                 this.end_game()
             }
             else {
-                this.answer_array[this.input_answer - 1] = this.answer_array[this.input_answer - 1] + ' ❌'
+                this.answer_array[this.input_answer - 1] = this.answer_array[this.input_answer - 1] + ' <:xmark:314349398824058880>'
                 this.question_embed = new discord.MessageEmbed()
                 .setColor('#0099ff')
                 .setTitle(atob(this.question.results[0].question))
                 .setDescription(this.answer_array)
                 .setFooter('Category - ' + atob(this.question.results[0].category) + ', Difficulty - ' + atob(this.question.results[0].difficulty))
                 this.question_message.edit(this.question_embed)
-                this.question_message.edit('You got it wrong. The correct answer was ' + this.reactions[this.correct_answer - 1])
+                this.question_message.edit('<:xmark:314349398824058880> You got it wrong. The correct answer was ' + this.reactions[this.correct_answer - 1])
                 this.end_game()
             }
         }).catch(() => {
-            this.question_message.edit('You took to long to answer! Game has timed out. The answer was ' +  this.reactions[this.correct_answer - 1])
+            this.question_message.edit('<:xmark:314349398824058880> You took to long to answer! Game has timed out. The answer was ' +  this.reactions[this.correct_answer - 1])
             this.end_game()
         })
     }

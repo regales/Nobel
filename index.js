@@ -20,7 +20,7 @@ client.on('message', async message => {
           .addFields(
             { name: '**Prefix**', value: `\`My Prefix Is ${prefix}\`` },
             
-            { name: '**Help Page**', value: `\`To Learn How To Use Me, Type ${prefix}\``, inline: true },
+            { name: '**Help Page**', value: `\`To Learn How To Use Me, Type ${prefix}help\``, inline: true },
             
           )
           .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))

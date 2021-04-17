@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+const lineReply = require('discord-reply');
 const fs = require("fs");
 const weather = require("weather-js");
 const recon = require('reconlx');
@@ -78,7 +79,7 @@ client.on('guildCreate', guild => {
   .setAuthor(
     "ռօɮɛʟ",
     "https://i.pinimg.com/236x/d5/e2/c5/d5e2c5c0315e6b1f3cc30189f9dccd82.jpg")
-  .setTitle(`Hey There, I'm Nobel. Thanks For Inviting Me To ${guild.name}! <a:WavingBlob:825931440402595840>`)
+  .setTitle(`Hey There, I'm Nobel. \n\`Thanks For Inviting Me To ${guild.name}!\` <a:WavingBlob:825931440402595840>`)
   
   .addFields(
     { name: '**Prefix**', value: '\`\`\`My Prefix Is *\`\`\`' },

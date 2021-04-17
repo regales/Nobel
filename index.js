@@ -18,9 +18,9 @@ client.on('message', async message => {
       const embed = new Discord.MessageEmbed()
           .setTitle("You Pinged Me! <a:WavingBlob:825931440402595840>")
           .addFields(
-            { name: '**Prefix**', value: '\`My Prefix Is *\`' },
+            { name: '**Prefix**', value: `\`My Prefix Is ${prefix}\`` },
             
-            { name: '**Help Page**', value: '\`To Learn How To Use Me, Type *help\`', inline: true },
+            { name: '**Help Page**', value: `\`To Learn How To Use Me, Type ${prefix}\``, inline: true },
             
           )
           .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
@@ -82,9 +82,9 @@ client.on('guildCreate', guild => {
   .setTitle(`Hey There, I'm Nobel. \n\`Thanks For Inviting Me To ${guild.name}!\` <a:WavingBlob:825931440402595840>`)
   
   .addFields(
-    { name: '**Prefix**', value: '\`\`\`My Prefix Is *\`\`\`' },
+    { name: '**Prefix**', value: `\`\`\`My Prefix Is ${prefix}\`\`\`` },
           
-    { name: '**Help Page**', value: '\`\`\`For All Of My Commands, Type *help\`\`\`', inline: true },
+    { name: '**Help Page**', value: `\`\`\`For All Of My Commands, Type ${prefix}help\`\`\``, inline: true },
           
   )
   .setThumbnail(guild.iconURL({ dynamic: true }))

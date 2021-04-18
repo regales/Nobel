@@ -3,7 +3,7 @@ const lineReply = require('discord-reply');
 const fs = require("fs");
 const weather = require("weather-js");
 const recon = require('reconlx');
-
+const mongoose = require("mongoose");
 
 const client = new Discord.Client();
 const got = require('got');
@@ -11,6 +11,20 @@ const config = require("./config.json");
 client.config = config;
 client.queue = new Map()
 prefix = config.prefix
+
+mongoose
+  .connect("mongodb+srv://regales:wtfweakpassword281004@nobel.obxxa.mongodb.net/NobelDB?retryWrites=true&w=majority", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false,
+  })
+  .then(() => {
+    console.log("Connected To The Database!");
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+
 
 client.on('message', async message => {
     

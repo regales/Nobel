@@ -12,20 +12,6 @@ client.config = config;
 client.queue = new Map()
 prefix = config.prefix
 
-mongoose
-  .connect("mongodb+srv://regales:wtfweakpassword281004@nobel.obxxa.mongodb.net/NobelDB?retryWrites=true&w=majority", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useFindAndModify: false,
-  })
-  .then(() => {
-    console.log("Connected To The Database!");
-  })
-  .catch((err) => {
-    console.log(err);
-  });
-
-
 client.on('message', async message => {
     
   if (/<@!820939172491427840>|<@820939172491427840>/.test(message.content)) {

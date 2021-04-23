@@ -2,10 +2,11 @@ const recon = require('reconlx');
 const { MessageEmbed } = require("discord.js");
 const ReactionPages = recon.ReactionPages;
 const Discord = require("discord.js");
+const pagination = require('discord.js-pagination')
 
 module.exports = {
     run: async(client, message, args) => {
-        const embed1 = new Discord.MessageEmbed()
+        const page1 = new Discord.MessageEmbed()
             .setColor('RANDOM')
             .setTitle('<a:music:738887962754023445>\`\`\`Help Page For Nobel\`\`\`<a:music:738887962754023445>')
             .setDescription(`
@@ -20,7 +21,7 @@ module.exports = {
             .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
             .setTimestamp()
         
-        const embed2 = new Discord.MessageEmbed()
+        const page2 = new Discord.MessageEmbed()
             .setColor('RANDOM')
             .setTitle('<a:music:738887962754023445>\`\`\`Help Page For Nobel\`\`\`<a:music:738887962754023445>')
             .setDescription(`
@@ -33,10 +34,12 @@ module.exports = {
             \n\`ping\` - Returns latency and API ping\n\`help\` - Displays all commands for Nobel\n\`mjl\` - Member Joined LeaderBoard\n\`userinfo\` - Information regarding a user\n\`serverinfo\` - Information regarding current server\n\`stats\` - Information regarding Nobel\n\`support\` - Link for inviting Nobel or support server\n\`uptime\` - How long Nobel has been online\n\`globalchat\` - Help on how to set up Nobel's global chat\n\`covid\` - Information regarding the COVID-19 pandemic`)
             .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
             .setTimestamp()
-        const pages = [embed1, embed2];
+        const pages = [page1, page2];
         const emojis = ['◀', '▶'];
+        const timeout = '60000'
+
+        pagination(message, pages, emojis, timeout)
     
-        ReactionPages(message, pages, true, emojis);
         message.react('<a:water_green_Okay:825929495164223528>')
     }
     

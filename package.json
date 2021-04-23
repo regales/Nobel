@@ -16,6 +16,7 @@
     "dankmemes": "^1.0.0",
     "discord-reply": "^0.1.2",
     "discord.js": "^12.5.1",
+    "discord.js-pagination": "^1.0.3",
     "distube": "^2.8.12",
     "eslint": "^7.22.0",
     "ffmpeg": "^0.0.4",

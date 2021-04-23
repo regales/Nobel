@@ -11,7 +11,7 @@ module.exports = {
    run: async(client, message, args) => {
     try {
       const query = args.slice(1).join(" ");
-    if (!query) return message.channel.send("<:xmark:314349398824058880> Please type a valid text to translate.")
+    if (!query) return message.channel.send(`<:xmark:314349398824058880> Please type a valid text to translate.\n\`\`Refer To *helptranslate\`\``)
 const arg = args[0]
 
     const translated = await translate(query, {to: `${arg}`});

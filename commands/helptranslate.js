@@ -2,6 +2,7 @@ const recon = require('reconlx');
 const { MessageEmbed } = require("discord.js");
 const ReactionPages = recon.ReactionPages;
 const Discord = require("discord.js");
+const pagination = require('discord.js-pagination');
 
 module.exports = {
     run: async(client, message, args) => {
@@ -153,8 +154,9 @@ module.exports = {
             .setTimestamp()
         const pages = [embed1, embed2, embed3, embed4];
         const emojis = ['◀', '▶'];
+        const timeout = '60000';
     
-        ReactionPages(message, pages, true, emojis);
+        pagination(message, pages, emojis, timeout)
         message.react('<a:water_green_Okay:825929495164223528>')
     }
     

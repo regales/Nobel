@@ -1,219 +1,37 @@
-const { MessageEmbed } = require('discord.js');
-
-
+const { MessageEmbed } = require("discord.js")
 
 module.exports = {
-
-    name: "serverinfo",
-
-    category: "extra",
+    commands: ['serverinfo', 'server-info', 'si','s-i'],
+    description: 'Gives Info About A Server',
 
     run: async(client, message, args) => {
 
-        let region;
-
-        switch (message.guild.region) {
-
-            case "europe":
-
-                region = ':flag_eu:  Europe';
-
-                break;
-
-            case "us-east":
-
-                region = ':flag_us:  US-East'
-
-                break;
-
-            case "us-west":
-
-                region = ':flag_us:  US-West';
-
-                break;
-
-            case "us-south":
-
-                region = ':flag_us:  US-South'
-
-                break;
-
-            case "us-central":
-
-                region = ':flag_us:  US-Central'
-
-                break;
-
-            case "singapore":
-
-                region = ':flag_sg:  Singapore'
-
-                break;
-
-            case "brazil":
-
-                region = ':flag_br:  Brazil'
-
-                break;
-
-            case "hongkong":
-
-                region = ':flag_hk:  Hong Kong'
-
-                break;
-
-            case "india":
-
-                region = ':flag_in:  India'
-
-                break;
-
-            case "japan":
-
-                region = ':flag_jp:  Japan'
-
-                break;
-
-            case "russia":
-
-                region = ':flag_ru:  Russia'
-
-                break;
-
-            case "southafrica":
-
-                region = ':flag_za:  South Africa'
-
-                break;
-
-            case "sydney":
-
-                region = ':flag_au:  Sydney'
-
-                break;
-
-        }
-
-
+        const { guild } = message
+        const icon = message.guild.iconURL({ dynamic: true }) // Icon Of Server
+        const roles = message.guild.roles.cache.map(e => e.toString()) // Roles Of Server
+        const emojis = message.guild.emojis.cache.map(e =>  e.toString()) // Emojis Of Server
+        const emojicount = message.guild.emojis.cache // EmojiCount If Server
+        const members = message.guild.members.cache // Members In Server
+        const create = message.guild.createdAt.toLocaleDateString() // Server Created Date
 
         const embed = new MessageEmbed()
-
-            .setThumbnail(message.guild.iconURL({ dynamic: true }))
-
-            .setColor('RANDOM')
-
-            .setTitle(`${message.guild.name} server stats`)
-
-            .addFields(
-
-                {
-
-                    name: "Owner: ",
-
-                    value: message.guild.owner.user.tag,
-
-                    inline: true
-
-                },
-
-                {
-
-                    name: "Members: ",
-
-                    value: `There are ${message.guild.memberCount} users!`,
-
-                    inline: true
-
-                },
-
-                {
-
-                    name: "Members Online: ",
-
-                    value: `There are ${message.guild.members.cache.filter(m => m.user.presence.status == "online").size} users online!`,
-
-                    inline: true
-
-                },
-
-                {
-
-                    name: "Total Bots: ",
-
-                    value: `There are ${message.guild.members.cache.filter(m => m.user.bot).size} bots!`,
-
-                    inline: true
-
-                },
-
-                {
-
-                    name: "Creation Date: ",
-
-                    value: message.guild.createdAt.toLocaleDateString("en-us"),
-
-                    inline: true
-
-                },
-
-                {
-
-                    name: "Roles Count: ",
-
-                    value: `There are ${message.guild.roles.cache.size} roles in this server.`,
-
-                    inline: true,
-
-                },
-
-                {
-
-                    name: `🗺 Region: `,
-
-                    value: region,
-
-                    inline: true
-
-                },
-
-                {
-
-                    name: `Verified: `,
-
-                    value: message.guild.verified ? 'Server is verified' : `Server isn't verified`,
-
-                    inline: true
-
-                },
-
-                {
-
-                    name: 'Boosters: ',
-
-                    value: message.guild.premiumSubscriptionCount >= 1 ? `There are ${message.guild.premiumSubscriptionCount} Boosters` : `There are no boosters`,
-
-                    inline: true
-
-                },
-
-                {
-
-                    name: "Emojis: ",
-
-                    value: message.guild.emojis.cache.size >= 1 ? `There are ${message.guild.emojis.cache.size} emojis!` : 'There are no emojis',
-
-                    inline: true
-
-                }
-
-            )
-            .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
-            .setTimestamp()
-
-            
-
-        await message.channel.send(embed)
-
+        .setColor('RANDOM')
+        .setAuthor(`${message.guild.name} Info`, icon)
+        .setThumbnail(`${icon}`)
+        .addField('Server Onwer', `${guild.owner}`, true)
+        .addField('Server ID', `\`${guild.id}\``, true)
+        .addField('Server Creation Date', `\`${create}\``, true)
+        .addField('Boost Count', `<:DiscordServerBoost:834953235633668117> ${guild.premiumSubscriptionCount}`, true)
+        .addField('Boost Level', `<:DiscordServerBoost:834953235633668117> ${guild.premiumTier}`, true)
+        .addField('Highest Role', `${guild.roles.highest}`, true)
+        .addField('Member Count', `Total :${members.size}\nHuman :${members.filter(member => !member.user.bot).size}\nBot(s) :${members.filter(member => member.user.bot).size}`, true)
+        .addField('Member Stats', `${guild.members.cache.filter(member => member.presence.status == 'online').size} <:online:825069525170520135>\n${guild.members.cache.filter(member => member.presence.status == 'idle').size} <:idle:825069524201373707>\n${guild.members.cache.filter(member => member.presence.status == 'dnd').size}  <:dnd:825069525044428810>\n${guild.members.cache.filter(member => member.presence.status == 'offline').size} <:offline:825069524574535762>`, true)
+        // .addField('Roles:-', `${roles}`, true) // <true> Means All Roles Will Come In Line
+        .addField('Emoji Count', `Total :${emojicount.size}\nNon Animated :${emojicount.filter(emoji => !emoji.animated).size}\nAnimated :${emojicount.filter(emoji => emoji.animated).size}`, true)
+        // .addField('Emojis:-', `${emojis}`, true) // <true> Means All Emojis Will Come In Line // This Will All Emojis Of Server
+        .addField('Server Stats', `\`\`\`⌨️Text Channels :${guild.channels.cache.filter(channel => channel.type == 'text').size}\n🔈Voice Channels :${guild.channels.cache.filter(channel => channel.type == 'voice').size}\n📢Announcement Channels :${guild.channels.cache.filter(channel => channel.type == 'news').size}\n📁Categories :${guild.channels.cache.filter(channel => channel.type == 'category').size}\`\`\``, true)
+        .setTimestamp()
+        .setFooter('Server Info', icon)
+        message.channel.send(embed)
     }
-
 }

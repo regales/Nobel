@@ -15,12 +15,8 @@ module.exports = {
             response = await fetch(url).then(res => res.json())
         }      
         catch (e) {
-            const embed = new MessageEmbed()
-            .setColor('RANDOM')
-            .setTitle('What was that again?')
-            .setDescription(`Even Wikipedia doesn't seem to know what you're talking about.`)
-            .setFooter("Check for typos or try searching for something else!")
-            message.channel.send(embed)
+            
+            message.channel.send(`<:xmark:314349398824058880> Wikipedia doesn't seem to know what you're talking about. \n\`Search for typos or mabe this topic doesn't exist on Wikipedia.\``)
         }
 
         try {
@@ -50,11 +46,7 @@ module.exports = {
             }
         }
         catch {
-            const embed = new MessageEmbed()
-            .setColor('RANDOM')
-            .setTitle('What was that again?')
-            .setDescription(`Even Wikipedia doesn't seem to know what you're talking about.`)
-            .setFooter("Check for typos or try searching for something else!")
-            message.channel.send(embed)
+
+            message.channel.send(`<:xmark:314349398824058880> Wikipedia doesn't seem to know what you're talking about. \n\`Search for typos or mabe this topic doesn't exist on Wikipedia.`)
         }
 }}

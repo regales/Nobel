@@ -93,4 +93,17 @@ client.on('guildCreate', guild => {
   
 guild.systemChannel.send(embed) 
 });
+//bot's activity reset when joins a new server
+client.on('guildCreate', guild => {
+  const activities = [
+      `Music Videos`,
+      `*help`,
+      `In ${client.guilds.cache.size} Servers`,
+      `Support Server ====> discord.gg/ZJevrUQ46Q`,
+      `Recently Added To ==> ${guild.name}` //a nice bonus feature! nicesu
+  ];
+
+  let i = 0;
+  setInterval(() => client.user.setActivity(`${activities[i++ % activities.length]}`, { type: 'PLAYING' }), 7000);
+});
 client.login(process.env.TOKEN)

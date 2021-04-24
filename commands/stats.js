@@ -10,12 +10,14 @@ module.exports = {
         const d = moment.duration(message.client.uptime);
         const days = (d.days() == 1) ? `${d.days()} day` : `${d.days()} days`;
         const hours = (d.hours() == 1) ? `${d.hours()} hour` : `${d.hours()} hours`;
+        const minutes = (d.minutes() == 1) ? `${d.minutes()} minute` : `${d.minutes()} minutes`;
+        const seconds = (d.seconds() == 1) ? `${d.seconds()} second` : `${d.seconds()} seconds`;
         const clientStats = stripIndent`
       Servers   :: ${message.client.guilds.cache.size}
       Users     :: ${message.client.users.cache.size}
       Channels  :: ${message.client.channels.cache.size}
       WS Ping   :: ${Math.round(message.client.ws.ping)}ms
-      Uptime    :: ${days} and ${hours}
+      Uptime    :: ${days} , ${hours} , ${minutes} , ${seconds}
     `;
         const { totalMemMb, usedMemMb } = await mem.info();
         const serverStats = stripIndent`

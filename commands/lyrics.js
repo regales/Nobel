@@ -15,6 +15,9 @@ exports.run = async(client, message, args) => {
     }
 
     let lyricsEmbed = new MessageEmbed()
+      .setAuthor(
+        "ռօɮɛʟ",
+        "https://i.pinimg.com/236x/d5/e2/c5/d5e2c5c0315e6b1f3cc30189f9dccd82.jpg")
       .setTitle(`<a:music:738887962754023445> Lyrics For ${queue.songs[0].title}`)
       .setDescription(lyrics)
       .setColor("RANDOM")

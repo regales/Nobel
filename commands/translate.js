@@ -17,6 +17,9 @@ const arg = args[0]
     const translated = await translate(query, {to: `${arg}`});
     const embed = new MessageEmbed()
     .setTitle("Translated Successfully.")
+    .setAuthor(
+      "ռօɮɛʟ",
+      "https://i.pinimg.com/236x/d5/e2/c5/d5e2c5c0315e6b1f3cc30189f9dccd82.jpg")
     .addField("Your Query", `\`\`\`fix\n${query}\`\`\``)
     .addField('Selected Language', `\`\`\`fix\n${arg}\`\`\``)
     .addField('Result', `\`\`\`fix\n${translated.text}\`\`\``)

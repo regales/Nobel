@@ -10,7 +10,10 @@ exports.run = async(client, message) => {
         }
     })
     const embed = new MessageEmbed()
-            .setTitle(`<a:music:738887962754023445> Now Playing <a:music:738887962754023445>`)
+            .setTitle(`<a:music:738887962754023445> Now Playing`)
+            .setAuthor(
+                "ռօɮɛʟ",
+                "https://i.pinimg.com/236x/d5/e2/c5/d5e2c5c0315e6b1f3cc30189f9dccd82.jpg")
             .setColor('RANDOM')
             .setThumbnail(queue.songs[0].thumbnail)
             .addFields(

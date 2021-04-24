@@ -10,6 +10,9 @@ module.exports = {
         const covidStats = await covid.all()
         
         return message.channel.send(new Discord.MessageEmbed()
+            .setAuthor(
+              "ռօɮɛʟ",
+              "https://i.pinimg.com/236x/d5/e2/c5/d5e2c5c0315e6b1f3cc30189f9dccd82.jpg")
             .setTitle('😷 COVID-19 STATISTICS')
             .setColor("RED")
             .setFooter(`𝗖𝗢𝗩𝗜𝗗-𝟭𝟵 Stay at home`)

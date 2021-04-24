@@ -5,6 +5,9 @@ module.exports = {
 	run: async(client, message, args) => {
 		let embed = new discord.MessageEmbed()
 		.setTitle("ROCK PAPER SCISSORS ")
+		.setAuthor(
+			"ռօɮɛʟ",
+			"https://i.pinimg.com/236x/d5/e2/c5/d5e2c5c0315e6b1f3cc30189f9dccd82.jpg")
 		.setDescription("React [🗻 | ✂ | 📰] to play!")
         .setColor("RANDOM")
 		.setThumbnail("https://media.giphy.com/media/3ohzdGnD5vAud1NCZW/source.gif")
@@ -25,6 +28,9 @@ module.exports = {
         		const reaction = collected.first()
         		let result = new discord.MessageEmbed()
         		.setTitle("RESULT")
+				.setAuthor(
+					"ռօɮɛʟ",
+					"https://i.pinimg.com/236x/d5/e2/c5/d5e2c5c0315e6b1f3cc30189f9dccd82.jpg")
         		.addField("Your choice", `${reaction.emoji.name}`)
         		.addField("My choice", `${me}`)
 				.setColor("RANDOM")

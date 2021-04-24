@@ -24,6 +24,9 @@ module.exports = {
                 const description = chunk.map((v) => `#${index++} **${message.guild.members.cache.get(v).user.tag}**`);
                 arry.push(
                     new MessageEmbed()
+                        .setAuthor(
+                          "ռօɮɛʟ",
+                          "https://i.pinimg.com/236x/d5/e2/c5/d5e2c5c0315e6b1f3cc30189f9dccd82.jpg")
                         .setTitle('Join Leaderboard in ' + message.guild.name)
                         .setDescription(description)
                         .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
@@ -36,6 +39,9 @@ module.exports = {
             const description = ids.map((v) => `#${index++} **${message.guild.members.cache.get(v).user.tag}**`);
             message.channel.send(
                 new MessageEmbed()
+                    .setAuthor(
+                       "ռօɮɛʟ",
+                       "https://i.pinimg.com/236x/d5/e2/c5/d5e2c5c0315e6b1f3cc30189f9dccd82.jpg")
                     .setTitle('Join Leaderboard in ' + message.guild.name)
                     .setDescription(description)
                     .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))

@@ -16,7 +16,7 @@ module.exports = {
         }      
         catch (e) {
             
-            message.channel.send(`<:xmark:314349398824058880> Wikipedia doesn't seem to know what you're talking about. \n\`Search for typos or mabe this topic doesn't exist on Wikipedia.\``)
+            message.channel.send(`<:xmark:314349398824058880> Wikipedia doesn't seem to know what you're talking about. \n\`Search for typos or maybe this topic doesn't exist on Wikipedia.\``)
         }
 
         try {
@@ -47,6 +47,6 @@ module.exports = {
         }
         catch {
 
-            message.channel.send(`<:xmark:314349398824058880> Wikipedia doesn't seem to know what you're talking about. \n\`Search for typos or mabe this topic doesn't exist on Wikipedia.`)
+            message.channel.send(`<:xmark:314349398824058880> Wikipedia doesn't seem to know what you're talking about. \n\`Search for typos or maybe this topic doesn't exist on Wikipedia.`)
         }
 }}

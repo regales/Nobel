@@ -4,7 +4,9 @@ const fs = require("fs");
 const weather = require("weather-js");
 const recon = require('reconlx');
 const mongoose = require("mongoose");
-
+const { CanvasSenpai } = require("canvas-senpai")
+const canva = new CanvasSenpai();
+const db =require("quick.db"); 
 const client = new Discord.Client();
 const got = require('got');
 const config = require("./config.json");
@@ -107,58 +109,35 @@ client.on('guildCreate', guild => {
   setInterval(() => client.user.setActivity(`${activities[i++ % activities.length]}`, { type: 'PLAYING' }), 7000);
 });
 
-//nitro party
-client.on("message", async message => {
-  function Check(str) {
-    if (
-      client.emojis.cache.find(emoji => emoji.name === str) ||
-      message.guild.emojis.cache.find(emoji => emoji.name === str)
-    ) {
-      return true;
-    } else {
-      return false;
-    }
+client.on("guildMemberAdd", async member => {
+
+  let chx = db.get(`welchannel_${member.guild.id}`);
+
+  if (chx === null) {
+
+    return;
+
   }
-  if (message.content.startsWith(":") && message.content.endsWith(":")) {
-    let EmojiName = message.content.slice(1, -1);
 
-    if (Check(EmojiName) === true) {
-      const channel = client.channels.cache.get(message.channel.id);
-      try {
-        let webhooks = await channel.fetchWebhooks();
-        let webhook = webhooks.first();
-        if (webhook === undefined || null || !webhook) {
-          let Created = channel
-            .createWebhook("Bloxiphy", {
-              avatar:
-                "https://cdn.discordapp.com/avatars/708580906880860171/a_229b573176f79643d7fa5f6f7d8aed63.gif?size=256"
-            })
-            .then(async webhook => {
-              const emoji =
-                client.emojis.cache.find(e => e.name == EmojiName).id ||
-                message.guild.emojis.cache.find(e => e.name === EmojiName).id;
+  
 
-              await webhook.send(`${client.emojis.cache.get(emoji)}`, {
-                username: message.author.username,
-                avatarURL: message.author.avatarURL({ dynamic: true })
-              });
-              message.delete();
-            });
-        }
+   let data = await canva.welcome(member, { link: "https://i.pinimg.com/originals/f3/1c/39/f31c39d56512dc8fbf30f9d0fb3ee9d3.jpg" })
 
-        const emoji =
-          client.emojis.cache.find(e => e.name == EmojiName).id ||
-          message.guild.emojis.cache.find(e => e.name === EmojiName).id;
+ 
 
-        await webhook.send(`${client.emojis.cache.get(emoji)}`, {
-          username: message.author.username,
-          avatarURL: message.author.avatarURL({ dynamic: true })
-        });
-        message.delete();
-      } catch (error) {
-        console.log(`Error :\n${error}`);
-      }
-    }
-  }
+    const attachment = new Discord.MessageAttachment(
+
+      data,
+
+      "welcome-image.png"
+
+    );
+
+  
+
+  
+
+  client.channels.cache.get(chx).send("Welcome to our Server, " + member.user.username, attachment);
+
 });
 client.login(process.env.TOKEN)

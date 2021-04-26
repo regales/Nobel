@@ -19,7 +19,7 @@ module.exports = {
             
             \n\`Fun Commands\`
 
-            \n\`rps\` - Plays a game of rock, paper and scissors\n\`reverse\` - Reverses a text\n\`8ball\` - Gives you an answer for those essential questions\n\`text\` - Rewrites a text in Ascii art\n\`tictactoe\` - Plays Tic Tac Toe with another user\n\`meme\` - Scavenges reddit for currently top memes\n\`hack\` - Hacks a user\n\`owo\` - Sends an OwO in chat\n\`avatar\` - Displays someone's avatar\n\`deepfry\` - Deepfries a user's profile picture\n\`tweet\` - Tweets something on twitter\n\`trivia\` - Oh yeah, it's big brain time\n\`sp\` - Displays what a user is currently listening to on Spotify\n\`weather\` - Weather for mentioned cities (not countries)\n\`wiki\` - Searches wiki for top tier answers\n\`worldclock\` - Time all around the world\n\`translate\` - Translates a text\n\`anime\` - Searches information of an anime series`)
+            \n\`rps\` - Plays a game of rock, paper and scissors\n\`reverse\` - Reverses a text\n\`8ball\` - Gives you an answer for those essential questions\n\`text\` - Rewrites a text in Ascii art\n\`tictactoe\` - Plays Tic Tac Toe with another user\n\`meme\` - Scavenges reddit for currently top memes\n\`hack\` - Hacks a user\n\`owo\` - Sends an OwO in chat\n\`avatar\` - Displays someone's avatar\n\`deepfry\` - Deepfries a user's profile picture\n\`tweet\` - Tweets something on twitter\n\`trivia\` - Oh yeah, it's big brain time\n\`sp\` - Displays what a user is currently listening to on Spotify\n\`weather\` - Weather for mentioned cities (not countries)\n\`wiki\` - Searches wiki for top tier answers\n\`worldclock\` - Time all around the world\n\`translate\` - Translates a text\n\`anime\` - Searches information of an anime series\n\`github\` - Searches a profile on Github\n\`urban\` - Searches meaning of words Boomers won't understand\n\`news\` - Gives Top 5 news of the day`)
     
             .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
             .setTimestamp()
@@ -37,7 +37,7 @@ module.exports = {
 
             \n\`Utility Commands\`
 
-            \n\`ping\` - Returns latency and API ping\n\`help\` - Displays all commands for Nobel\n\`mjl\` - Member Joined LeaderBoard\n\`userinfo\` - Information regarding a user\n\`serverinfo\` - Information regarding current server\n\`stats\` - Information regarding Nobel\n\`support\` - Link for inviting Nobel or support server\n\`globalchat\` - Help on how to set up Nobel's global chat\n\`covid\` - Information regarding the COVID-19 pandemic`)
+            \n\`welcome\` - Sets mentioned server to welcome new members\n\`ping\` - Returns latency and API ping\n\`help\` - Displays all commands for Nobel\n\`mjl\` - Member Joined LeaderBoard\n\`userinfo\` - Information regarding a user\n\`serverinfo\` - Information regarding current server\n\`stats\` - Information regarding Nobel\n\`support\` - Link for inviting Nobel or support server\n\`globalchat\` - Help on how to set up Nobel's global chat\n\`covid\` - Information regarding the COVID-19 pandemic`)
             .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
             .setTimestamp()
         const pages = [page1, page2];

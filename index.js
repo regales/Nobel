@@ -148,4 +148,4 @@ client.on("messageDelete", (message) => {
   })
 })
   
-client.login('ODIwOTM5MTcyNDkxNDI3ODQw.YE8dLw.NY1de72miETZ4HLiRNztP1dCtdA')
+client.login(process.env.TOKEN)

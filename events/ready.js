@@ -7,6 +7,6 @@ module.exports = (client) => {
   ];
 
   let i = 0;
-  setInterval(() => client.user.setActivity(`${activities[i++ % activities.length]}`, { type: 'PLAYING' }), 3000);
+  setInterval(() => client.user.setActivity(`${activities[i++ % activities.length]}`, { type: 'PLAYING' }), 5000);
 
 }

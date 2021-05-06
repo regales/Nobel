@@ -14,6 +14,7 @@ client.config = config;
 client.queue = new Map()
 pb = config.pb
 prefix = config.prefix
+client.snipes = new Discord.Collection()
 
 client.on('message', async message => {
     
@@ -104,7 +105,7 @@ client.on('guildCreate', guild => {
   ];
 
   let i = 0;
-  setInterval(() => client.user.setActivity(`${activities[i++ % activities.length]}`, { type: 'PLAYING' }), 3000);
+  setInterval(() => client.user.setActivity(`${activities[i++ % activities.length]}`, { type: 'PLAYING' }), 5000);
 });
 
 client.on("guildMemberAdd", async member => {
@@ -138,4 +139,13 @@ client.on("guildMemberAdd", async member => {
   client.channels.cache.get(chx).send("Welcome to our Server, " + member.user.username, attachment);
 
 });
-client.login(process.env.TOKEN)
+client.on("messageDelete", (message) => {
+  client.snipes.set(message.channel.id, {
+      content: message.content,
+      author: message.author.tag,
+      member: message.member,
+      image: message.attachments.first() ? message.attachments.first().proxyURL : null
+  })
+})
+  
+client.login('ODIwOTM5MTcyNDkxNDI3ODQw.YE8dLw.NY1de72miETZ4HLiRNztP1dCtdA')

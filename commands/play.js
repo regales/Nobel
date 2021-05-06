@@ -94,6 +94,7 @@ exports.run = async (client, message, args) => {
         .addField('Views', song.views, true)
         .addField('Duration', timeString, true)
         queue.textChannel.send(noiceEmbed);
+        
     };
 
 

@@ -16,8 +16,7 @@ const generateEmbed = start => {
     .setColor('PURPLE')
     .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
     .setTimestamp();
-  current.forEach(g => embed.addField(g.name, `**ID:** ${g.id}
-**Owner:** ${g.owner.user.tag}`))
+  current.forEach(g => embed.addField(g.name, `**ID:** ${g.id}`))
   return embed
 }
 

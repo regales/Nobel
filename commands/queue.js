@@ -16,7 +16,7 @@ exports.run = async (client, message) => {
     .setAuthor(
         "ռօɮɛʟ",
         "https://i.pinimg.com/236x/d5/e2/c5/d5e2c5c0315e6b1f3cc30189f9dccd82.jpg")
-    .setTitle('<a:music:738887962754023445> Queue')
+    .setTitle('<a:playing:799562690129035294> Queue')
     .setThumbnail(thumbnail)
     .setColor('RANDOM')
     .setDescription(status)

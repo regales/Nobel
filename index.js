@@ -12,6 +12,7 @@ const got = require('got');
 const config = require("./config.json");
 client.config = config;
 client.queue = new Map()
+pb = config.pb
 prefix = config.prefix
 
 client.on('message', async message => {

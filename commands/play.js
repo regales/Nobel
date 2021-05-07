@@ -46,7 +46,7 @@ exports.run = async (client, message, args) => {
         .addField('Views', song.views, true)
         .addField('Reqeusted By', song.requester, true)
         .addField('Duration', timeString, true)
-        message.channel.send(embed);
+        return message.channel.send(embed)
         
     }
 
@@ -94,10 +94,7 @@ exports.run = async (client, message, args) => {
         .addField('Requested By', song.requester, true)
         .addField('Views', song.views, true)
         .addField('Duration', timeString, true)
-        let embedmessage= await message.channel.send(noiceEmbed);
-        setTimeout(()=>{
-            embedmessage.delete()
-        },5000);
+        queue.textChannel.send(noiceEmbed);
         
     };
 

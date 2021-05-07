@@ -46,10 +46,8 @@ exports.run = async (client, message, args) => {
         .addField('Views', song.views, true)
         .addField('Reqeusted By', song.requester, true)
         .addField('Duration', timeString, true)
-        let embedmessage= await message.channel.send(embed);
-        setTimeout(()=>{
-            embedmessage.delete()
-        },5000);
+        message.channel.send(embed);
+        
     }
 
     const queueConstruct = {

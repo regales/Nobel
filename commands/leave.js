@@ -9,6 +9,9 @@ module.exports = {
       if (!message.guild.me.voice) return message.channel.send("<:xmark:314349398824058880> I Am Not In Any Voice Channel!");
       
       try {
+        let queue = message.client.queue.get(message.guild.id)
+        queue.songs = []
+        queue.connection.dispatcher.end('Stopped!')
       
       await message.guild.me.voice.kick(client.user.id);
         

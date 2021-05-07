@@ -18,7 +18,7 @@ exports.run = async(client, message, args) => {
       .setAuthor(
         "ռօɮɛʟ",
         "https://i.pinimg.com/236x/d5/e2/c5/d5e2c5c0315e6b1f3cc30189f9dccd82.jpg")
-      .setTitle(`<a:playing:799562690129035294> Lyrics For ${queue.songs[0].title}`)
+      .setTitle(`<a:playing:799562690129035294>  Lyrics For ${queue.songs[0].title}`)
       .setDescription(lyrics)
       .setColor("RANDOM")
       .setTimestamp();

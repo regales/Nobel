@@ -21,7 +21,7 @@ exports.run = async(client, message, args) => {
     queue.volume = args[0]
     message.channel.send({
         embed: {
-            description: `<a:playing:799562690129035294>` + 'Volume is set to' + args[0] + '/10' ,
+            description: `<a:playing:799562690129035294>  `  + 'Volume is set to ' + args[0] + '/10' ,
             color: 'RANDOM'
         }
     })

@@ -15,9 +15,9 @@ module.exports = {
       const Embed = new Discord.MessageEmbed()
       .setColor('GREEN')
       .setTitle("Success")
-      .setDescription("<a:playing:799562690129035294> **Joined The Voice Channel, Use \`*play <music name>\` To Play Music!**")
+      .setDescription("<a:playing:799562690129035294>  **Joined The Voice Channel, Use \`*play <music name>\` To Play Music!**")
       .setTimestamp();
       
-      return message.channel.send(Embed).catch(() => message.channel.send("<a:playing:799562690129035294> **Joined The Voice Channel, Use \`*play <music name>\` Command To Play Music!**"));
+      return message.channel.send(Embed).catch(() => message.channel.send("<a:playing:799562690129035294>  **Joined The Voice Channel, Use \`*play <music name>\` Command To Play Music!**"));
     }
   };

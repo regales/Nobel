@@ -10,5 +10,5 @@ exports.run = async(client, message, args) => {
     }
     queue.songs = songs;
     message.client.queue.set(message.guild.id, queue);
-    message.channel.send(`<a:playing:799562690129035294> Shuffled the current queue 🔀`).catch(console.error);
+    message.channel.send(`<a:playing:799562690129035294>  Shuffled the current queue 🔀`).catch(console.error);
 }

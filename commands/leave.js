@@ -14,15 +14,15 @@ module.exports = {
         
       } catch (error) {
         await message.guild.me.voice.kick(message.guild.me.id);
-        return message.channel.send("<a:loading_plus:675395739949727774> Trying To Leave The Voice Channel");
+        return message.channel.send("<a:loading_plus:675395739949727774>  Trying To Leave The Voice Channel");
       };
       const Discord = require("discord.js");
       const Embed = new Discord.MessageEmbed()
       .setColor('RED')
       .setTitle("Success")
-      .setDescription("<a:playing:799562690129035294> **Left The Voice Channel**")
+      .setDescription("<a:playing:799562690129035294>  **Left The Voice Channel**")
       .setTimestamp();
       
-      return message.channel.send(Embed).catch(() => message.channel.send("<a:playing:799562690129035294> **Left The Voice Channel**"));
+      return message.channel.send(Embed).catch(() => message.channel.send("<a:playing:799562690129035294>  **Left The Voice Channel**"));
     }
   };

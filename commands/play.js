@@ -39,14 +39,17 @@ exports.run = async (client, message, args) => {
         .setAuthor(
           "ռօɮɛʟ",
           "https://i.pinimg.com/236x/d5/e2/c5/d5e2c5c0315e6b1f3cc30189f9dccd82.jpg")
-        .setTitle(`<a:playing:799562690129035294> Added to queue!`)
+        .setTitle(`<a:playing:799562690129035294>  Added to queue!`)
         .setColor('RANDOM')
         .addField('Name', song.title, true)
         .setThumbnail(song.thumbnail)
         .addField('Views', song.views, true)
         .addField('Reqeusted By', song.requester, true)
         .addField('Duration', timeString, true)
-        return message.channel.send(embed)
+        let embedmessage= await message.channel.send(embed);
+        setTimeout(()=>{
+            embedmessage.delete()
+        },5000);
     }
 
     const queueConstruct = {
@@ -86,14 +89,17 @@ exports.run = async (client, message, args) => {
         .setAuthor(
           "ռօɮɛʟ",
           "https://i.pinimg.com/236x/d5/e2/c5/d5e2c5c0315e6b1f3cc30189f9dccd82.jpg")
-        .setTitle(`<a:playing:799562690129035294> Started Playing`)
+        .setTitle(`<a:playing:799562690129035294>  Started Playing`)
         .setThumbnail(song.thumbnail)
         .setColor('RANDOM')
         .addField('Name', song.title, true)
         .addField('Requested By', song.requester, true)
         .addField('Views', song.views, true)
         .addField('Duration', timeString, true)
-        queue.textChannel.send(noiceEmbed);
+        let embedmessage= await message.channel.send(noiceEmbed);
+        setTimeout(()=>{
+            embedmessage.delete()
+        },5000);
         
     };
 

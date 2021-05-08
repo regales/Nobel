@@ -3,11 +3,12 @@ module.exports = (client) => {
   const activities = [
     `Music Videos`,
     `*help`,
-    `Support Server ====> discord.gg/ZJevrUQ46Q`
     `In ${client.guilds.cache.size} Servers`,
+    `Support Server ====> discord.gg/ZJevrUQ46Q`
   ];
-
+  
   let i = 0;
   setInterval(() => client.user.setActivity(`${activities[i++ % activities.length]}`, { type: 'PLAYING' }), 5000);
+  
 
 }

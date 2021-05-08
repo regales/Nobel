@@ -97,16 +97,6 @@ client.on('guildCreate', guild => {
   
 guild.systemChannel.send(embed) 
 });
-//bot's activity reset when joins a new server
-client.on('guildCreate', guild => {
-  const activities = [
-      `In ${client.guilds.cache.size} Servers`,
-      `Recently Added To ==> ${guild.name}` //a nice bonus feature! nicesu
-  ];
-
-  let i = 0;
-  setInterval(() => client.user.setActivity(`${activities[i++ % activities.length]}`, { type: 'PLAYING' }), 5000);
-});
 
 client.on("guildMemberAdd", async member => {
 

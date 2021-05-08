@@ -4,6 +4,7 @@ module.exports = (client) => {
     `Music Videos`,
     `*help`,
     `Support Server ====> discord.gg/ZJevrUQ46Q`
+    `In ${client.guilds.cache.size} Servers`,
   ];
 
   let i = 0;

@@ -6,7 +6,7 @@ module.exports.run = async (client, message, args) => {
 
 	let permission = message.member.hasPermission("ADMINISTRATOR");
 
- if(!permission) return message.channel.send("<:xmark:314349398824058880> Sorry you need `Administration` permissions!`")
+ if(!permission) return message.channel.send("<:xmark:314349398824058880> Sorry you need `Administration` permissions!")
 
  let channel = message.mentions.channels.first()
     

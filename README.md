@@ -1,43 +1,145 @@
 
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <a href="https://github.com/regales/Nobel">
+  </a>
 
-# What Makes Nobel Special 
+  <h3 align="center">Nobel </h3>
 
-
-* No queue limit
-
-* No max duration for songs (Ex. You can play those 10 hour version of songs or live music on Youtube, the bot wont leave the voice channel even though there is no one until someone has to command *stop and it will leave) 
-
----
-
-### Prefix For Nobel
-
-* Prefix = *
-
----
-  
-
-
-### Help Page For Nobel
-
-![Nobel Help Page](https://i.imgur.com/J48IcUa.jpg)
-
----
+  <p align="center">
+    Fairly simple music discord bot with extra fun and meme commands!
+    <br />
+    <a href="https://github.com/regales/privacy-policy-nobel"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://i.imgur.com/J48IcUa.jpg">View Demo</a>
+    ·
+    <a href="https://github.com/regales/Nobel/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/regales/Nobel/issues">Request Feature</a>
+  </p>
+</p>
 
 
-### Note
 
-`Use *help for Nobel's help page!`
+<!-- TABLE OF CONTENTS -->
+<details open="open">
+  <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgements">Acknowledgements</a></li>
+  </ol>
+</details>
 
-* If the volume is too low in default, use *volume 5 !
 
-* You don't have to literally put <5>
 
-* Weather command searches cities' names not countries
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-* If weather command doesn't show searched city weather means that there are no weather reports regarding that city in the first place
+[Nobel Discord Bot](https://top.gg/bot/820939172491427840)
 
----
+Nobel serves as a discord music bot with some extra commands categorized as fun commands like `snipe` or `8ball` 
 
-[Privacy Policy](https://github.com/regales-0428/privacy-policy-nobel)
 
-[Support](https://discord.gg/ZJevrUQ46Q)
+### Built With
+
+* [Javascript](https://www.javascript.com/)
+* [Markdown](https://www.markdownguide.org/getting-started/)
+* [Visual Studio Code](https://code.visualstudio.com/)
+
+
+
+<!-- GETTING STARTED -->
+## Getting Started
+
+To get a local copy up and running follow these simple steps.
+
+### Prerequisites
+
+This is an example of how to list things you need to use the software and how to install them.
+* npm
+  ```sh
+  npm install npm@latest -g
+  ```
+
+### Installation
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/github_username/repo_name.git
+   ```
+2. Install NPM packages
+   ```sh
+   npm install
+   ```
+
+
+
+
+
+
+
+<!-- ROADMAP -->
+## Roadmap
+
+See the [open issues](https://github.com/regales/Nobel/issues) for a list of proposed features (and known issues).
+
+
+
+<!-- CONTRIBUTING -->
+## Contributing
+
+Contributions are what make Nobel an open source project an amazing place to make it better. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+
+
+<!-- LICENSE -->
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+
+
+<!-- CONTACT -->
+## Contact
+
+Regales - [@Regales#0320](https://discord.gg/ZJevrUQ46Q) - Discord Username
+
+Project Link: [https://github.com/regales/Nobel](https://github.com/regales/Nobel)
+
+
+
+<!-- ACKNOWLEDGEMENTS -->
+## Acknowledgements
+
+* [Ronald](https://github.com/Ronald545)
+* [Robbie-Wittenhagen](https://github.com/Robbie-Wittenhagen)
+
+
+
+
+
+

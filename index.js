@@ -18,7 +18,9 @@ client.snipes = new Discord.Collection()
 
 client.on('message', async message => {
     
-  if (/<@!820939172491427840>|<@820939172491427840>/.test(message.content)) {
+  if(message.author.bot) {
+
+  } else if (/<@!820939172491427840>|<@820939172491427840>/.test(message.content)) {
       const embed = new Discord.MessageEmbed()
           .setTitle("You Pinged Me! <a:WavingBlob:825931440402595840>")
           .addFields(

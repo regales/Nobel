@@ -4,9 +4,9 @@ const db = require("quick.db")
 
 module.exports.run = async (client, message, args) => {
 
-	let permission = message.member.hasPermission("ADMINISTRATOR");
+	let permission = message.member.hasPermission("MANAGE_CHANNELS");
 
- if(!permission) return message.channel.send("<:xmark:314349398824058880> Sorry you need `Administration` permissions!")
+ if(!permission) return message.channel.send("<:xmark:314349398824058880> Sorry you need `MANAGE_CHANNELS` permissions!")
 
  let channel = message.mentions.channels.first()
     

@@ -72,10 +72,14 @@ Nobel serves as a discord music bot with some extra commands categorized as fun 
 To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+* PREFIX
+```
+Change prefix in config.json
+```
+* TOKEN
+```
+Change token in index.js at client.login('Your_Token')
+```
 
 ### Installation
 

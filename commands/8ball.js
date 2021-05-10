@@ -49,7 +49,9 @@ module.exports = {
             const embed = new Discord.MessageEmbed()
 // create embed
         .setAuthor(`🎱 ${message.author.username} Asks Me?`, message.author.displayAvatarURL({ dynamic: true }))
-        .setDescription(`**Your question:** \n ${yq} \n**My Answer:** \n ${answers[Math.floor(Math.random() * answers.length)]}`)
+        .setDescription(`**Your question:** \n ${yq} 
+        
+        \n**My Answer:** \n ${answers[Math.floor(Math.random() * answers.length)]}`)
 // math the answers and get the answer
         .setColor("RANDOM");
 //get a random color for embed

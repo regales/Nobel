@@ -31,9 +31,6 @@ module.exports = {
                 "https://i.pinimg.com/236x/d5/e2/c5/d5e2c5c0315e6b1f3cc30189f9dccd82.jpg")
             .setTitle('<a:music:738887962754023445>\`\`\`Help Page For Nobel\`\`\`<a:music:738887962754023445>')
             .setDescription(`
-            \n\`NSFW Commands\`
-
-            \n\`All NSFW Commands Require NSFW Channels\`\n\`hentai\` - Images of anime and manga pornography\n\`ahegao\` - Images of anime girls being fucked silly\n\`neko\` - Images of NSFW nekomimi\n\`pantsu\` - Images of panty shots\n\`oppai\` - Images of big tiddies\n\`bondage\` - Images of extreme sex-plays\n\`ecchi\` - Images of borderline SFW hentai\n\`futa\` - Images of 2-in-1 packages
 
             \n\`Utility Commands\`
 

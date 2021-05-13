@@ -13,6 +13,8 @@ function sleep(milliseconds) {
 }
 
 module.exports = { sleep }
+const query = args.join(" ");
+    if (!query) return message.channel.send("<:xmark:314349398824058880> User not found!");
         const hacked = message.mentions.members.first() || message.guild.members.cache.get(args[0])
         const genemail = [
             `${hacked.user.username}noob@`

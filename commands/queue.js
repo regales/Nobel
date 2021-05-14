@@ -1,25 +1,92 @@
-const { MessageEmbed } = require('discord.js')
+const { MessageEmbed } = require("discord.js");
+const sendError = require("../util/error");
 
-exports.run = async (client, message) => {
-    const channel = message.member.voice.channel;
-    let num = 0;
-    if (!channel) return message.channel.send('<:xmark:314349398824058880> You should join a voice channel before using this command!');
-    const queue = message.client.queue.get(message.guild.id)
-    let status;
-    if(!queue) status = '<:xmark:314349398824058880> There is nothing in queue!'
-    else status = queue.songs.map(x => `**${num++}) **` + x.title + ' -Requested by ' + `<@${x.requester.id}>`).join('\n')
-    if(!queue) np = status
-    else np = queue.songs[0].title
-    if(queue) thumbnail = queue.songs[0].thumbnail
-    else thumbnail = message.guild.iconURL()
-    let embed = new MessageEmbed()
-    .setAuthor(
-        "ռօɮɛʟ",
-        "https://i.pinimg.com/236x/d5/e2/c5/d5e2c5c0315e6b1f3cc30189f9dccd82.jpg")
-    .setTitle('<a:playing:799562690129035294>  Queue')
-    .setThumbnail(thumbnail)
-    .setColor('RANDOM')
-    .setDescription(status)
-    .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
-    message.channel.send(embed)
-}
+module.exports = {
+  info: {
+    name: "queue",
+    description: "To show the server songs queue",
+    usage: "",
+    aliases: ["q", "list", "songlist", "song-list"],
+  },
+
+  run: async(client, message, args) => {
+ 
+  const permissions = message.channel.permissionsFor(message.client.user);
+    if (!permissions.has(["MANAGE_MESSAGES", "ADD_REACTIONS"]))
+      return sendError("<:xmark:314349398824058880> Missing Permission To Manage Messages Or Add Reactions",message.channel);
+
+    const queue = message.client.queue.get(message.guild.id);
+    if (!queue) return sendError("<:xmark:314349398824058880> There Is Nothing Playing In This Server.",message.channel)
+
+    let currentPage = 0;
+    const embeds = generateQueueEmbed(message, queue.songs);
+
+    const queueEmbed = await message.channel.send(
+      `**\`${currentPage + 1}\`**/**${embeds.length}**`,
+      embeds[currentPage]
+    );
+
+    try {
+      await queueEmbed.react("⬅️");
+      await queueEmbed.react("🛑");
+      await queueEmbed.react("➡️");
+    } catch (error) {
+      console.error(error);
+      message.channel.send(error.message).catch(console.error);
+    }
+
+    const filter = (reaction, user) =>
+      ["⬅️", "🛑", "➡️"].includes(reaction.emoji.name) && message.author.id === user.id;
+    const collector = queueEmbed.createReactionCollector(filter, { time: 60000 });
+
+    collector.on("collect", async (reaction, user) => {
+      try {
+        if (reaction.emoji.name === "➡️") {
+          if (currentPage < embeds.length - 1) {
+            currentPage++;
+            queueEmbed.edit(`**\`${currentPage + 1}\`**/**${embeds.length}**`, embeds[currentPage]);
+          }
+        } else if (reaction.emoji.name === "⬅️") {
+          if (currentPage !== 0) {
+            --currentPage;
+            queueEmbed.edit(`**\`${currentPage + 1}\`**/**${embeds.length}**`, embeds[currentPage]);
+          }
+        } else {
+          collector.stop();
+          reaction.message.reactions.removeAll();
+        }
+        await reaction.users.remove(message.author.id);
+      } catch (error) {
+        console.error(error);
+        return message.channel.send(error.message).catch(console.error);
+      }
+    });
+  }
+};
+
+function generateQueueEmbed(message, queue) {
+  let embeds = [];
+  let k = 10;
+
+  for (let i = 0; i < queue.length; i += 10) {
+    const current = queue.slice(i, k);
+    let j = i;
+    k += 10;
+
+    const info = current.map((track) => `**\`${++j}\`** | \`${track.title}\``).join("\n\n");
+  
+    const serverQueue =message.client.queue.get(message.guild.id);
+    const embed = new MessageEmbed()
+    .setTitle('<a:playing:799562690129035294> Server Queue')
+    .setThumbnail(`https://media.discordapp.net/attachments/778283828099809283/822353825624883200/unknown_1.png`)
+    .setColor("PURPLE")
+    .setDescription(`${info}`)
+    .setFooter(`Songs Source ~ YouTube`, `https://cdn.discordapp.com/emojis/782125440873660417.png?v=1`)
+     if(serverQueue.songs.length === 1)embed.setDescription(`<:xmark:314349398824058880> No Songs To Play, Add Songs By \`\`*play <song_name>\`\``)
+
+    embeds.push(embed);
+  }
+
+  return embeds;
+ 
+};

@@ -15,7 +15,7 @@ module.exports = {
             .setDescription(`
             \`Music Commands\`
 
-            \n\`play\` - Plays a song from youtube\n\`pause\` - Pauses music\n\`resume\` - Resumes music\n\`np\` - Gets now playing song's info\n\`skip\` - Skips to next song\n\`stop\` - Stops playing music\n\`volume\` - Adjusts volume of the music from 1-10 \n\`queue\` - To see the full song queue\n\`lyrics\` - Lyrics for the current song playing in queue\n\`join\` - Joins a voice channel 24/7\n\`leave\` - Leaves a voice channel
+            \n\`play\` - Plays a song from Youtube\n\`playlist\` - Plays a playlist for Youtube\n\`pause\` - Pauses music\n\`resume\` - Resumes music\n\`np\` - Gets now playing song's info\n\`skip\` - Skips to next song\n\`skipto\` - Skips to requested song number\n\`remove\` - Remove songs from the queue\n\`stop\` - Stops playing music\n\`volume\` - Adjusts volume of the music\n\`queue\` - To see the full song queue\n\`join\` - Joins a voice channel 24/7\n\`leave\` - Leaves a voice channel\n\`loop\` - Loops The queue\n\`shuffle\` - Shuffles the queue\n\`bassboost\` - Cheeki Breeki V Damke
             
             \n\`Fun Commands\`
 

@@ -1,14 +1,30 @@
-exports.run = async(client, message, args) => {
-    const channel = message.member.voice.channel;
-    if (!channel) return message.channel.send('<:xmark:314349398824058880> You should join a voice channel before using this command!');
-    const queue = message.client.queue.get(message.guild.id)
-    if(!queue) return message.channel.send('<:xmark:314349398824058880> There are no songs in queue to shuffle')
-    let songs = queue.songs;
+const { MessageEmbed } = require("discord.js");
+const sendError = require("../util/error");
+
+module.exports = {
+  info: {
+    name: "shuffle",
+    description: "Shuffle queue",
+    usage: "[sh]",
+    aliases: ["sh"],
+  },
+
+  run: async(client, message, args) => {
+    const serverQueue = message.client.queue.get(message.guild.id);
+    if (!serverQueue) return sendError("<:xmark:314349398824058880> There Is No Queue.",message.channel).catch(console.error);
+try{
+    let songs = serverQueue.songs;
     for (let i = songs.length - 1; i > 1; i--) {
       let j = 1 + Math.floor(Math.random() * i);
       [songs[i], songs[j]] = [songs[j], songs[i]];
     }
-    queue.songs = songs;
-    message.client.queue.set(message.guild.id, queue);
-    message.channel.send(`<a:playing:799562690129035294>  Shuffled the current queue 🔀`).catch(console.error);
-}
+    serverQueue.songs = songs;
+    message.client.queue.set(message.guild.id, serverQueue);
+    message.react("<a:water_green_Okay:825929495164223528>")
+      } catch (error) {
+        message.guild.me.voice.channel.leave();
+        message.client.queue.delete(message.guild.id);
+        return sendError(`<:xmark:314349398824058880> Music Has Been Stopped: \`${error}\``, message.channel);
+     }
+  },
+};

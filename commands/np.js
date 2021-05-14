@@ -1,44 +1,25 @@
-const { MessageEmbed } = require('discord.js')
-exports.run = async(client, message) => {
-    const channel = message.member.voice.channel;
-    if (!channel) return message.channel.send('<:xmark:314349398824058880> You should join a voice channel before using this command!');
-    let queue = message.client.queue.get(message.guild.id)
-    if(!queue) return message.channel.send({
-        embed:{
-            title: '<:xmark:314349398824058880> There is nothing playing right now!',
-            color: 'RANDOM'
-        }
-    })
-    const embed = new MessageEmbed()
-            .setTitle(`<a:playing:799562690129035294>  Now Playing`)
-            .setAuthor(
-                "ռօɮɛʟ",
-                "https://i.pinimg.com/236x/d5/e2/c5/d5e2c5c0315e6b1f3cc30189f9dccd82.jpg")
-            .setColor('RANDOM')
-            .setThumbnail(queue.songs[0].thumbnail)
-            .addFields(
-                {
-                    name: "Song Name:",
+const { MessageEmbed } = require("discord.js");
+const sendError = require("../util/error")
 
-                    value: queue.songs[0].title,
+module.exports = {
+  info: {
+    name: "nowplaying",
+    description: "To show the music which is currently playing in this server",
+    usage: "",
+    aliases: ["np"],
+  },
 
-                    inline: true
-
-                },
-
-                
-            )
-
-            .addFields(
-            {
-                name: "Requested By:",
-
-                value: '<@' + queue.songs[0].requester + '>',
-
-                inline: true
-
-            },
-        )
-            
-    message.channel.send(embed)
-}
+  run: async(client, message, args) => {
+    const serverQueue = message.client.queue.get(message.guild.id);
+    if (!serverQueue) return sendError("<:xmark:314349398824058880> I Am Not Playing Anything!", message.channel);
+    let song = serverQueue.songs[0]
+    let thing = new MessageEmbed()
+      .setTitle("<a:loading_plus:675395739949727774> Currently Playing")
+      .setDescription('[© YouTube](https://support.google.com/youtube/topic/2676339?hl=en&ref_topic=6151248)')
+      .setThumbnail('https://media.discordapp.net/attachments/778283828099809283/822353825624883200/unknown_1.png')
+      .setColor("PURPLE")
+      .addField("Name", song.title, true)
+      .addField("Song Commanded by", `\`\`\`\n${song.req.username}\n\`\`\``, true)
+    return message.channel.send(thing)
+  },
+};

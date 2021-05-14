@@ -1,28 +1,28 @@
-exports.run = async(client, message, args) => {
+const { MessageEmbed } = require("discord.js");
+const sendError = require("../util/error");
+
+module.exports = {
+  info: {
+    name: "volume",
+    description: "To change the server song queue volume",
+    usage: "[volume]",
+    aliases: ["v", "vol"],
+  },
+
+  run: async(client, message, args) => {
     const channel = message.member.voice.channel;
-    if (!channel) return message.channel.send('<:xmark:314349398824058880> You should join a voice channel before using this command!');
-
-    let queue = message.client.queue.get(message.guild.id)
-
-    if(!args[0]) return message.channel.send({
-        embed: {
-            description: `<a:playing:799562690129035294>` + 'The current volume is set to' + queue.volume + '/10',
-            color: 'RANDOM'
-        }
-    })
-
-    const deek = args[0]
-
-    if(deek > 10) return message.channel.send('<:xmark:314349398824058880> Please enter a value from 1-10')
-    if(deek < 0) return message.channel.send('<:xmark:314349398824058880> Please enter a value from 1-10')
-    if(args[0] > `<0>`)return message.channel.send(`<:xmark:314349398824058880> You don't need to literally put <1-10> just 1-10 will do `)
-
-    queue.connection.dispatcher.setVolumeLogarithmic(args[0] / 5);
-    queue.volume = args[0]
-    message.channel.send({
-        embed: {
-            description: `<a:playing:799562690129035294>  `  + 'Volume is set to ' + args[0] + '/10' ,
-            color: 'RANDOM'
-        }
-    })
-}
+    if (!channel)return sendError("<:xmark:314349398824058880> I'm Sorry But You Need To Be In A Voice Channel To Set My Volume!", message.channel);
+    const serverQueue = message.client.queue.get(message.guild.id);
+    if (!serverQueue) return sendError("<:xmark:314349398824058880> There Is Nothing Playing.", message.channel);
+    if (!serverQueue.connection) return sendError("<:xmark:314349398824058880> There Is Nothing Playing.", message.channel);
+    if (!args[0])return message.channel.send(`The Current Volume Is: **${serverQueue.volume}**`);
+     if(isNaN(args[0])) return message.channel.send('<:xmark:314349398824058880> Numbers only!').catch(err => console.log(err));
+    if(parseInt(args[0]) > 150 ||(args[0]) < 0) return sendError('<:xmark:314349398824058880> You Can\'t Set The Volume More Than 100 Or Lower Than 0',message.channel).catch(err => console.log(err));
+    serverQueue.volume = args[0]; 
+    serverQueue.connection.dispatcher.setVolumeLogarithmic(args[0] / 100);
+    let xd = new MessageEmbed()
+    .setDescription(`I Have Set The Volume To: **${args[0]/1}/100**`)
+    .setColor("PURPLE")
+    return message.channel.send(xd);
+  },
+};

@@ -1,11 +1,24 @@
-exports.run = async(client, message) => {
-    const channel = message.member.voice.channel;
-    if (!channel) return message.channel.send('<:xmark:314349398824058880> You should join a voice channel before using this command!');
-    let queue = message.client.queue.get(message.guild.id)
-    if(!queue) return message.channel.send(`<:xmark:314349398824058880> There is nothing playing right now to resume!`)
-    
-    if(queue.playing !== false)
-    queue.connection.dispatcher.resume()
-    message.react('▶')
-    message.channel.send('Music resumed! ▶ ')
-}
+const { MessageEmbed } = require("discord.js");
+const sendError = require("../util/error");
+
+module.exports = {
+  info: {
+    name: "resume",
+    description: "To resume the paused music",
+    usage: "",
+    aliases: [],
+  },
+
+  run: async(client, message, args) => {
+    const serverQueue = message.client.queue.get(message.guild.id);
+    if (serverQueue && !serverQueue.playing) {
+      serverQueue.playing = true;
+      serverQueue.connection.dispatcher.resume();
+      let xd = new MessageEmbed()
+      .setDescription("▶ Resumed Music!")
+      .setColor("PURPLE")
+      return message.channel.send(xd);
+    }
+    return sendError("<:xmark:314349398824058880> Im Not Playing Anything In This Server.", message.channel);
+  },
+};

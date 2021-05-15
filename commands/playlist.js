@@ -36,7 +36,7 @@ module.exports = {
                 return message.channel.send({
                     embed: {
                         color: "PURPLE",
-                        description: `<a:water_green_Okay:825929495164223528> Playlist: **\`${videos[0].title}\`** Has Been Added To The Queue`,
+                        description: `<:ayb_yes:655678981131075594> Playlist: **\`${videos[0].title}\`** Has Been Added To The Queue`,
                     },
                 });
             } catch (error) {
@@ -58,9 +58,8 @@ module.exports = {
                 }
                 let thing = new MessageEmbed()
                     .setTitle("<a:playing:799562690129035294> Playlist Added To Queue")
-                    .setThumbnail('https://media.discordapp.net/attachments/778283828099809283/822353825624883200/unknown_1.png')
                     .setColor("PURPLE")
-                    .setDescription(`<a:water_green_Okay:825929495164223528>  Playlist: **\`${songInfo.title}\`** Has Been Added \`${songInfo.videoCount}\` Video To The Queue`);
+                    .setDescription(`<:ayb_yes:655678981131075594>  Playlist: **\`${songInfo.title}\`** Has Been Added \`${songInfo.videoCount}\` Video To The Queue`);
                 return message.channel.send(thing);
             } catch (error) {
                 return sendError("<:xmark:314349398824058880> An Unexpected Error Has Occurred", message.channel).catch(console.error);
@@ -106,7 +105,6 @@ module.exports = {
                 if (playlist) return;
                 let thing = new MessageEmbed()
                     .setTitle("<a:playing:799562690129035294> Song Has Been Added To Queue")
-                    .setThumbnail('https://media.discordapp.net/attachments/778283828099809283/822353825624883200/unknown_1.png')
                     .setColor("PURPLE")
                     .addField("Name", song.title, true)
                     .addField("Requested By", song.req.tag, true)

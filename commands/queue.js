@@ -22,9 +22,9 @@ module.exports = {
     const embeds = generateQueueEmbed(message, queue.songs);
 
     const queueEmbed = await message.channel.send(
-      `**\`${currentPage + 1}\`**/**${embeds.length}**`,
+      `<a:playing:799562690129035294> **Server Queue** [**${currentPage + 1}**/**${embeds.length}**]`,
       embeds[currentPage]
-    );
+    );//here is the thingy
 
     try {
       await queueEmbed.react("⬅️");
@@ -77,12 +77,12 @@ function generateQueueEmbed(message, queue) {
   
     const serverQueue =message.client.queue.get(message.guild.id);
     const embed = new MessageEmbed()
-    .setTitle('<a:playing:799562690129035294> Server Queue')
+    .setTitle('')
     .setThumbnail(`https://media.discordapp.net/attachments/778283828099809283/822353825624883200/unknown_1.png`)
     .setColor("PURPLE")
     .setDescription(`${info}`)
     .setFooter(`Songs Source ~ YouTube`, `https://cdn.discordapp.com/emojis/782125440873660417.png?v=1`)
-     if(serverQueue.songs.length === 1)embed.setDescription(`<:xmark:314349398824058880> No Songs To Play, Add Songs By \`\`*play <song_name>\`\``)
+     if(serverQueue.songs.length === 1)embed.setDescription(`**No Queued Up Songs** - Add Next Songs By \`\`*play <song_name>\`\``)
 
     embeds.push(embed);
   }

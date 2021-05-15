@@ -139,6 +139,7 @@ Project Link: [https://github.com/regales/Nobel](https://github.com/regales/Nobe
 
 * [Ronald](https://github.com/Ronald545)
 * [Robbie-Wittenhagen](https://github.com/Robbie-Wittenhagen)
+* [Socks](https://github.com/Socks2111)
 
 
 

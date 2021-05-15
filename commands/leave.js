@@ -22,9 +22,10 @@ module.exports = {
         }
 
         const Embed = new MessageEmbed()
-            .setColor("PURPLE")
-            .setDescription("<a:water_green_Okay:825929495164223528> I Left The VC.")
-
-        return message.channel.send(Embed).catch(() => message.channel.send("<a:water_green_Okay:825929495164223528> Left The Voice Channel"));
+        .setColor('PURPLE')
+        .setTitle("Success")
+        .setDescription("<a:655682046873567253:843036646915440660>  **Left The Voice Channel, Thanks For Using Me!**")
+        .setTimestamp();
+        return message.channel.send(Embed).catch(() => message.channel.send("<a:655682046873567253:843036646915440660> Left The Voice Channel"));
     },
 };

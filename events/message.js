@@ -10,11 +10,7 @@ module.exports = (client, message) => {
     const command = args.shift().toLowerCase();
 
     const cmd = client.commands.get(command);
-    const aliases = client.commands.find(x => x.info.aliases.includes(command))
+    if (!cmd) return 
 
-    if(cmd){
-      cmd.run(client, message, args);
-    }else if(aliases){
-      aliases.run(client, message, args);
-    }else return
+    cmd.run(client, message, args);
   };

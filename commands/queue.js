@@ -37,19 +37,19 @@ module.exports = {
 
     const filter = (reaction, user) =>
       ["⬅️", "🛑", "➡️"].includes(reaction.emoji.name) && message.author.id === user.id;
-    const collector = queueEmbed.createReactionCollector(filter, { time: 60000 });
+    const collector = queueEmbed.createReactionCollector(filter, { time: 40000 });
 
     collector.on("collect", async (reaction, user) => {
       try {
         if (reaction.emoji.name === "➡️") {
           if (currentPage < embeds.length - 1) {
             currentPage++;
-            queueEmbed.edit(`**\`${currentPage + 1}\`**/**${embeds.length}**`, embeds[currentPage]);
+            queueEmbed.edit(`<a:playing:799562690129035294> **Server Queue** [**${currentPage + 1}**/**${embeds.length}**]`, embeds[currentPage]);
           }
         } else if (reaction.emoji.name === "⬅️") {
           if (currentPage !== 0) {
             --currentPage;
-            queueEmbed.edit(`**\`${currentPage + 1}\`**/**${embeds.length}**`, embeds[currentPage]);
+            queueEmbed.edit(`<a:playing:799562690129035294> **Server Queue** [**${currentPage + 1}**/**${embeds.length}**]`, embeds[currentPage]);
           }
         } else {
           collector.stop();

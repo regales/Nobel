@@ -14,7 +14,7 @@ module.exports = {
       return message.channel.send({
                         embed: {
                             color: "PURPLE",
-                            description: `<:xmark:314349398824058880> **Usage**: \`*skipto <number>\``
+                            description: `<:xmark:314349398824058880> Usage: **\`*skipto <number>\`**`
                         }
    
                    }).catch(console.error);

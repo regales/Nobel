@@ -11,7 +11,9 @@ module.exports = (client, message) => {
 
     const cmd = client.commands.get(command);
 
-    if (!cmd) return 
-  
-    cmd.run(client, message, args);
+    if(cmd){
+      cmd.run(client, message, args);
+    }else if(aliases){
+      aliases.run(client, message, args);
+    }else return
   };

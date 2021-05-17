@@ -5,6 +5,12 @@ const Discord = require("discord.js");
 const pagination = require('discord.js-pagination')
 
 module.exports = {
+    info: {
+        name: "help",
+        description: "help page",
+        usage: "",
+        aliases: ["h"],
+      },
     run: async(client, message, args) => {
         const page1 = new Discord.MessageEmbed()
             .setAuthor(

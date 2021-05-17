@@ -38,12 +38,26 @@ module.exports = {
             .setTitle('**HELP PAGE FOR** ***NOBEL***')
             .setDescription(`
 
+            \n<:DPSRole:843830825044803625> **Roleplay Commands**
+
+            \n\`sad\` - Don't be\n\`smug - Nice grin bro\n\`shy\` - Introverts smh\n\`happy\` - Someone's over cloud nine\n\`hug\` - Huggies for everyone\n\`shoot\` - Bam, you ded\n\`lick\` - Kinky much?\n\`cuddle\` - Extra touchy than hug\n\`tickle\` - Please hahah stwap\n\`pat\` - Ara ara\n\`kiss\` - Ranging from french to sweet ones\n\`slap\` - Ow, that hurts\n\`dance\` - Bille Jean is nnot my lover\n\`laugh\` - Lolmao Rofl`)
+            .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
+            .setTimestamp()
+        
+        const page3 = new Discord.MessageEmbed()
+            .setColor('RANDOM')
+            .setAuthor(
+                "ռօɮɛʟ",
+                "https://i.pinimg.com/236x/d5/e2/c5/d5e2c5c0315e6b1f3cc30189f9dccd82.jpg")
+            .setTitle('**HELP PAGE FOR** ***NOBEL***')
+            .setDescription(`
+
             \n<:settings:843041534609850370> **Utility Commands**
 
             \n\`welcome\` - Sets mentioned server to welcome new members\n\`ping\` - Returns latency and API ping\n\`help\` - Displays all commands for Nobel\n\`mjl\` - Member Joined LeaderBoard\n\`userinfo\` - Information regarding a user\n\`serverinfo\` - Information regarding current server\n\`stats\` - Information regarding Nobel\n\`support\` - Link for inviting Nobel or support server\n\`globalchat\` - Help on how to set up Nobel's global chat\n\`covid\` - Information regarding the COVID-19 pandemic`)
             .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
             .setTimestamp()
-        const pages = [page1, page2];
+        const pages = [page1, page2, page3];
         const emojis = ['◀', '▶'];
         const timeout = '60000'
 

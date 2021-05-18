@@ -40,7 +40,7 @@ module.exports = {
 
             \n<:DPSRole:843830825044803625> **Roleplay Commands**
 
-            \n\`sad\` - Don't be\n\`smug\` - Nice grin bro\n\`shy\` - Introverts smh\n\`happy\` - Someone's over cloud nine\n\`hug\` - Huggies for everyone\n\`shoot\` - Bam, you ded\n\`lick\` - Kinky much?\n\`cuddle\` - Extra touchy than hug\n\`tickle\` - Please hahah stwap\n\`pat\` - Ara ara\n\`kiss\` - Ranging from french to sweet ones\n\`slap\` - Ow, that hurts\n\`dance\` - Bille Jean is nnot my lover\n\`laugh\` - Lolmao Rofl`)
+            \n\`sad\` - Don't be\n\`smug\` - Nice grin bro\n\`shy\` - Introverts smh\n\`happy\` - Someone's over cloud nine\n\`hug\` - Huggies for everyone\n\`shoot\` - Bam, you ded\n\`lick\` - Kinky much?\n\`cuddle\` - Extra touchy than hug\n\`tickle\` - Please hahah stwap\n\`pat\` - Ara ara\n\`kiss\` - Ranging from french to sweet ones\n\`slap\` - Ow, that hurts\n\`dance\` - Bille Jean is not my lover\n\`laugh\` - Lolmao Rofl`)
             .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
             .setTimestamp()
         

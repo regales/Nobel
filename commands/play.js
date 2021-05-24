@@ -131,6 +131,7 @@ module.exports = {
                 .setImage(song.img)
                 .addField("Song Name", song.title, true)
                 .addField("Commanded By", `\`\`\`\n${song.req.username}\n\`\`\``, true)
+                .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
                 .setTimestamp()
             queue.textChannel.send(thing);
         };

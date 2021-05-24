@@ -32,7 +32,7 @@ client.on('message', async message => {
           .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
           .setTimestamp()
           .setColor('RANDOM')
-          .setThumbnail('https://cdn.discordapp.com/avatars/820939172491427840/f174bcc62d9e2665806d2b63236c25fb.webp')
+          .setThumbnail('https://i.imgur.com/o3xDQbB.jpeg')
       message.channel.send(embed)
   }
 },

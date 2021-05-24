@@ -1,6 +1,7 @@
 const fs = require('fs');
 const Discord = require('discord.js');
-const sendError = require("../util/error")
+const sendError = require("../util/error");
+const jsontickle = require("../assets/json/roleplay.json")
 
 module.exports = {
     name: "tickle",
@@ -9,10 +10,8 @@ module.exports = {
         let user = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
         if(!args[0]) return sendError(`<:xmark:314349398824058880> **Try run again the command but next time please specify a user!**` , message.channel);
         if(user.id === message.author.id) return sendError(`**Why are you tickling yourself?**` , message.channel);
-        const jsontickle = fs.readFileSync(
-          './roleplay.json'
-          );
-         const tickleArray = JSON.parse(jsontickle).tickle;
+        
+         const tickleArray = (jsontickle).tickle;
       
          const randomtickle =
            tickleArray[Math.floor(Math.random() * tickleArray.length)];

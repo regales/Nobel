@@ -1,6 +1,7 @@
 const fs = require('fs');
 const Discord = require('discord.js');
-const sendError = require("../util/error")
+const sendError = require("../util/error");
+const jsonDance = require("../assets/json/roleplay.json")
 
 module.exports = {
     name: "dance",
@@ -9,10 +10,8 @@ module.exports = {
         let user = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
         if(!args[0]) return sendError(`<:xmark:314349398824058880> **Try run again the command but next time please specify a user!**` , message.channel);
         if(user.id === message.author.id) return sendError(`**Cheer up! Don't dance with yourself.**` , message.channel);
-        const jsonDance = fs.readFileSync(
-          './roleplay.json'
-          );
-         const danceArray = JSON.parse(jsonDance).dance;
+        
+         const danceArray = (jsonDance).dance;
       
          const randomDance =
            danceArray[Math.floor(Math.random() * danceArray.length)];

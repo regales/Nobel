@@ -158,6 +158,7 @@ module.exports = {
                 .setColor("PURPLE")
                 .addField("Name", song.title, true)
                 .addField("Requested By", song.req.tag, true)
+                .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
                 .setTimestamp()
             serverQueue.textChannel.send(thing);
         }

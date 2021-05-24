@@ -31,7 +31,7 @@ module.exports = {
         const embed = new MessageEmbed()
             .setAuthor(
                "Nobel's statistics",
-               "https://i.pinimg.com/236x/d5/e2/c5/d5e2c5c0315e6b1f3cc30189f9dccd82.jpg")
+               "https://i.imgur.com/o3xDQbB.jpeg")
             .addField('Commands', `\`${message.client.commands.size}\` commands`, true)
             .addField('Client', `\`\`\`asciidoc\n${clientStats}\`\`\``)
             .addField('Server', `\`\`\`asciidoc\n${serverStats}\`\`\``)

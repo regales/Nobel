@@ -16,10 +16,10 @@ module.exports = {
             return message.channel.send({
                 embed: {
                     color: "PURPLE",
-                    description: `🔁 Loop is **\`${serverQueue.loop === true ? "Enabled" : "Disabled"}\`**`
+                    description: `🔁 **Loop is** **\`${serverQueue.loop === true ? "Enabled" : "Disabled"}\`**`
                 }
             });
         };
-    return sendError("<:xmark:314349398824058880> There Is Nothing Being Played!", message.channel);
+    return sendError("<:xmark:314349398824058880> **There Is Nothing Being Played!**", message.channel);
   },
 };

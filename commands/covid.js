@@ -21,7 +21,7 @@ run: async(client, message, args) => {
                 const embed = new Discord.MessageEmbed()
                 .setAuthor(
                     "ռօɮɛʟ",
-                    "https://i.pinimg.com/236x/d5/e2/c5/d5e2c5c0315e6b1f3cc30189f9dccd82.jpg")
+                    "https://i.imgur.com/o3xDQbB.jpeg")
                 .setTitle(`<:coronaS:840831289132449793> COVID-19 Stats World Wide!`)
                 .addField('<:coronaS:840831289132449793> `Confirmed Cases`', confirmed)
                 .addField('<:coronaS:840831289132449793> `Recovered`', recovered)
@@ -44,7 +44,7 @@ run: async(client, message, args) => {
                 const embed = new Discord.MessageEmbed()
                 .setAuthor(
                     "ռօɮɛʟ",
-                    "https://i.pinimg.com/236x/d5/e2/c5/d5e2c5c0315e6b1f3cc30189f9dccd82.jpg")
+                    "https://i.imgur.com/o3xDQbB.jpeg")
                 .setTitle(`<:coronaS:840831289132449793> COVID-19 Stats for **${countries}**`)
                 .addField('<:coronaS:840831289132449793> `Confirmed Cases`', confirmed)
                 .addField('<:coronaS:840831289132449793> `Recovered`', recovered)

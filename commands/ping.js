@@ -15,7 +15,7 @@ module.exports = {
         const embed = new MessageEmbed()
             .setAuthor(
                 "ռօɮɛʟ",
-                "https://i.pinimg.com/236x/d5/e2/c5/d5e2c5c0315e6b1f3cc30189f9dccd82.jpg")
+                "https://i.imgur.com/o3xDQbB.jpeg")
             .setTitle('Pong! 🏓')
             .setDescription(`WebSocket ping is \`${client.ws.ping}MS\`\nMessage edit ping is \`${Math.floor(msg.createdAt - message.createdAt)}MS!\``)
             .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))

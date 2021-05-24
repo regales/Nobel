@@ -11,7 +11,7 @@ module.exports = {
 
   run: async(client, message, args) => {
     const serverQueue = message.client.queue.get(message.guild.id);
-    if (!serverQueue) return sendError("<:xmark:314349398824058880> I Am Not Playing Anything!", message.channel);
+    if (!serverQueue) return sendError("<:xmark:314349398824058880> **I Am Not Playing Anything!**", message.channel);
     let song = serverQueue.songs[0]
     let thing = new MessageEmbed()
       .setTitle("<a:loading_plus:675395739949727774> Currently Playing")
@@ -20,6 +20,8 @@ module.exports = {
       .setColor("PURPLE")
       .addField("Name", song.title, true)
       .addField("Song Commanded by", `\`\`\`\n${song.req.username}\n\`\`\``, true)
+      .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
+      .setTimestamp()
     return message.channel.send(thing)
   },
 };

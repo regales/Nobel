@@ -26,7 +26,7 @@ module.exports = {
                     new MessageEmbed()
                         .setAuthor(
                           "ռօɮɛʟ",
-                          "https://i.pinimg.com/236x/d5/e2/c5/d5e2c5c0315e6b1f3cc30189f9dccd82.jpg")
+                          "https://i.imgur.com/o3xDQbB.jpeg")
                         .setTitle('Join Leaderboard in ' + message.guild.name)
                         .setDescription(description)
                         .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
@@ -41,7 +41,7 @@ module.exports = {
                 new MessageEmbed()
                     .setAuthor(
                        "ռօɮɛʟ",
-                       "https://i.pinimg.com/236x/d5/e2/c5/d5e2c5c0315e6b1f3cc30189f9dccd82.jpg")
+                       "https://i.imgur.com/o3xDQbB.jpeg")
                     .setTitle('Join Leaderboard in ' + message.guild.name)
                     .setDescription(description)
                     .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))

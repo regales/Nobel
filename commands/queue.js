@@ -13,10 +13,10 @@ module.exports = {
  
   const permissions = message.channel.permissionsFor(message.client.user);
     if (!permissions.has(["MANAGE_MESSAGES", "ADD_REACTIONS"]))
-      return sendError("<:xmark:314349398824058880> Missing Permission To Manage Messages Or Add Reactions",message.channel);
+      return sendError("<:xmark:314349398824058880> **Missing Permission To Manage Messages Or Add Reactions**",message.channel);
 
     const queue = message.client.queue.get(message.guild.id);
-    if (!queue) return sendError("<:xmark:314349398824058880> There Is Nothing Playing In This Server.",message.channel)
+    if (!queue) return sendError("<:xmark:314349398824058880> **There Is Nothing Playing In This Server.**",message.channel)
 
     let currentPage = 0;
     const embeds = generateQueueEmbed(message, queue.songs);
@@ -81,7 +81,8 @@ function generateQueueEmbed(message, queue) {
     .setThumbnail(`https://media.discordapp.net/attachments/778283828099809283/822353825624883200/unknown_1.png`)
     .setColor("PURPLE")
     .setDescription(`${info}`)
-    .setFooter(`Songs Source ~ YouTube`, `https://cdn.discordapp.com/emojis/782125440873660417.png?v=1`)
+    .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
+    .setTimestamp()
      if(serverQueue.songs.length === 1)embed.setDescription(`**No Queued Up Songs** - Add Next Songs By \`\`*play <song_name>\`\``)
 
     embeds.push(embed);

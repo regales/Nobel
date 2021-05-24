@@ -19,6 +19,6 @@ module.exports = {
       .setColor("PURPLE")
       return message.channel.send(xd);
     }
-    return sendError("<:xmark:314349398824058880> Im Not Playing Anything In This Server.", message.channel);
+    return sendError("<:xmark:314349398824058880> **Im Not Playing Anything In This Server.**", message.channel);
   },
 };

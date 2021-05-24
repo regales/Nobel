@@ -14,16 +14,16 @@ module.exports = {
       return message.channel.send({
                         embed: {
                             color: "PURPLE",
-                            description: `<:xmark:314349398824058880> Usage: **\`*skipto <number>\`**`
+                            description: `<:xmark:314349398824058880> **Usage:** **\`*skipto <number>\`**`
                         }
    
                    }).catch(console.error);
         
 
     const queue = message.client.queue.get(message.guild.id);
-    if (!queue) return sendError("<:xmark:314349398824058880> There Is No Queue.",message.channel).catch(console.error);
+    if (!queue) return sendError("<:xmark:314349398824058880> **There Is No Queue.**",message.channel).catch(console.error);
     if (args[0] > queue.songs.length)
-      return sendError(`<:xmark:314349398824058880> The Queue Is Only ${queue.songs.length} Songs Long!`,message.channel).catch(console.error);
+      return sendError(`<:xmark:314349398824058880> **The Queue Is Only ${queue.songs.length} Songs Long!**`,message.channel).catch(console.error);
 
     queue.playing = true;
 
@@ -39,13 +39,13 @@ module.exports = {
       }catch (error) {
         queue.voiceChannel.leave()
         message.client.queue.delete(message.guild.id);
-       return sendError(`<:xmark:314349398824058880> The Player Has Stopped And The Queue Has Been Cleared: ${error}`, message.channel);
+       return sendError(`<:xmark:314349398824058880> **The Player Has Stopped And The Queue Has Been Cleared:** ${error}`, message.channel);
       }
     
     queue.textChannel.send({
                         embed: {
                             color: "GREEN",
-                            description: `${message.author} ⏭ Skipped \`${args[0] - 1}\` Songs`
+                            description: `${message.author} ⏭ **Skipped \`${args[0] - 1}\` Songs**`
                         }
    
                    }).catch(console.error);

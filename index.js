@@ -84,7 +84,7 @@ client.on('guildCreate', guild => {
   const embed = new Discord.MessageEmbed()
   .setAuthor(
     "ռօɮɛʟ",
-    "https://i.pinimg.com/236x/d5/e2/c5/d5e2c5c0315e6b1f3cc30189f9dccd82.jpg")
+    "https://i.imgur.com/o3xDQbB.jpeg")
   .setTitle(`Hey There, I'm Nobel. \n\`Thanks For Inviting Me To ${guild.name}!\` <a:WavingBlob:825931440402595840>`)
   
   .addFields(
@@ -114,21 +114,14 @@ client.on("guildMemberAdd", async member => {
 
    let data = await canva.welcome(member, { link: "https://i.pinimg.com/originals/f3/1c/39/f31c39d56512dc8fbf30f9d0fb3ee9d3.jpg" })
 
- 
+   const attachment = new Discord.MessageAttachment(
 
-    const attachment = new Discord.MessageAttachment(
+    data,
 
-      data,
+    "welcome-image.png"
 
-      "welcome-image.png"
-
-    );
-
-  
-
-  
-
-  client.channels.cache.get(chx).send("Welcome to our Server, " + member.user.username, attachment);
+  );
+  client.channels.cache.get(chx).send(`**Welcome to ${member.guild.name}, ${member.user}**\n**You are our ${member.guild.memberCount}th Member**.\n**Enjoy your time here!**` ,attachment);
 
 });
 client.on("messageDelete", (message) => {

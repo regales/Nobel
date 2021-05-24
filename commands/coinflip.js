@@ -8,7 +8,7 @@ module.exports = {
         let embed = new MessageEmbed()
         .setAuthor(
             "ռօɮɛʟ",
-            "https://i.pinimg.com/236x/d5/e2/c5/d5e2c5c0315e6b1f3cc30189f9dccd82.jpg")
+            "https://i.imgur.com/o3xDQbB.jpeg")
         .setTitle("Coinflip!")
         .setDescription(`You flipped a **${choice}**!`)
         .setColor("RANDOM")

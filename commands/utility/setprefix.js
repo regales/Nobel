@@ -6,6 +6,9 @@ module.exports = {
     const data = await prefixModel.findOne({
         GuildID: message.guild.id
     });
+    let permission = message.member.hasPermission("ADMINISTRATOR");
+
+    if(!permission) return message.channel.send("<:xmark:314349398824058880> Sorry you need `ADMINISTRATOR` permissions!")
 
     if (!args[0]) return message.channel.send('You must provide a **new prefix**!');
 

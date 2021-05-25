@@ -11,32 +11,14 @@ const client = new Discord.Client();
 const got = require('got');
 const config = require("./config.json");
 client.config = config;
-client.queue = new Map()
-pb = config.pb
+client.queue = new Map();
+client.snipes = new Discord.Collection();
+client.commands = new Discord.Collection();
 prefix = config.prefix
-client.snipes = new Discord.Collection()
 
-client.on('message', async message => {
-    
-  if(message.author.bot) {
 
-  } else if (/<@!820939172491427840>|<@820939172491427840>/.test(message.content)) {
-      const embed = new Discord.MessageEmbed()
-          .setTitle("You Pinged Me! <a:WavingBlob:825931440402595840>")
-          .addFields(
-            { name: '**Prefix**', value: `\`My Prefix Is ${prefix}\`` },
-            
-            { name: '**Help Page**', value: `\`To Learn How To Use Me, Type ${prefix}help\``, inline: true },
-            
-          )
-          .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
-          .setTimestamp()
-          .setColor('RANDOM')
-          .setThumbnail('https://i.imgur.com/o3xDQbB.jpeg')
-      message.channel.send(embed)
-  }
-},
 
+// events loader
 fs.readdir("./events/", (err, files) => {
   if (err) return console.error(err);
   files.forEach(file => {
@@ -44,10 +26,10 @@ fs.readdir("./events/", (err, files) => {
     let eventName = file.split(".")[0];
     client.on(eventName, event.bind(null, client));
   });
-}))
+}),
 
-client.commands = new Discord.Collection()
 
+// command loader
 fs.readdir("./commands/", (err, files) => {
   if (err) return console.error(err);
   files.forEach(file => {
@@ -59,6 +41,7 @@ fs.readdir("./commands/", (err, files) => {
   });
 });
 
+// global chat feature
 client.on('message', async message => { 
   if(message.channel.name == 'nb-chat' && !message.author.bot){
     client.guilds.cache.forEach(guild=>{
@@ -76,9 +59,7 @@ client.on('message', async message => {
   }
 })
 
- const AutoPoster = require('topgg-autoposter');
- const poster = AutoPoster('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjgyMDkzOTE3MjQ5MTQyNzg0MCIsImJvdCI6dHJ1ZSwiaWF0IjoxNjE4NDc0NTkzfQ.xUA47WBV0GHYK3cWDWHCTsbjoVswD-dIEQRF_ARz8GQ', client);
-
+// Message when nobel joins a server
 client.on('guildCreate', guild => {
   
   const embed = new Discord.MessageEmbed()
@@ -88,9 +69,11 @@ client.on('guildCreate', guild => {
   .setTitle(`Hey There, I'm Nobel. \n\`Thanks For Inviting Me To ${guild.name}!\` <a:WavingBlob:825931440402595840>`)
   
   .addFields(
-    { name: '**Prefix**', value: `\`\`\`My Prefix Is ${prefix}\`\`\`` },
+    { name: '**Prefix**', value: `\`\`\`My Prefix Is *\`\`\`` },
+
+    { name: '**Custom Prefix**', value: `\`\`\`Prefix Is Changable Via *setprefix\`\`\`` },
           
-    { name: '**Help Page**', value: `\`\`\`For All Of My Commands, Type ${prefix}help\`\`\``, inline: true },
+    { name: '**Help Page**', value: `\`\`\`For All Of My Commands, Type *help\`\`\``, inline: true },
           
   )
   .setThumbnail(guild.iconURL({ dynamic: true }))
@@ -100,6 +83,8 @@ client.on('guildCreate', guild => {
 guild.systemChannel.send(embed) 
 });
 
+
+// welcome message
 client.on("guildMemberAdd", async member => {
 
   let chx = db.get(`welchannel_${member.guild.id}`);
@@ -124,6 +109,9 @@ client.on("guildMemberAdd", async member => {
   client.channels.cache.get(chx).send(`**Welcome to ${member.guild.name}, ${member.user}**\n**You are our ${member.guild.memberCount}th Member**.\n**Enjoy your time here!**` ,attachment);
 
 });
+
+
+// snipe command
 client.on("messageDelete", (message) => {
   client.snipes.set(message.channel.id, {
       content: message.content,
@@ -132,5 +120,18 @@ client.on("messageDelete", (message) => {
       image: message.attachments.first() ? message.attachments.first().proxyURL : null
   })
 })
-  
+
+// utility area
+
+// top.gg api and info poster
+const AutoPoster = require('topgg-autoposter');
+const poster = AutoPoster('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjgyMDkzOTE3MjQ5MTQyNzg0MCIsImJvdCI6dHJ1ZSwiaWF0IjoxNjE4NDc0NTkzfQ.xUA47WBV0GHYK3cWDWHCTsbjoVswD-dIEQRF_ARz8GQ', client);
+
+// connecting to mongoose
+mongoose.connect(process.env.MONGODB_URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+});
+
+// connect bot token
 client.login(process.env.TOKEN)

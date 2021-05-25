@@ -14,7 +14,7 @@ client.config = config;
 client.queue = new Map();
 client.snipes = new Discord.Collection();
 client.commands = new Discord.Collection();
-prefix = config.prefix
+default_prefix = config.prefix
 
 
 
@@ -26,20 +26,22 @@ fs.readdir("./events/", (err, files) => {
     let eventName = file.split(".")[0];
     client.on(eventName, event.bind(null, client));
   });
-}),
+});
 
 
 // command loader
-fs.readdir("./commands/", (err, files) => {
-  if (err) return console.error(err);
-  files.forEach(file => {
-    if (!file.endsWith(".js")) return;
-    let props = require(`./commands/${file}`);
-    let commandName = file.split(".")[0];
-    console.log(`Attempting to load command ${commandName}`);
-    client.commands.set(commandName, props);
-  });
-});
+const { readdirSync } = require("fs");
+
+readdirSync('./commands').forEach(dir => {
+  
+    const commandFiles = readdirSync(`./commands/${dir}/`).filter((file) => file.endsWith(".js"));
+    for (const file of commandFiles) {
+    const command = require(`./commands/${dir}/${file}`);
+    console.log(`Attempting to load command ${command.name}`);
+    client.commands.set(command.name, command)
+    
+    }})
+
 
 // global chat feature
 client.on('message', async message => { 
@@ -69,11 +71,11 @@ client.on('guildCreate', guild => {
   .setTitle(`Hey There, I'm Nobel. \n\`Thanks For Inviting Me To ${guild.name}!\` <a:WavingBlob:825931440402595840>`)
   
   .addFields(
-    { name: '**Prefix**', value: `\`\`\`My Prefix Is *\`\`\`` },
+    { name: '**Prefix**', value: `\`\`\`My Prefix Is ${default_prefix}\`\`\`` },
 
-    { name: '**Custom Prefix**', value: `\`\`\`Prefix Is Changable Via *setprefix\`\`\`` },
+    { name: '**Custom Prefix**', value: `\`\`\`Prefix Is Changable Via ${default_prefix}setprefix\`\`\`` },
           
-    { name: '**Help Page**', value: `\`\`\`For All Of My Commands, Type *help\`\`\``, inline: true },
+    { name: '**Help Page**', value: `\`\`\`For All Of My Commands, Type ${default_prefix}help\`\`\``, inline: true },
           
   )
   .setThumbnail(guild.iconURL({ dynamic: true }))

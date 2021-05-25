@@ -87,30 +87,18 @@ guild.systemChannel.send(embed)
 
 
 // welcome message
-client.on("guildMemberAdd", async member => {
+const WelcomeSchema = require("./models/prefix");
+client.on("guildMemberAdd", async (member, guild, message) => {
 
-  let chx = db.get(`welchannel_${member.guild.id}`);
+  WelcomeSchema.findOne({ GuildID: member.guild.id }, async(err, data) => {
+    if(!data) return;
 
-  if (chx === null) {
+    const user = member.user;
+    const channel = client.channels.cache.get(data.ChannelID);
+    message.channel.send('Welcome')
+  })
+})
 
-    return;
-
-  }
-
-  
-
-   let data = await canva.welcome(member, { link: "https://i.pinimg.com/originals/f3/1c/39/f31c39d56512dc8fbf30f9d0fb3ee9d3.jpg" })
-
-   const attachment = new Discord.MessageAttachment(
-
-    data,
-
-    "welcome-image.png"
-
-  );
-  client.channels.cache.get(chx).send(`**Welcome to ${member.guild.name}, ${member.user}**\n**You are our ${member.guild.memberCount}th Member**.\n**Enjoy your time here!**` ,attachment);
-
-});
 
 
 // snipe command

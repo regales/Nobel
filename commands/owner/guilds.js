@@ -5,14 +5,14 @@ module.exports = {
     const guilds = client.guilds.cache.array()
     const { MessageEmbed } = require('discord.js');
 
-/**
- * 
- * @param {number} start The index to start from.
- */
+   /**
+   * 
+   * @param {number} start The index to start from.
+   */
 
- const botOwnerID = 623553796160618517
+   const botOwnerID = 623553796160618517
 
-function botOwnerFunc() {
+   function botOwnerFunc() {
     if (message.author.id == botOwnerID) {
       const generateEmbed = start => {
         const current = guilds.slice(start, start + 10)
@@ -63,7 +63,7 @@ function botOwnerFunc() {
     },
     else :
        
-      message.channel.send(`Sorry, only Regales#0320 can use this`)
+    message.channel.send(`Sorry, only Regales#0320 can use this`)
     
 }
 

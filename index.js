@@ -98,7 +98,8 @@ client.on("guildMemberAdd", async (member, guild) => {
         const welcomeEmbed = new Discord.MessageEmbed()
 
         welcomeEmbed.setColor('PURPLE')
-        welcomeEmbed.setTitle(`⚫**Welcome ${member.user.username} to ${member.guild.name}**\n⚫**You are the ${member.guild.memberCount}th member to join ${member.guild.name}!**\n⚫**Enjoy your time here!** `)
+        welcomeEmbed.setTitle('Welcome')
+        welcomeEmbed.setDescription(`<a:629155002505756672:846970724836442142>**Welcome ${member.user.username}, to ${member.guild.name}**\n<a:629155002505756672:846970724836442142>**You are the ${member.guild.memberCount}th member to join ${member.guild.name}!**\n<a:629155002505756672:846970724836442142>**Enjoy your time here!** `)
         welcomeEmbed.setImage('https://i.imgur.com/2oIZ4N6.gif')
 
         channel.send(welcomeEmbed);

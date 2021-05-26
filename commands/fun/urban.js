@@ -3,11 +3,8 @@ const { MessageEmbed } = require('discord.js');
 
 module.exports = {
     
-        name: "urbandictionary",
-        aliases: ["ud", "urban"],
-        category: "info",
-        description: "Give information about urban words!",
-        usage: "[word]",
+        name: "urban",
+    
         
     
     run: async (bot, message, args) => {

@@ -87,16 +87,22 @@ guild.systemChannel.send(embed)
 
 
 // welcome message
-const WelcomeSchema = require("./models/prefix");
-client.on("guildMemberAdd", async (member, guild, message) => {
+const WelcomeSchema = require('./models/welcome');
 
-  WelcomeSchema.findOne({ GuildID: member.guild.id }, async(err, data) => {
-    if(!data) return;
+client.on("guildMemberAdd", async (member, guild) => {
+    WelcomeSchema.findOne({ guildId: member.guild.id }, async (err, data) => {
+        if(!data) return;
 
-    const user = member.user;
-    const channel = client.channels.cache.get(data.ChannelID);
-    message.channel.send('Welcome')
-  })
+        const user = member.user;
+        const channel = member.guild.channels.cache.get(data.channelId);
+        const welcomeEmbed = new Discord.MessageEmbed()
+
+        welcomeEmbed.setColor('PURPLE')
+        welcomeEmbed.setTitle(`⚫**Welcome ${member.user.username} to ${member.guild.name}**\n⚫**You are the ${member.guild.memberCount}th member to join ${member.guild.name}!**\n⚫**Enjoy your time here!** `)
+        welcomeEmbed.setImage('https://i.imgur.com/2oIZ4N6.gif')
+
+        channel.send(welcomeEmbed);
+    })
 })
 
 

@@ -1,39 +1,27 @@
-const welcomeModel = require("../../models/welcome")
+const Discord = require('discord.js');
+const Schema = require('../../models/welcome');
+const sendError = require("../../util/error")
 
 module.exports = {
     name: "setwelcome",
+
     run: async (client, message, args) => {
-    const data = await welcomeModel.findOne({
-        GuildID: message.guild.id
-    });
-    let permission = message.member.hasPermission("ADMINISTRATOR");
+        if(!message.member.hasPermission("ADMINISTRATOR")) return sendError("You cannot use this command!", message.channel);
 
-    if(!permission) return message.channel.send("<:xmark:314349398824058880> Sorry you need `ADMINISTRATOR` permissions!")
+        const channel = message.mentions.channels.first();
+        if(!channel) return sendError("Please specify a channel you would like to be your welcome channel!", message.channel);
 
-    if (!args[0]) return message.channel.send('You must mention a **CHANNEL**!');
-
-
-    if (data) {
-        await welcomeModel.findOneAndRemove({
-            GuildID: message.guild.id
+        Schema.findOne({ guildId: message.guild.id }, async (err, data) => {
+            if (data){
+                data.channelId = channel.id;
+                data.save();
+            } else {
+                new Schema({
+                    guildId: message.guild.id,
+                    channelId: channel.id,
+                }).save();
+            }
+            sendError(`New welcome channel is now set as: ${channel}!`, message.channel);
         })
-        
-        message.channel.send(`The welcome channel is set to **\`${args[0]}\`**`);
-
-        let newData = new welcomeModel({
-            Prefix: args[0],
-            GuildID: message.guild.id
-        })
-        newData.save();
-    } else if (!data) {
-        message.channel.send(`The welcome channel is set to **\`${args[0]}\`**`);
-
-        let newData = new welcomeModel({
-            ChannelID: args[0],
-            GuildID: message.guild.id
-        })
-        newData.save();
     }
-
-}
 }

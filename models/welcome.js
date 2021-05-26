@@ -1,10 +1,8 @@
 const mongoose = require('mongoose');
 
-const WelcomeSchema = new mongoose.Schema({
-    
-    ChannelID: String,
-    
-    GuildID: String
-});
+let Schema = new mongoose.Schema({
+    guildId: String,
+    channelId: String
+})
 
-const MessageModel = module.exports = mongoose.model('welcomes', WelcomeSchema);
+module.exports = mongoose.model('welcomes', Schema)

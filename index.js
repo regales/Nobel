@@ -10,6 +10,7 @@ const db =require("quick.db");
 const client = new Discord.Client();
 const got = require('got');
 const config = require("./config.json");
+const prefix = require("./models/prefix");
 client.config = config;
 client.queue = new Map();
 client.snipes = new Discord.Collection();
@@ -17,7 +18,6 @@ client.editedMessage = new Discord.Collection();
 client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
 default_prefix = config.prefix
-
 
 
 // events loader
@@ -44,6 +44,60 @@ readdirSync('./commands').forEach(dir => {
     
     }})
 
+// mention bot to get info
+client.on('message',  async message  => {
+  const data = await prefix.findOne({
+    GuildID: message.guild.id
+  
+  });
+    
+  if(data) {
+    const prefix = data.Prefix;
+    if(message.author.bot) {
+
+
+    } else if (/<@!820939172491427840>|<@820939172491427840>/.test(message.content)) {
+        const embed = new Discord.MessageEmbed()
+          .setTitle("You Pinged Me! <a:WavingBlob:825931440402595840>")
+          .addFields(
+            { name: '**Prefix**', value: `\`My Custom Prefix In This Server Is ${prefix}\`` },
+            
+            { name: '**Help Page**', value: `\`To Learn How To Use Me, Type ${prefix}help\``, inline: true },
+            
+            )
+          .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
+          .setTimestamp()
+          .setColor('RANDOM')
+          .setThumbnail('https://i.imgur.com/o3xDQbB.jpeg')
+          message.channel.send(embed)
+  }
+
+} else if (!data) {
+
+    const prefix = "*";
+    if(message.author.bot) {
+
+
+    } else if (/<@!820939172491427840>|<@820939172491427840>/.test(message.content)) {
+        const embed = new Discord.MessageEmbed()
+          .setTitle("You Pinged Me! <a:WavingBlob:825931440402595840>")
+          .addFields(
+            { name: '**Prefix**', value: `\`My Custom Prefix In This Server Is ${prefix}\`` },
+            
+            { name: '**Help Page**', value: `\`To Learn How To Use Me, Type ${prefix}help\``, inline: true },
+            
+            )
+          .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
+          .setTimestamp()
+          .setColor('RANDOM')
+          .setThumbnail('https://i.imgur.com/o3xDQbB.jpeg')
+          message.channel.send(embed)
+    }
+
+    
+}
+},
+
 
 // global chat feature
 client.on('message', async message => { 
@@ -61,7 +115,7 @@ client.on('message', async message => {
       channel.send(embed)
     })
   }
-})
+}))
 
 // Message when nobel joins a server
 client.on('guildCreate', guild => {
@@ -137,10 +191,10 @@ const AutoPoster = require('topgg-autoposter');
 const poster = AutoPoster('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjgyMDkzOTE3MjQ5MTQyNzg0MCIsImJvdCI6dHJ1ZSwiaWF0IjoxNjE4NDc0NTkzfQ.xUA47WBV0GHYK3cWDWHCTsbjoVswD-dIEQRF_ARz8GQ', client);
 
 // connecting to mongoose
-mongoose.connect(process.env.MONGODB_URL, {
+mongoose.connect('mongodb+srv://regales:wtfweakpassword281004@nobel.obxxa.mongodb.net/test', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
 
 // connect bot token
-client.login(process.env.TOKEN)
+client.login("ODIwOTM5MTcyNDkxNDI3ODQw.YE8dLw.OmCJS2slO7wm3yJM_quHwhLHYmM")

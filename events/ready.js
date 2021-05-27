@@ -2,7 +2,7 @@ module.exports = (client) => {
   console.log(`${client.user.username} ✅`) 
   const activities = [
     `Music Videos`,
-    `*help`,
+    `*help / @Nobel`,
     `In ${client.guilds.cache.size} Servers`,
     `Support Server ====> discord.gg/ZJevrUQ46Q`
   ];

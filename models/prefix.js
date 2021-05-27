@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 
 const PrefixSchema = new mongoose.Schema({
-    Prefix: {
-        type: String
-    },
+    
+    Prefix: String,
+    
     GuildID: String
 });
 

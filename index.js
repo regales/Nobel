@@ -13,7 +13,9 @@ const config = require("./config.json");
 client.config = config;
 client.queue = new Map();
 client.snipes = new Discord.Collection();
+client.editedMessage = new Discord.Collection();
 client.commands = new Discord.Collection();
+client.aliases = new Discord.Collection();
 default_prefix = config.prefix
 
 
@@ -116,6 +118,16 @@ client.on("messageDelete", (message) => {
       member: message.member,
       image: message.attachments.first() ? message.attachments.first().proxyURL : null
   })
+})
+
+//editsnipe command
+client.on("messageUpdate", message => {
+  client.editedMessage.set(message.channel.id, {
+    content: message.content,
+    author: message.author.tag,
+    member: message.member,
+    image: message.attachments.first() ? message.attachments.first().proxyURL : null
+})
 })
 
 // utility area

@@ -18,10 +18,12 @@ module.exports = {
     const anime = await searchAnime(query, 1).then((res) => {
       return res[0];
     });
+    if (!anime) return message.channel.send("<:xmark:314349398824058880> Search results came back with nothing!");
     function trim(input) {
       return input.length > 1024 ? `${input.slice(0, 1015)} [...]` : input;
     }
     const Undefined = anime.titles.english;
+    
     
 
     const embed = new MessageEmbed()

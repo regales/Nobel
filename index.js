@@ -191,10 +191,10 @@ const AutoPoster = require('topgg-autoposter');
 const poster = AutoPoster('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjgyMDkzOTE3MjQ5MTQyNzg0MCIsImJvdCI6dHJ1ZSwiaWF0IjoxNjE4NDc0NTkzfQ.xUA47WBV0GHYK3cWDWHCTsbjoVswD-dIEQRF_ARz8GQ', client);
 
 // connecting to mongoose
-mongoose.connect('mongodb+srv://regales:wtfweakpassword281004@nobel.obxxa.mongodb.net/test', {
+mongoose.connect(process.env.MONGODB_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
 
 // connect bot token
-client.login("ODIwOTM5MTcyNDkxNDI3ODQw.YE8dLw.OmCJS2slO7wm3yJM_quHwhLHYmM")
+client.login(process.env.TOKEN)

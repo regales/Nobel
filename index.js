@@ -102,7 +102,7 @@ client.on("guildMemberAdd", async (member, guild) => {
         welcomeEmbed.setColor('PURPLE')
         welcomeEmbed.setTitle('Welcome')
         welcomeEmbed.setDescription(`<a:629155002505756672:846970724836442142>**Welcome ${member.user.username}, to ${member.guild.name}**\n<a:629155002505756672:846970724836442142>**You are the ${member.guild.memberCount}th member to join ${member.guild.name}!**\n<a:629155002505756672:846970724836442142>**Enjoy your time here!** `)
-        welcomeEmbed.setImage('https://i.imgur.com/2oIZ4N6.gif')
+        welcomeEmbed.setImage('https://raw.githubusercontent.com/regales/Nobel/main/assets/gif/welcome.gif')
 
         channel.send(welcomeEmbed);
     })

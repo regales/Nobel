@@ -11,18 +11,18 @@ module.exports = {
 
     run: async(client, message, args) => {
         const channel = message.member.voice.channel;
-        if (!channel) return sendError("<:xmark:314349398824058880> **I'm Sorry But You Need To Be In A Voice Channel To Play Music!**", message.channel);
+        if (!channel) return sendError("<:xmark:848019597907329085> **I'm Sorry But You Need To Be In A Voice Channel To Play Music!**", message.channel);
         const url = args[0] ? args[0].replace(/<(.+)>/g, "$1") : "";
         var searchString = args.join(" ");
         const permissions = channel.permissionsFor(message.client.user);
-        if (!permissions.has("CONNECT")) return sendError("<:xmark:314349398824058880> **I Cannot Connect To Your Voice Channel, Make Sure I Have The Proper Permissions!**", message.channel);
-        if (!permissions.has("SPEAK")) return sendError("<:xmark:314349398824058880> **I Cannot Connect To Your Voice Channel, Make Sure I Have The Proper Permissions!**", message.channel);
+        if (!permissions.has("CONNECT")) return sendError("<:xmark:848019597907329085> **I Cannot Connect To Your Voice Channel, Make Sure I Have The Proper Permissions!**", message.channel);
+        if (!permissions.has("SPEAK")) return sendError("<:xmark:848019597907329085> **I Cannot Connect To Your Voice Channel, Make Sure I Have The Proper Permissions!**", message.channel);
 
-        if (!searchString || !url) return sendError(`<:xmark:314349398824058880> **Usage:** \`*playlist <YouTube Playlist URL | Playlist Name>\``, message.channel);
+        if (!searchString || !url) return sendError(`<:xmark:848019597907329085> **Usage:** \`*playlist <YouTube Playlist URL | Playlist Name>\``, message.channel);
         if (url.match(/^https?:\/\/(www.youtube.com|youtube.com)\/playlist(.*)$/)) {
             try {
                 const playlist = await ytpl(url.split("list=")[1]);
-                if (!playlist) return sendError("<:xmark:314349398824058880> **Playlist Not Found**", message.channel);
+                if (!playlist) return sendError("<:xmark:848019597907329085> **Playlist Not Found**", message.channel);
                 const videos = await playlist.items;
                 for (const video of videos) {
                     // eslint-disable-line no-await-in-loop
@@ -36,13 +36,13 @@ module.exports = {
                 });
             } catch (error) {
                 console.error(error);
-                return sendError("<:xmark:314349398824058880> **Playlist Not Found**", message.channel).catch(console.error);
+                return sendError("<:xmark:848019597907329085> **Playlist Not Found**", message.channel).catch(console.error);
             }
         } else {
             try {
                 var searched = await yts.search(searchString);
 
-                if (searched.playlists.length === 0) return sendError("<:xmark:314349398824058880> **Looks Like I Was Unable To Find The Playlist On YouTube**", message.channel);
+                if (searched.playlists.length === 0) return sendError("<:xmark:848019597907329085> **Looks Like I Was Unable To Find The Playlist On YouTube**", message.channel);
                 var songInfo = searched.playlists[0];
                 let listurl = songInfo.listId;
                 const playlist = await ytpl(listurl);
@@ -59,7 +59,7 @@ module.exports = {
                     .setTimestamp()
                 return message.channel.send(thing);
             } catch (error) {
-                return sendError("<:xmark:314349398824058880> **An Unexpected Error Has Occurred**", message.channel).catch(console.error);
+                return sendError("<:xmark:848019597907329085> **An Unexpected Error Has Occurred**", message.channel).catch(console.error);
             }
         }
 
@@ -93,9 +93,9 @@ module.exports = {
                     queueConstruct.connection = connection;
                     play(message.guild, queueConstruct.songs[0]);
                 } catch (error) {
-                    console.error(`<:xmark:314349398824058880> **I Could Not Join The Voice Channel:** ${error}`);
+                    console.error(`<:xmark:848019597907329085> **I Could Not Join The Voice Channel:** ${error}`);
                     message.client.queue.delete(message.guild.id);
-                    return sendError(`<:xmark:314349398824058880> **I Could Not Join The Voice Channel:** ${error}`, message.channel);
+                    return sendError(`<:xmark:848019597907329085> **I Could Not Join The Voice Channel:** ${error}`, message.channel);
                 }
             } else {
                 serverQueue.songs.push(song);
@@ -116,7 +116,7 @@ module.exports = {
             const serverQueue = message.client.queue.get(message.guild.id);
             if (!song) {
                 sendError(
-                    "<:xmark:314349398824058880> **Leaving The Voice Channel Because I Think There Are No Songs In The Queue.**",
+                    "<:xmark:848019597907329085> **Leaving The Voice Channel Because I Think There Are No Songs In The Queue.**",
                     message.channel
                 );
                 message.guild.me.voice.channel.leave(); //If you want your bot stay in vc 24/7 remove this line :D
@@ -131,7 +131,7 @@ module.exports = {
                         if (serverQueue) {
                             serverQueue.songs.shift();
                             play(guild, serverQueue.songs[0]);
-                            return sendError(`<:xmark:314349398824058880> **An Unexpected Error Has Occurred**.\nPossible Type \`${er}\``, message.channel);
+                            return sendError(`<:xmark:848019597907329085> **An Unexpected Error Has Occurred**.\nPossible Type \`${er}\``, message.channel);
                         }
                     }
                 });

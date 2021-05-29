@@ -8,11 +8,11 @@ module.exports = {
     });
     let permission = message.member.hasPermission("ADMINISTRATOR");
 
-    if(!permission) return message.channel.send("<:xmark:314349398824058880> Sorry you need `ADMINISTRATOR` permissions!")
+    if(!permission) return message.channel.send("<:xmark:848019597907329085> Sorry you need `ADMINISTRATOR` permissions!")
 
-    if (!args[0]) return message.channel.send('You must provide a **new prefix**!');
+    if (!args[0]) return message.channel.send('<:xmark:848019597907329085> You must provide a **New Prefix**!');
 
-    if (args[0].length > 5) return message.channel.send('Your new prefix must be under \`5\` characters!')
+    if (args[0].length > 5) return message.channel.send('<:xmark:848019597907329085> Your new prefix must be under \`5\` characters!')
 
     if (data) {
         await prefixModel.findOneAndRemove({

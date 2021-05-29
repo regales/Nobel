@@ -5,7 +5,7 @@ module.exports = {
    
     run: async (client, message, args) => {
         const msg = client.editedMessage.get(message.channel.id)
-        if (!msg) return message.lineReply('<:xmark:314349398824058880> There\'s nothing edited to snipe!')
+        if (!msg) return message.lineReply('<:xmark:848019597907329085> There\'s nothing edited to snipe!')
         const embed = new MessageEmbed()
             .setAuthor(msg.author, msg.member.user.displayAvatarURL())
             .setDescription(msg.content)

@@ -14,11 +14,11 @@ module.exports = {
 
        try {
 
-  if (!args[0]) return message.channel.send(`<:xmark:314349398824058880> Please Give Me A Username!`)
+  if (!args[0]) return message.channel.send(`<:xmark:848019597907329085> Please Give Me A Username!`)
     
   fetch(`https://api.github.com/users/${args.join('-')}`)
     .then(res => res.json()).then(body => {
-      if(body.message) return message.channel.send(`<:xmark:314349398824058880> Please Give Me A Valid Username!`);
+      if(body.message) return message.channel.send(`<:xmark:848019597907329085> Please Give Me A Valid Username!`);
     let { login, avatar_url, name, id, html_url, public_repos, followers, following, location, created_at, bio } = body;
 
             const embed = new MessageEmbed()
@@ -42,7 +42,7 @@ module.exports = {
 
         } catch (error) {
             console.log(`[Commands] [github] Getting Error In github Command :\n`, error);
-            return message.channel.send(`<:xmark:314349398824058880> Something Went Wrong Try Again Later!`)
+            return message.channel.send(`<:xmark:848019597907329085> Something Went Wrong Try Again Later!`)
         }
     }
 };

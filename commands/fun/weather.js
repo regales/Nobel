@@ -8,10 +8,10 @@ module.exports = {
     
         weather.find({search: args.join(" "), degreeType: 'C'}, function (error, result){
        
-        if(error) return message.channel.send('<:xmark:314349398824058880> Please specify a location');
-        if(!args[0]) return message.channel.send('<:xmark:314349398824058880> Please specify a location')
+        if(error) return message.channel.send('<:xmark:848019597907329085> Please specify a location');
+        if(!args[0]) return message.channel.send('<:xmark:848019597907329085> Please specify a location')
         
-        if(result === undefined || result.length === 0) return message.channel.send('<:xmark:314349398824058880> **Invalid** location');
+        if(result === undefined || result.length === 0) return message.channel.send('<:xmark:848019597907329085> **Invalid** location');
 
         var current = result[0].current;
         var location = result[0].location;

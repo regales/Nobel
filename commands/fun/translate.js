@@ -11,7 +11,7 @@ module.exports = {
    run: async(client, message, args) => {
     try {
       const query = args.slice(1).join(" ");
-    if (!query) return message.channel.send(`<:xmark:314349398824058880> Please type a valid text to translate.\n\`\`Refer To *helptranslate\`\``)
+    if (!query) return message.channel.send(`<:xmark:848019597907329085> Please type a valid text to translate.\n\`\`Refer To *helptranslate\`\``)
 const arg = args[0]
 
     const translated = await translate(query, {to: `${arg}`});
@@ -27,7 +27,7 @@ const arg = args[0]
     message.channel.send(embed)
 
     } catch (error) {
-      return message.channel.send("<:xmark:314349398824058880> Your translation is invalid! \n\`\`Check *helptranslate\`\`")
+      return message.channel.send("<:xmark:848019597907329085> Your translation is invalid! \n\`\`Check *helptranslate\`\`")
       .then(() => console.log(error));
     }
   }

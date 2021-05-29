@@ -8,10 +8,10 @@ module.exports = {
  
   const permissions = message.channel.permissionsFor(message.client.user);
     if (!permissions.has(["MANAGE_MESSAGES", "ADD_REACTIONS"]))
-      return sendError("<:xmark:314349398824058880> **Missing Permission To Manage Messages Or Add Reactions**",message.channel);
+      return sendError("<:xmark:848019597907329085> **Missing Permission To Manage Messages Or Add Reactions**",message.channel);
 
     const queue = message.client.queue.get(message.guild.id);
-    if (!queue) return sendError("<:xmark:314349398824058880> **There Is Nothing Playing In This Server.**",message.channel)
+    if (!queue) return sendError("<:xmark:848019597907329085> **There Is Nothing Playing In This Server.**",message.channel)
 
     let currentPage = 0;
     const embeds = generateQueueEmbed(message, queue.songs);

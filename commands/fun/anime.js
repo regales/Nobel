@@ -14,11 +14,11 @@ module.exports = {
    */
   run: async (client, message, args) => {
     const query = args.join(" ");
-    if (!query) return message.channel.send("<:xmark:314349398824058880> Please type a name of an anime!");
+    if (!query) return message.channel.send("<:xmark:848019597907329085> Please type a name of an anime!");
     const anime = await searchAnime(query, 1).then((res) => {
       return res[0];
     });
-    if (!anime) return message.channel.send("<:xmark:314349398824058880> Search results came back with nothing!");
+    if (!anime) return message.channel.send("<:xmark:848019597907329085> Search results came back with nothing!");
     function trim(input) {
       return input.length > 1024 ? `${input.slice(0, 1015)} [...]` : input;
     }

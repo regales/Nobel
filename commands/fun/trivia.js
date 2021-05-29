@@ -149,18 +149,18 @@ class Game {
                 this.end_game()
             }
             else {
-                this.answer_array[this.input_answer - 1] = this.answer_array[this.input_answer - 1] + ' <:xmark:314349398824058880>'
+                this.answer_array[this.input_answer - 1] = this.answer_array[this.input_answer - 1] + ' <:xmark:848019597907329085>'
                 this.question_embed = new discord.MessageEmbed()
                 .setColor('#0099ff')
                 .setTitle(atob(this.question.results[0].question))
                 .setDescription(this.answer_array)
                 .setFooter('Category - ' + atob(this.question.results[0].category) + ', Difficulty - ' + atob(this.question.results[0].difficulty))
                 this.question_message.edit(this.question_embed)
-                this.question_message.edit('<:xmark:314349398824058880> You got it wrong. The correct answer was ' + this.reactions[this.correct_answer - 1])
+                this.question_message.edit('<:xmark:848019597907329085> You got it wrong. The correct answer was ' + this.reactions[this.correct_answer - 1])
                 this.end_game()
             }
         }).catch(() => {
-            this.question_message.edit('<:xmark:314349398824058880> You took to long to answer! Game has timed out. The answer was ' +  this.reactions[this.correct_answer - 1])
+            this.question_message.edit('<:xmark:848019597907329085> You took to long to answer! Game has timed out. The answer was ' +  this.reactions[this.correct_answer - 1])
             this.end_game()
         })
     }

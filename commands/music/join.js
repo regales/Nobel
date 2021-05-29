@@ -7,12 +7,12 @@ module.exports = {
       
       const Channel = message.member.voice.channel;
       
-      if (!Channel) return sendError("<:xmark:314349398824058880> **Please Join A Voice Channel!**", message.channel);
+      if (!Channel) return sendError("<:xmark:848019597907329085> **Please Join A Voice Channel!**", message.channel);
       
-      if (!Channel.joinable) return sendError("<:xmark:314349398824058880> **I Can't Join The Voice Channel!**", message.channel);
+      if (!Channel.joinable) return sendError("<:xmark:848019597907329085> **I Can't Join The Voice Channel!**", message.channel);
       
       await Channel.join().catch(() => {
-        return sendError("<:xmark:314349398824058880> **Unable To Join The Voice Channel!**", message.channel);
+        return sendError("<:xmark:848019597907329085> **Unable To Join The Voice Channel!**", message.channel);
       });
       const Discord = require("discord.js");
       const Embed = new Discord.MessageEmbed()

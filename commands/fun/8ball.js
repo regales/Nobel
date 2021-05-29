@@ -42,7 +42,7 @@ module.exports = {
 // Member question
         let q = args.join(' ').endsWith('?')
         if (!q)
-          return message.channel.send('<:xmark:314349398824058880> That doesn\'t seem to be a question, please try again!').then(m => m.delete({ timeout: 10000 }))
+          return message.channel.send('<:xmark:848019597907329085> That doesn\'t seem to be a question, please try again!').then(m => m.delete({ timeout: 10000 }))
 // then delete msg in 10s
         else {
 // if ends whit ? then

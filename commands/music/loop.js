@@ -15,6 +15,6 @@ module.exports = {
                 }
             });
         };
-    return sendError("<:xmark:314349398824058880> **There Is Nothing Being Played!**", message.channel);
+    return sendError("<:xmark:848019597907329085> **There Is Nothing Being Played!**", message.channel);
   },
 };

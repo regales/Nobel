@@ -55,7 +55,7 @@ run: async(client, message, args) => {
 
                 message.channel.send(embed)
             }).catch(e => {
-                return message.channel.send(`<:xmark:314349398824058880> Invalid country provided!`)
+                return message.channel.send(`<:xmark:848019597907329085> Invalid country provided!`)
             })
         }
     }

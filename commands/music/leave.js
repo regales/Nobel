@@ -6,8 +6,8 @@ module.exports = {
 
     run: async(client, message, args) => {
         let channel = message.member.voice.channel;
-        if (!channel) return sendError("<:xmark:314349398824058880> **You Should Join A VC First Before Using This Command!**", message.channel);
-        if (!message.guild.me.voice.channel) return sendError("<:xmark:314349398824058880> **I Am Not In Any Voice Channel!**", message.channel);
+        if (!channel) return sendError("<:xmark:848019597907329085> **You Should Join A VC First Before Using This Command!**", message.channel);
+        if (!message.guild.me.voice.channel) return sendError("<:xmark:848019597907329085> **I Am Not In Any Voice Channel!**", message.channel);
 
         try {
             await message.guild.me.voice.channel.leave();

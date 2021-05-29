@@ -12,11 +12,11 @@ module.exports = {
 
     run: async(client, message, args) => {
         let channel = message.member.voice.channel;
-        if (!channel) return sendError("<:xmark:314349398824058880> **I'm Sorry But You Need To Join In A Voice Channel To Play Music!**", message.channel);
+        if (!channel) return sendError("<:xmark:848019597907329085> **I'm Sorry But You Need To Join In A Voice Channel To Play Music!**", message.channel);
 
 
         var searchString = args.join(" ");
-        if (!searchString) return sendError("<:xmark:314349398824058880> **What To Play?** \n `*play <song name_url>` ? ", message.channel);
+        if (!searchString) return sendError("<:xmark:848019597907329085> **What To Play?** \n `*play <song name_url>` ? ", message.channel);
         const url = args[0] ? args[0].replace(/<(.+)>/g, "$1") : "";
         var serverQueue = message.client.queue.get(message.guild.id);
 
@@ -25,7 +25,7 @@ module.exports = {
         if (url.match(/^(https?:\/\/)?(www\.)?(m\.)?(youtube\.com|youtu\.?be)\/.+$/gi)) {
             try {
                 songInfo = await ytdl.getInfo(url);
-                if (!songInfo) return sendError("<:xmark:314349398824058880> **Looks Like I Was Unable To Find The Song On YouTube**", message.channel);
+                if (!songInfo) return sendError("<:xmark:848019597907329085> **Looks Like I Was Unable To Find The Song On YouTube**", message.channel);
                 song = {
                     id: songInfo.videoDetails.videoId,
                     title: songInfo.videoDetails.title,
@@ -43,7 +43,7 @@ module.exports = {
         } else {
             try {
                 var searched = await yts.search(searchString);
-                if (searched.videos.length === 0) return sendError("<:xmark:314349398824058880> **Looks Like I Was Unable To Find The Song On YouTube**", message.channel);
+                if (searched.videos.length === 0) return sendError("<:xmark:848019597907329085> **Looks Like I Was Unable To Find The Song On YouTube**", message.channel);
 
                 songInfo = searched.videos[0];
                 song = {
@@ -88,7 +88,7 @@ module.exports = {
             const queue = message.client.queue.get(message.guild.id);
             if (!song) {
                 sendError(
-                    "<:xmark:314349398824058880> **The Song Has Ended!**",
+                    "<:xmark:848019597907329085> **The Song Has Ended!**",
                     message.channel
                 );
                 message.client.queue.delete(message.guild.id);
@@ -102,7 +102,7 @@ module.exports = {
                         if (queue) {
                             queue.songs.shift();
                             play(queue.songs[0]);
-                            return sendError(`<:xmark:314349398824058880> **An Unexpected Error Has Occurred.**\nPossible Type \`${er}\``, message.channel);
+                            return sendError(`<:xmark:848019597907329085> **An Unexpected Error Has Occurred.**\nPossible Type \`${er}\``, message.channel);
                         }
                     }
                 });
@@ -136,10 +136,10 @@ module.exports = {
             queueConstruct.connection = connection;
             play(queueConstruct.songs[0]);
         } catch (error) {
-            console.error(`<:xmark:314349398824058880> **I Could Not Join The Voice Channel**: ${error}`);
+            console.error(`<:xmark:848019597907329085> **I Could Not Join The Voice Channel**: ${error}`);
             message.client.queue.delete(message.guild.id);
             await channel.leave();
-            return sendError(`<:xmark:314349398824058880> **I Could Not Join The Voice Channel**\n**Make Sure That You Gave Me Proper Permissions** : ${error}`, message.channel);
+            return sendError(`<:xmark:848019597907329085> **I Could Not Join The Voice Channel**\n**Make Sure That You Gave Me Proper Permissions** : ${error}`, message.channel);
         }
     },
 };

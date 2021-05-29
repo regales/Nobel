@@ -1,9 +1,13 @@
 
 <!-- PROJECT LOGO -->
+<p align="center">
+  <img width="519" height="523" src="https://github.com/regales/Nobel/blob/main/assets/img/newnobelpfp.jpg?raw=true">
+</p>
 <br />
 <p align="center">
   <a href="https://github.com/regales/Nobel">
   </a>
+  
 
   <h3 align="center">Nobel </h3>
 
@@ -52,6 +56,9 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
+<p align="center">
+  <img width="600" height="348" src="https://github.com/regales/Nobel/blob/main/assets/gif/welcome.gif?raw=true">
+</p>
 
 [Nobel Discord Bot](https://top.gg/bot/820939172491427840)
 

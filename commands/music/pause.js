@@ -12,7 +12,7 @@ module.exports = {
       serverQueue.connection.dispatcher.pause()
 	  } catch (error) {
         message.client.queue.delete(message.guild.id);
-        return sendError(`<:xmark:314349398824058880> **Music Has Been Stopped And The Queue Has Been Cleared**: ${error}`, message.channel);
+        return sendError(`<:xmark:848019597907329085> **Music Has Been Stopped And The Queue Has Been Cleared**: ${error}`, message.channel);
       }	    
       let xd = new MessageEmbed()
       .setDescription("⏸ Paused music!")
@@ -20,6 +20,6 @@ module.exports = {
       .setTitle("Music paused!") 
       return message.channel.send(xd);
     }
-    return sendError("<:xmark:314349398824058880> **There Is Nothing Playing In This Server!**", message.channel);
+    return sendError("<:xmark:848019597907329085> **There Is Nothing Playing In This Server!**", message.channel);
   },
 };

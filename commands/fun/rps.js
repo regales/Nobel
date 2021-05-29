@@ -46,7 +46,7 @@ module.exports = {
             }
         })
         .catch(collected => {
-                message.reply('<:xmark:314349398824058880> Process has been cancelled since you did not respond in time!');
+                message.reply('<:xmark:848019597907329085> Process has been cancelled since you did not respond in time!');
             })
 }
 }

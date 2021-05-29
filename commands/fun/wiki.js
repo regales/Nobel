@@ -8,7 +8,7 @@ module.exports = {
 
         const wiki = args.slice().join(' ')
        
-        if(!wiki) return message.channel.send(`<:xmark:314349398824058880> Please provide a valid query`)
+        if(!wiki) return message.channel.send(`<:xmark:848019597907329085> Please provide a valid query`)
         const url = `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(wiki)}`
 
         let response
@@ -17,7 +17,7 @@ module.exports = {
         }      
         catch (e) {
             
-            message.channel.send(`<:xmark:314349398824058880> Wikipedia doesn't seem to know what you're talking about. \n\`Search for typos or maybe this topic doesn't exist on Wikipedia.\``)
+            message.channel.send(`<:xmark:848019597907329085> Wikipedia doesn't seem to know what you're talking about. \n\`Search for typos or maybe this topic doesn't exist on Wikipedia.\``)
         }
 
         try {
@@ -48,6 +48,6 @@ module.exports = {
         }
         catch {
 
-            message.channel.send(`<:xmark:314349398824058880> Wikipedia doesn't seem to know what you're talking about. \n\`Search for typos or maybe this topic doesn't exist on Wikipedia.`)
+            message.channel.send(`<:xmark:848019597907329085> Wikipedia doesn't seem to know what you're talking about. \n\`Search for typos or maybe this topic doesn't exist on Wikipedia.`)
         }
 }}

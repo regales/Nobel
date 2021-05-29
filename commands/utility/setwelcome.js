@@ -6,10 +6,10 @@ module.exports = {
     name: "setwelcome",
 
     run: async (client, message, args) => {
-        if(!message.member.hasPermission("ADMINISTRATOR")) return sendError(`**You require \`ADMINSTRATOR\` permissions**`, message.channel);
+        if(!message.member.hasPermission("ADMINISTRATOR")) return sendError(`<:xmark:848019597907329085> **You require \`ADMINSTRATOR\` permissions**`, message.channel);
 
         const channel = message.mentions.channels.first();
-        if(!channel) return sendError("**Please specify a channel you would like to be your welcome channel!**", message.channel);
+        if(!channel) return sendError("<:xmark:848019597907329085> **Please specify a channel you would like to be your welcome channel!**", message.channel);
 
         Schema.findOne({ guildId: message.guild.id }, async (err, data) => {
             if (data){

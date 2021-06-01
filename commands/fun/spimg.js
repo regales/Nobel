@@ -2,7 +2,7 @@ const canvacord = require("canvacord")
 const Discord = require("discord.js")
 
 module.exports = {
-  name: "sp",
+  name: "spimg",
     
     run : async(client, message, args) => {
        if (message.author.bot) return

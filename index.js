@@ -61,6 +61,8 @@ client.on('message',  async message  => {
           .setTitle("You Pinged Me! <a:WavingBlob:825931440402595840>")
           .addFields(
             { name: '**Prefix**', value: `\`My Custom Prefix In This Server Is ${prefix}\`` },
+
+            { name: '**Default Prefix**', value: `\`My Default Prefix Is *\``},
             
             { name: '**Help Page**', value: `\`To Learn How To Use Me, Type ${prefix}help\``, inline: true },
             
@@ -83,6 +85,8 @@ client.on('message',  async message  => {
           .setTitle("You Pinged Me! <a:WavingBlob:825931440402595840>")
           .addFields(
             { name: '**Prefix**', value: `\`My Custom Prefix In This Server Is ${prefix}\`` },
+
+            { name: '**Default Prefix**', value: `\`My Default Prefix Is *\``},
             
             { name: '**Help Page**', value: `\`To Learn How To Use Me, Type ${prefix}help\``, inline: true },
             

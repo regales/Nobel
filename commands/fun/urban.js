@@ -21,7 +21,7 @@ module.exports = {
                     .setColor("PURPLE")
                     .setAuthor(
                         "ռօɮɛʟ",
-                        "https://i.pinimg.com/236x/d5/e2/c5/d5e2c5c0315e6b1f3cc30189f9dccd82.jpg")
+                        "https://github.com/regales/Nobel/blob/main/assets/img/newnobelpfp.jpg?raw=true")
                     .setTitle(`**Urban - ${word}**`)
                     .setThumbnail(image)
                     .setDescription(`**Meaning:**\n*${definition || "No meaning"}*\n\n**Example:**\n*${example || "No Example"}*`)

@@ -15,7 +15,7 @@ module.exports = {
                 .addField("**No Status**", 'This user does not have any custom status!')
                 .setFooter(message.guild.name, message.guild.iconURL())
                 .setTimestamp()
-            message.channel.send()
+            
             return undefined;
         }
 
@@ -29,7 +29,7 @@ module.exports = {
                     .setThumbnail(user.user.displayAvatarURL())
                     .setFooter(message.guild.name, message.guild.iconURL())
                     .setTimestamp()
-                message.channel.send()
+                
             }
             else if (activity.type === 'PLAYING') {
                 let name1 = activity.name
@@ -45,7 +45,7 @@ module.exports = {
                     .addField("**App**", `${name1}`)
                     .addField("**Details**", `${details1 || "No Details"}`)
                     .addField("**Working on**", `${state1 || "No Details"}`)
-                message.channel.send();
+                
             }
             else if (activity.type === 'LISTENING' && activity.name === 'Spotify' && activity.assets !== null) {
 
@@ -69,6 +69,7 @@ module.exports = {
                     .setFooter(user.displayName, user.user.displayAvatarURL({ dynamic: true }))
                 message.channel.send(embed);
             }
+            else message.channel.send("<:xmark:848019597907329085> This user is not listening music on Spotify")
         })
     }
 }

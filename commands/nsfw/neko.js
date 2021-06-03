@@ -19,7 +19,7 @@ module.exports = {
     const hook = allowed[randomnumber].data.title;
     const embed = new MessageEmbed()
         .setColor('RANDOM')
-        .setTitle(`\`\`\`${hook}\`\`\``)
+        .setTitle(`${hook}`)
         .setImage(allowed[randomnumber].data.url)
         .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
         .setTimestamp()

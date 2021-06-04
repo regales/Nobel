@@ -37,10 +37,7 @@ module.exports = {
 
             \n\`sad\` - Don't be\n\`smug\` - Nice grin bro\n\`shy\` - Introverts smh\n\`happy\` - Someone's over cloud nine\n\`hug\` - Huggies for everyone\n\`shoot\` - Bam, you ded\n\`lick\` - Kinky much?\n\`cuddle\` - Extra touchy than hug\n\`tickle\` - Please hahah stwap\n\`pat\` - Ara ara\n\`kiss\` - Ranging from french to sweet ones\n\`slap\` - Ow, that hurts\n\`dance\` - Bille Jean is not my lover\n\`laugh\` - Lolmao Rofl
             
-            \n<a:nsfw:847155010701492265> **NSFW Commmands [9]**
-
-            \n***All NSFW Commands Require NSFW Channels***
-            \n\`hentai\` - Images of anime and manga pornography\n\`ahegao\` - Images of anime girls being fucked silly\n\`neko\` - Images of NSFW nekomimi\n\`pantsu\` - Images of panty shots\n\`oppai\` - Images of big tiddies\n\`bondage\` - Images of extreme sex-plays\n\`ecchi\` - Images of borderline SFW hentai\n\`futa\` - Images of 2-in-1 packages\n\`yuri\` - Girl meets girl`)
+            `)
             .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
             .setTimestamp()
         

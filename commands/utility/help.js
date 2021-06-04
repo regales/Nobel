@@ -49,9 +49,9 @@ module.exports = {
             
             .setDescription(`
 
-            \n<:settings:843041534609850370> **Utility Commands [10]**
+            \n<:settings:843041534609850370> **Utility Commands [11]**
 
-            \n\`setwelcome\` - Sets mentioned server to welcome new members\n\`ping\` - Returns latency and API ping\n\`help\` - Displays all commands for Nobel\n\`mjl\` - Member Joined LeaderBoard\n\`userinfo\` - Information regarding a user\n\`serverinfo\` - Information regarding current server\n\`stats\` - Information regarding Nobel\n\`support\` - Link for inviting Nobel or support server\n\`globalchat\` - Help on how to set up Nobel's global chat\n\`covid\` - Information regarding the COVID-19 pandemic`)
+            \n\`setwelcome\` - Sets mentioned server to welcome new members\n\`setprefix\` - Sets typed prefix as custom prefix for server\n\`ping\` - Returns latency and API ping\n\`help\` - Displays all commands for Nobel\n\`mjl\` - Member Joined LeaderBoard\n\`userinfo\` - Information regarding a user\n\`serverinfo\` - Information regarding current server\n\`stats\` - Information regarding Nobel\n\`support\` - Link for inviting Nobel or support server\n\`globalchat\` - Help on how to set up Nobel's global chat\n\`covid\` - Information regarding the COVID-19 pandemic`)
             .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
             .setTimestamp()
         const pages = [page1, page2, page3];

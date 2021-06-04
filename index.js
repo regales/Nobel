@@ -11,6 +11,7 @@ const client = new Discord.Client();
 const got = require('got');
 const config = require("./config.json");
 const prefix = require("./models/prefix");
+require('discord-buttons')(client)
 client.config = config;
 client.queue = new Map();
 client.snipes = new Discord.Collection();

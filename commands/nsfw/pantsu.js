@@ -18,11 +18,9 @@ module.exports = {
     const randomnumber = Math.floor(Math.random() * allowed.length)
     const hook = allowed[randomnumber].data.title;
     const embed = new MessageEmbed()
-        .setColor('RANDOM')
-        .setTitle(`${hook}`)
+        .setColor('#202225')
         .setImage(allowed[randomnumber].data.url)
         .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
-        .setTimestamp()
     message.channel.send(embed)
     }}
 }

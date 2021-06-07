@@ -1,6 +1,6 @@
 const fetch = require("node-fetch")
 const { MessageEmbed, MessageMentions } = require('discord.js')
-const { execute } = require("../utility/mjl")
+const { execute } = require("../moderation/mjl")
 module.exports = {
     name: "deepfry",
     description: "Deepfry someone!",

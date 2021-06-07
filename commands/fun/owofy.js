@@ -17,6 +17,6 @@ module.exports = {
     const { owo } = await fetch(`https://nekos.life/api/v2/owoify?text=${encodeURIComponent(text)}`)
       .then(res => res.json())
 
-      return message.channel.send(owo);
+      return message.lineReply(owo);
     }
 }

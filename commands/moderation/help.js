@@ -37,7 +37,7 @@ module.exports = {
 
             \n\`sad\` - Don't be\n\`smug\` - Nice grin bro\n\`shy\` - Introverts smh\n\`happy\` - Someone's over cloud nine\n\`hug\` - Huggies for everyone\n\`shoot\` - Bam, you ded\n\`lick\` - Kinky much?\n\`cuddle\` - Extra touchy than hug\n\`tickle\` - Please hahah stwap\n\`pat\` - Ara ara\n\`kiss\` - Ranging from french to sweet ones\n\`slap\` - Ow, that hurts\n\`dance\` - Bille Jean is not my lover\n\`laugh\` - Lolmao Rofl
 
-            \n<:image:719431405989396530>  **Image Commands [5]**
+            \n<:blurple_image:851465590744940594>  **Image Commands [5]**
 
             \n\`maps\` - Geography time\n\`changemymind\` - Try me\n\`tweet\` - Tweet something on twitter\n\`avatar\` - Displays someone's avatar\n\`deepfry\` - Deepfries a user's profile picture
             

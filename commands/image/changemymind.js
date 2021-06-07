@@ -14,7 +14,7 @@ module.exports = {
     return message.lineReply({
      embed: {
       color: 16734039,
-      description: "❌ | You must enter a text!",
+      description: "<:xmark:848019597907329085> You must enter a text!",
      },
     })
    }
@@ -22,16 +22,12 @@ module.exports = {
     return message.lineReply({
      embed: {
       color: 16734039,
-      description: "❌ | Max lenght for the text is 20!",
+      description: "<:xmark:848019597907329085> Max length for the text is 20!",
      },
     })
    }
-   const wait = await message.lineReply({
-    embed: {
-     color: 4779354,
-     description: "✨ | Please wait... I'm generating your image",
-    },
-   })
+   const wait = await message.lineReply("<a:loading_plus:675395739949727774> Please wait... I'm generating your image")
+    
    const changemymind = await canvacord.Canvas.changemymind(args.join(" "))
    const attachment = new Discord.MessageAttachment(changemymind, "changemymind.png")
    return message.channel.send(attachment)

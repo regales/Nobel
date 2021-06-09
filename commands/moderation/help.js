@@ -11,7 +11,7 @@ module.exports = {
             .setAuthor(
                "Nobel Help",
                "https://i.imgur.com/o3xDQbB.jpeg")
-            .setColor('RANDOM')
+            .setColor('PURPLE')
             
             .setDescription(`
             <a:playing:799562690129035294> **Music Commands [17]**
@@ -26,7 +26,7 @@ module.exports = {
             .setTimestamp()
         
         const page2 = new Discord.MessageEmbed()
-            .setColor('RANDOM')
+            .setColor('PURPLE')
             .setAuthor(
                 "Nobel Help",
                 "https://i.imgur.com/o3xDQbB.jpeg")
@@ -37,7 +37,7 @@ module.exports = {
 
             \n\`sad\` - Don't be\n\`smug\` - Nice grin bro\n\`shy\` - Introverts smh\n\`happy\` - Someone's over cloud nine\n\`hug\` - Huggies for everyone\n\`shoot\` - Bam, you ded\n\`lick\` - Kinky much?\n\`cuddle\` - Extra touchy than hug\n\`tickle\` - Please hahah stwap\n\`pat\` - Ara ara\n\`kiss\` - Ranging from french to sweet ones\n\`slap\` - Ow, that hurts\n\`dance\` - Bille Jean is not my lover\n\`laugh\` - Lolmao Rofl
 
-            \n<:blurple_image:851465590744940594>  **Image Commands [5]**
+            \n<:blurple_image:851465590744940594>  **Image Commands [6]**
 
             \n\`maps\` - Geography time\n\`changemymind\` - Try me\n\`drake\` - Hotline bling\n\`tweet\` - Tweet something on twitter\n\`avatar\` - Displays someone's avatar\n\`deepfry\` - Deepfries a user's profile picture
             
@@ -46,7 +46,7 @@ module.exports = {
             .setTimestamp()
         
         const page3 = new Discord.MessageEmbed()
-            .setColor('RANDOM')
+            .setColor('PURPLE')
             .setAuthor(
                 "Nobel Help",
                 "https://i.imgur.com/o3xDQbB.jpeg")

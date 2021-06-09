@@ -39,7 +39,7 @@ module.exports = {
 
             \n<:blurple_image:851465590744940594>  **Image Commands [5]**
 
-            \n\`maps\` - Geography time\n\`changemymind\` - Try me\n\`tweet\` - Tweet something on twitter\n\`avatar\` - Displays someone's avatar\n\`deepfry\` - Deepfries a user's profile picture
+            \n\`maps\` - Geography time\n\`changemymind\` - Try me\n\`drake\` - Hotline bling\n\`tweet\` - Tweet something on twitter\n\`avatar\` - Displays someone's avatar\n\`deepfry\` - Deepfries a user's profile picture
             
             `)
             .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))

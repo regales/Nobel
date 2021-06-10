@@ -11,6 +11,8 @@ const client = new Discord.Client();
 const got = require('got');
 const config = require("./config.json");
 const prefix = require("./models/prefix");
+const { DiscordTogether } = require('discord-together');
+client.discordTogether = new DiscordTogether(client);
 require('discord-buttons')(client)
 client.config = config;
 client.queue = new Map();

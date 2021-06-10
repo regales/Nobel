@@ -14,9 +14,9 @@ module.exports = {
             .setColor('PURPLE')
             
             .setDescription(`
-            <a:playing:799562690129035294> **Music Commands [17]**
+            <a:playing:799562690129035294> **Music Commands [18]**
 
-            \n\`play\` - Plays a song from Youtube\n\`playlist\` - Plays a playlist for Youtube\n\`pause\` - Pauses music\n\`resume\` - Resumes music\n\`np\` - Gets now playing song's info\n\`skip\` - Skips to next song\n\`skipto\` - Skips to requested song number\n\`remove\` - Remove songs from the queue\n\`stop\` - Stops playing music\n\`volume\` - Adjusts volume of the music\n\`queue\` - To see the full song queue\n\`join\` - Joins a voice channel 24/7\n\`leave\` - Leaves a voice channel\n\`loop\` - Loops The queue\n\`shuffle\` - Shuffles the queue\n\`bassboost\` - Cheeki Breeki V Damke\n\`lyrics\` - Bee boo la lu
+            \n\`play\` - Plays a song from Youtube\n\`playlist\` - Plays a playlist for Youtube\n\`pause\` - Pauses music\n\`resume\` - Resumes music\n\`np\` - Gets now playing song's info\n\`skip\` - Skips to next song\n\`skipto\` - Skips to requested song number\n\`remove\` - Remove songs from the queue\n\`stop\` - Stops playing music\n\`volume\` - Adjusts volume of the music\n\`queue\` - To see the full song queue\n\`join\` - Joins a voice channel 24/7\n\`leave\` - Leaves a voice channel\n\`loop\` - Loops The queue\n\`shuffle\` - Shuffles the queue\n\`bassboost\` - Cheeki Breeki V Damke\n\`lyrics\` - Bee boo la lu\n\`ytt\` - Watch Youtube on Discord yo
             
             \n<:d6:843041076306640896> **Fun Commands [21]**
 

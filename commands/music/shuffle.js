@@ -3,6 +3,7 @@ const sendError = require("../../util/error");
 
 module.exports = {
   name: "shuffle",
+  aliases: ['shuf'],
 
   run: async(client, message, args) => {
     const serverQueue = message.client.queue.get(message.guild.id);

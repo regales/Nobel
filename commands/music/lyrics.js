@@ -4,6 +4,7 @@ const lyricsFinder = require('lyrics-finder');
 
 module.exports = {
     name : 'lyrics',
+    aliases : ['ly'],
     run: async(client, message, args) => {
     if (args.length < 1)
         return message.channel.send("<:xmark:848019597907329085> **Please enter the artist name first.**")

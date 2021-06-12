@@ -2,7 +2,8 @@ const { MessageEmbed } = require("discord.js");
 const sendError = require("../../util/error")
 
 module.exports = {
-  name: "np",
+  name: "nowplaying",
+  aliases: ['np'] ,
 
   run: async(client, message, args) => {
     const serverQueue = message.client.queue.get(message.guild.id);

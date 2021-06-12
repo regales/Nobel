@@ -3,6 +3,7 @@ const sendError = require("../../util/error");
 
 module.exports = {
   name: "bassboost",
+  aliases: ['bb'],
     
   
 

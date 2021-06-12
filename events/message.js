@@ -10,14 +10,12 @@ module.exports = async (client, message) => {
 
     if(data) {
         const prefix = data.Prefix;
-  
-
         const args = message.content.slice(prefix.length).trim().split(/ +/g);
         const command = args.shift().toLowerCase();
 
         if (message.content.indexOf(prefix) !== 0) return;
 
-        const cmd = client.commands.get(command);
+        const cmd = client.commands.get(command) || client.commands.find(a => a.aliases && a.aliases.includes(command));
         if (!cmd) return 
 
         cmd.run(client, message, args);
@@ -29,7 +27,7 @@ module.exports = async (client, message) => {
 
         if (message.content.indexOf(prefix) !== 0) return;
 
-        const cmd = client.commands.get(command);
+        const cmd = client.commands.get(command) || client.commands.find(a => a.aliases && a.aliases.includes(command));
         if (!cmd) return 
 
         cmd.run(client, message, args);

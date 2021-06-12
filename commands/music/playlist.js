@@ -8,6 +8,7 @@ const fs = require("fs");
 
 module.exports = {
     name: "playlist",
+    aliases: ['pl'],
 
     run: async(client, message, args) => {
         const channel = message.member.voice.channel;

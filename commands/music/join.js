@@ -2,6 +2,7 @@ const sendError = require("../../util/error");
 
 module.exports = {
   name: "join",
+  aliases: ['jn'],
     
     run: async (client, message, args) => {
       

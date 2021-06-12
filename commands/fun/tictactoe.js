@@ -2,6 +2,7 @@ const { TicTacToe } = require('weky');
 
 module.exports = {
     name : 'tictactoe',
+    aliases: ['ttt'],
     run: async(client, message, args) => {
         const opponent = message.mentions.users.first();
         if (!opponent) return message.channel.send(`<:xmark:848019597907329085> **Please mention who you want to challenge at tictactoe.**`);

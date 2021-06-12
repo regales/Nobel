@@ -9,6 +9,7 @@ const sendError = require("../../util/error");
 
 module.exports = {
     name: "play",
+    aliases: ['p'],
 
     run: async(client, message, args) => {
         let channel = message.member.voice.channel;

@@ -3,6 +3,7 @@ const sendError = require("../../util/error");
 
 module.exports = {
     name: "leave",
+    aliases: ['lv'],
 
     run: async(client, message, args) => {
         let channel = message.member.voice.channel;

@@ -3,6 +3,7 @@ const sendError = require("../../util/error");
 
 module.exports = {
   name: "remove",
+  aliases: ['rmv'],
 
   run: async function (client, message, args) {
    const queue = message.client.queue.get(message.guild.id);

@@ -2,7 +2,7 @@ const { MessageEmbed } = require('discord.js')
 const Discord = require('discord.js')
 module.exports = {
     name : 'valorant',
-    aliases: [valo , agent , valorant ],
+    aliases: ['valo' , 'agent' , 'valorant' ],
     
 
 

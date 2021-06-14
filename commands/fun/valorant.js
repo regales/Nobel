@@ -83,6 +83,12 @@ const cypher = new Discord.MessageEmbed ()
 		 .setImage('https://static.wikia.nocookie.net/valorant/images/7/79/Jett_artwork.png')
 
 
+		const killjoy = new Discord.MessageEmbed ()
+		 .setTitle('Killjoy')
+		 .setDescription("Abilities: \n**C**: Nanoswarm \n**Q**: Alarm Bot \n**E**: Turret | **Signature** \n**X** Lockdown | **Ultimate Ability**")
+		 .setImage('https://static.wikia.nocookie.net/valorant/images/8/8c/Killjoy.png')
+
+
 
 
 
@@ -184,6 +190,13 @@ const cypher = new Discord.MessageEmbed ()
 	  if (args[0] === 'jett') { 
 		 
 		message.channel.send (jett)
+		 return
+	
+	}
+
+	if (args[0] === 'killjoy') { 
+		 
+		message.channel.send (killjoy)
 		 return
 	
 	}

@@ -16,6 +16,7 @@ client.discordTogether = new DiscordTogether(client);
 require('discord-buttons')(client)
 client.config = config;
 client.queue = new Map();
+const cooldowns = new Map();
 client.snipes = new Discord.Collection();
 client.editedMessage = new Discord.Collection();
 client.commands = new Discord.Collection();

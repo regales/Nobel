@@ -34,6 +34,9 @@ const STATUSES = {
  
 module.exports = {
     name: "userinfo",
+    aliases: ['userinfo'],
+    usage: '<user>',
+    description: 'Information of an user',
     
     run: async(client, message, args) => {
         const member = message.mentions.members.last() || message.guild.members.cache.get(args[0]) || message.member;

@@ -3,6 +3,9 @@ const fetch = require("node-fetch");
 
 module.exports = {
   name: 'maps',
+  description: "Use Google Maps on Discord",
+  usage: '<place name>',
+  aliases: ['maps'],
 
 
 run: async(client, message, args) => {

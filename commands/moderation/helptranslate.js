@@ -7,6 +7,9 @@ const pagination = require('discord.js-pagination');
 module.exports = {
     name: "helptranslate",
     aliases: ['ht'],
+    description: "Help page for translations",
+    usage: '',
+    
     run: async(client, message, args) => {
         const embed1 = new Discord.MessageEmbed()
             .setColor('RANDOM')

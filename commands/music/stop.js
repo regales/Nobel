@@ -3,6 +3,9 @@ const sendError = require("../../util/error");
 
 module.exports = {
   name: "stop",
+  aliases: ['clear'],
+  description: "Stops music a voice channel",
+  usage: '',
 
   run: async(client, message, args) => {
     const channel = message.member.voice.channel

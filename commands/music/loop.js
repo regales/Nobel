@@ -4,6 +4,8 @@ const sendError = require("../../util/error");
 module.exports = {
   name: "loop",
   aliases: ['lp'],
+  description: "Loops a queue",
+  usage: '',
 
   run: async(client, message, args) => {
     const serverQueue = message.client.queue.get(message.guild.id);

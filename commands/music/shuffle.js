@@ -4,6 +4,8 @@ const sendError = require("../../util/error");
 module.exports = {
   name: "shuffle",
   aliases: ['shuf'],
+  description: "Shuffles music a voice channel",
+  usage: '',
 
   run: async(client, message, args) => {
     const serverQueue = message.client.queue.get(message.guild.id);

@@ -10,6 +10,8 @@ const sendError = require("../../util/error");
 module.exports = {
     name: "play",
     aliases: ['p'],
+    description: "Plays a song in a voice channel",
+    usage: '<song name> or <url>',
 
     run: async(client, message, args) => {
         let channel = message.member.voice.channel;

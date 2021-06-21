@@ -2,6 +2,9 @@ const { Client, Message, MessageEmbed } = require('discord.js');
 const fetch = require('node-fetch')
 module.exports = {
     name: 'owofy',
+    aliases: ['owofy'],
+    usage: '<text>',
+    description: 'OwO whowts twhis?',
     /**
      * @param {Client} client
      * @param {Message} message

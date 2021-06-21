@@ -3,6 +3,9 @@ const fetch = require('node-fetch')
 
 module.exports = {
     name: "wiki",
+    aliases: ['wikipedia'],
+    usage: 'text',
+    description: 'Searches wiki for top tier answers',
 
     run: async(client, message, args) => {
 

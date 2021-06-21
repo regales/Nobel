@@ -4,6 +4,9 @@ const fetch = require('node-fetch')
 
 module.exports = {
     name: 'ytt',
+    aliases: ['youtubetogether'],
+    description: "Watch Youtube on Discord",
+    usage: '',
  
     /** 
      * @param {Client} client 

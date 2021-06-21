@@ -33,6 +33,7 @@
     "moment": "^2.29.1",
     "mongoose": "^5.12.4",
     "nekos.life": "^2.0.7",
+    "nidhishpackage": "^1.7.5",
     "node-fetch": "^2.6.1",
     "node-os-utils": "^1.3.5",
     "novelcovid": "^3.0.0",

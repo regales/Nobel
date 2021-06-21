@@ -1,6 +1,8 @@
 module.exports = {
 	name: 'trivia',
     description: 'Answer trivia questions',
+    usage: '',
+    aliases: ['trivia'],
 	run: async(client, message, args) => {
         const discord = require('discord.js')
 const fetch = require("node-fetch"); 

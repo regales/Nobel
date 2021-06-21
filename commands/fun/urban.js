@@ -4,6 +4,9 @@ const { MessageEmbed } = require('discord.js');
 module.exports = {
     
         name: "urban",
+        aliases: ['urban'],
+        description: 'Searches meaning of words',
+        usage: '<text>',
     
         
     

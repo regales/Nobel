@@ -2,6 +2,9 @@ const { Snake } = require('weky');
 
 module.exports = {
     name: "snake",
+    aliases: ['snake'],
+    usage: '',
+    description: 'Plays a game of nokia snake',
     run: async (client, message, args) => {
         new Snake({
             message: message,

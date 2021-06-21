@@ -4,6 +4,8 @@ const sendError = require("../../util/error");
 module.exports = {
   name: "resume",
   aliases: ['res'],
+  description: "Resumes music a voice channel",
+  usage: '',
 
   run: async(client, message, args) => {
     const serverQueue = message.client.queue.get(message.guild.id);

@@ -4,6 +4,9 @@ const sendError = require("../../util/error")
 
 module.exports = {
     name: "setwelcome",
+    description: "Sets a welcome screen for a server",
+    usage: '<channel>',
+    aliases: ['setwelcome'],
 
     run: async (client, message, args) => {
         if(!message.member.hasPermission("ADMINISTRATOR")) return sendError(`<:xmark:848019597907329085> **You require \`ADMINSTRATOR\` permissions**`, message.channel);

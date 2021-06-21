@@ -1,7 +1,10 @@
 const { MessageEmbed } = require("discord.js");
 module.exports = {
     name: "coinflip",
-    description: "flips a coin!",
+    description: "Flips a coin!",
+    usage: '',
+    aliases: ['coinflip'],
+
     run: async(client, message, args) => {
         const choices= ["heads", "tails"];
         const choice = choices[Math.floor(Math.random() * choices.length)];

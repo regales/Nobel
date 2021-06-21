@@ -2,6 +2,8 @@ const Discord = require('discord.js')
 
 module.exports = {
     name: 'support',
+    aliases: ['support'],
+    description: 'Support is here for your needs',
     run: async(client, message) => {
     {
         const embed = new Discord.MessageEmbed()

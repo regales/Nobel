@@ -3,7 +3,9 @@ const { MessageEmbed, MessageMentions } = require('discord.js')
 const { execute } = require("../moderation/mjl")
 module.exports = {
     name: "deepfry",
-    description: "Deepfry someone!",
+    description: "Deepfry someone",
+    usage: '<user>',
+    aliases: ['deepfry'],
     run: async(client, message, args) => {
         const user = message.mentions.members.first() || message.member || message.guild.users.cache.get(u => u.id === args[0])
         const avatar = user.user.displayAvatarURL({ dynamic: false, size: 4096})

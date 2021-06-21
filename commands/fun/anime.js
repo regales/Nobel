@@ -7,6 +7,9 @@ const { replace } = require("ffmpeg-static");
 module.exports = {
   name: "anime",
   cooldown: 3,
+  aliases: ['anime'],
+  usage: '<name>',
+  description: 'Searches information of an anime series',
   /**
    * @param {Client} client
    * @param {Message} message

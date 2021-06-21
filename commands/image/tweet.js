@@ -2,7 +2,9 @@ const { MessageEmbed } = require('discord.js')
 const fetch = require('node-fetch')
 module.exports = {
     name: "tweet",
-    description: "tweet something on twitter!",
+    description: "Tweet something on twitter",
+    usage: '<text>',
+    aliases: ['tweet'],
     run: async (client, message, args) => {
         fetch(`https://nekobot.xyz/api/imagegen?type=tweet&username=${message.author.username}&text=${args.join(' ')}`)
             .then((res) => res.json())

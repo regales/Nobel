@@ -3,6 +3,9 @@ const Discord = require("discord.js")
 
 module.exports = {
   name: "spimg",
+  aliases: ['spotifyimage'],
+  usage: '<user>',
+  description: 'Gets an image of what a user is listening to on Spotify',
     
     run : async(client, message, args) => {
        if (message.author.bot) return

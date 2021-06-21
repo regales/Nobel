@@ -5,7 +5,9 @@ const jsonkill = require("../../assets/json/roleplay.json")
 
 module.exports = {
     name: "kill",
-    aliases: [" "],
+    aliases: ["korosu"],
+    description: "Kills someone",
+    usage: '<user>',
     run: async(client, message, args) => {
         let user = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
         if(!args[0]) return sendError(`<:xmark:848019597907329085> **Try run again the command but next time please specify a user!**` , message.channel);

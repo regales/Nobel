@@ -3,6 +3,9 @@ const sendError = require("../../util/error");
 
 module.exports = {
   name: "skipto",
+  aliases: ['jump'],
+  description: "Jumps to a certain music in the queue",
+  usage: '<queue number>',
 
   run: async(client, message, args) => {
     if (!args.length || isNaN(args[0]))

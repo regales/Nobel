@@ -3,6 +3,8 @@ const Discord = require('discord.js')
 module.exports = {
     name : 'valorant',
     aliases: ['valo' , 'agent' , 'valorant' ],
+	usage: '<agents>',
+	description: 'Gets info about Valorant agents',
     
 
 

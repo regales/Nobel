@@ -5,6 +5,9 @@ const got = require('got');
 
 module.exports = {
     name: "meme",
+    aliases: ['meme'],
+    usage: '',
+    description: 'Scavenges reddit for currently top memes',
     run: async(client, message) => {
     {
         const embed = new Discord.MessageEmbed()

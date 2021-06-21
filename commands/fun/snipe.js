@@ -2,6 +2,9 @@ const { Client, Message, MessageEmbed } = require('discord.js');
 const Discord = require('discord.js')
 module.exports = {
     name: 'snipe',
+    aliases: ['snipe'],
+    usage: '',
+    description: 'No deletes allowed sonny',
     /** 
      * @param {Client} client 
      * @param {Message} message 

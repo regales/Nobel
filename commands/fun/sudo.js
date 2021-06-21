@@ -2,6 +2,9 @@ const { Client, Message, MessageEmbed } = require('discord.js');
 
 module.exports = {
      name: 'sudo',
+     aliases: ['sudo'],
+     usage: '<user>',
+     description: 'Talk as whoever you want',
      
      /** 
       * @param {Client} client 

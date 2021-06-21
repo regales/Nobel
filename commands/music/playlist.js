@@ -9,6 +9,8 @@ const fs = require("fs");
 module.exports = {
     name: "playlist",
     aliases: ['pl'],
+    description: "Plays a playlist of songs in a voice channel",
+    usage: '<url>',
 
     run: async(client, message, args) => {
         const channel = message.member.voice.channel;

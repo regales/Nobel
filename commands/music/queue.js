@@ -4,6 +4,8 @@ const sendError = require("../../util/error");
 module.exports = {
   name: "queue",
   aliases: ['q'],
+  description: "Shows queued up songs in a server",
+  usage: '',
 
   run: async(client, message, args) => {
  

@@ -34,6 +34,10 @@ const answers = [
 // export module
 module.exports = {
     name: "8ball",
+    aliases: ['8b'], 
+    category: 'fun', 
+    usage: '<text> ?', 
+    description: 'Gives you an answer for those essential questions',
 
     run: async (client, message, args) => {
 //-----^ for new users please learn basic js

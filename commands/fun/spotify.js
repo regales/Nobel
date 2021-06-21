@@ -2,6 +2,9 @@ const { MessageEmbed } = require('discord.js');
 
 module.exports = {
     name: "spotify",
+    aliases: ['sp'],
+    usage: '<user>',
+    description: 'Shows what a user is listening to on Spotify',
       
     run: async (client, message, args) => {
 

@@ -1,6 +1,9 @@
 const { MessageEmbed } = require('discord.js')
 module.exports = {
     name : 'ping',
+    description: "Displays Latency and Ping",
+    usage: '',
+    aliases: ['ping'],
     
 
 

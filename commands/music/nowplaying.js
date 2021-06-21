@@ -4,6 +4,8 @@ const sendError = require("../../util/error")
 module.exports = {
   name: "nowplaying",
   aliases: ['np'] ,
+  description: "Gets information of a currently playing song",
+  usage: '',
 
   run: async(client, message, args) => {
     const serverQueue = message.client.queue.get(message.guild.id);

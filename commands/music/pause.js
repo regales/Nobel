@@ -4,6 +4,8 @@ const sendError = require("../../util/error");
 module.exports = {
   name: "pause",
   aliases: ['ps'],
+  description: "Pauses the current playing song",
+  usage: '',
 
   run: async(client, message, args) => {
     const serverQueue = message.client.queue.get(message.guild.id);

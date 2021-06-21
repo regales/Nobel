@@ -2,6 +2,9 @@ const Discord = require("discord.js")
 
 module.exports = {
   name: "worldclock",
+  aliases: ['clock'],
+  usage: '',
+  description: 'Time all around the world',
   
 
     run: async(client, message, args) => {

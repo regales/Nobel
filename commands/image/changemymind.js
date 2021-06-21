@@ -4,10 +4,9 @@ const canvacord = require("canvacord")
 
 module.exports = {
  name: "changemymind",
- aliases: [],
+ aliases: ['cmm'],
  description: "Try to change my mind!",
- category: "Image",
- usage: "changemymind (text)",
+ usage: "<text>",
  run: async (client, message, args) => {
   try {
    if (!args[0]) {

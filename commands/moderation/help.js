@@ -1,73 +1,360 @@
-const recon = require('reconlx');
-const { MessageEmbed } = require("discord.js");
-const ReactionPages = recon.ReactionPages;
-const Discord = require("discord.js");
-const pagination = require('discord.js-pagination')
+const {
+    MessageEmbed,
+    Message,
+    Client
+} = require("discord.js");
+const {
+    readdirSync
+} = require("fs");
+
+let color = "PURPLE"
 
 module.exports = {
     name: "help",
-    aliases: [ 'h' ],
-    cooldown: 10,
-    run: async(client, message, args) => {
-        const page1 = new Discord.MessageEmbed()
-            .setAuthor(
-               "Nobel Help",
-               "https://i.imgur.com/o3xDQbB.jpeg")
-            .setColor('PURPLE')
-            
-            .setDescription(`
-            <a:playing:799562690129035294> **Music Commands [18]**
+    aliases: ['h'],
+    description: "Shows all available bot commands.",
+    /**
+     * 
+     * @param {Client} client 
+     * @param {Message} message 
+     * @param {String} args 
+     * @returns 
+     */
+    run: async (client, message, args) => {
+        const prefix = require("../../models/prefix");
+        const data = await prefix.findOne({
+            GuildID: message.guild.id
+        });
 
-            \n\`play\` - Plays a song from Youtube\n\`playlist\` - Plays a playlist for Youtube\n\`pause\` - Pauses music\n\`resume\` - Resumes music\n\`np\` - Gets now playing song's info\n\`skip\` - Skips to next song\n\`skipto\` - Skips to requested song number\n\`remove\` - Remove songs from the queue\n\`stop\` - Stops playing music\n\`volume\` - Adjusts volume of the music\n\`queue\` - To see the full song queue\n\`join\` - Joins a voice channel 24/7\n\`leave\` - Leaves a voice channel\n\`loop\` - Loops The queue\n\`shuffle\` - Shuffles the queue\n\`bassboost\` - Cheeki Breeki V Damke\n\`lyrics\` - Bee boo la lu\n\`ytt\` - Watch Youtube on Discord yo
-            
-            \n<:d6:843041076306640896> **Fun Commands [22]**
+        if(data) {
+            const prefix = data.Prefix;
 
-            \n\`anime\` - Searches information of an anime series\n\`valorant\` - Gets info about Valorant agents\n\`snake\` - Classic game from Nokia\n\`snipe\` - I saw that and I have proof\n\`editsnipe\` - No edits allowed sonny\n\`rps\` - Plays a game of rock, paper and scissors\n\`reverse\` - Reverses a text\n\`8ball\` - Gives you an answer for those essential questions\n\`text\` - Rewrites a text in Ascii art\n\`tictactoe\` - Plays Tic Tac Toe with another user\n\`meme\` - Scavenges reddit for currently top memes\n\`owofy\` - OwO whowts twhis?\n\`trivia\` - Oh yeah, it's big brain time\n\`spotify\` - Displays what a user is currently listening to on Spotify\n\`spimg\` - Displays a Spotify card of what a user is listening to\n\`wiki\` - Searches wiki for top tier answers\n\`urban\` - Searches meaning of words Boomers won't understand\n\`weather\` - Weather for mentioned cities (not countries)\n\`worldclock\` - Time all around the world\n\`translate\` - Translates a text\n\`github\` - Searches a profile on Github\n\`sudo\` - Not me!`)
-    
-            .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
-            .setTimestamp()
+            if (!args[0]) {
+                let categories = [];
+
+
+                //categories to ignore
+                let ignored = [
+                    "owner",
+                    "nsfw"
+                ];
+
+                const emo = {
+                    fun: "<:d6:843041076306640896>",
+                    moderation: "<:settings:843041534609850370>",
+                    music: "<a:799562690129035294:848019748003643392>",
+                    roleplay: "<:DPSRole:843830825044803625>",
+                    image: "<:blurple_image:851465590744940594>",
+                    nsfw: "<a:nsfw:847155010701492265>"
+
+                }
+            
+
+                readdirSync("./commands").forEach((dir) => {
+                    if (ignored.includes(dir.toLowerCase())) return;
+                    const name = `${emo[dir.toLowerCase()]} ${dir.charAt(0).toUpperCase() + dir.substr(1).toLowerCase()}`
+                    let cats = new Object();
+
+                    cats = {
+                        name: name,
+                        value: `\`${prefix}help ${dir.toLowerCase()}\``,
+                        inline: true
+                    }
+
+
+                    categories.push(cats);
+                    //cots.push(dir.toLowerCase());
+                });
+
+                const embed = new MessageEmbed()
+                    .setAuthor(
+                        "Nobel Help",
+                        "https://i.imgur.com/o3xDQbB.jpeg")
+                    .setDescription(
+                        `\`\`\`js\nPrefix: ${prefix}\nParameters: <> = required , [] = optional\`\`\`\n[Invite me](https://nobel.ga)\n\nTo check out a category, use command \`${prefix}help [category]\` \n\n **Categories**`
+                    )
+                    .addFields(categories)
+                    .setFooter(
+                        `Requested by ${message.author.tag}`,
+                        message.author.displayAvatarURL({
+                            dynamic: true
+                        })
+                    )
+                    .setTimestamp()
+                    .setThumbnail(client.user.displayAvatarURL({
+                        dynamic: true
+                    }))
+                    .setColor(color);
+
+                return message.lineReply(embed);
+            } else {
+                let cots = [];
+                let catts = [];
+
+                readdirSync("./commands/").forEach((dir) => {
+                    if (dir.toLowerCase() !== args[0].toLowerCase()) return;
+                    const commands = readdirSync(`./commands/${dir}/`).filter((file) =>
+                        file.endsWith(".js")
+                    );
+
+
+                    const cmds = commands.map((command) => { 
+                        let file = require(`../../commands/${dir}/${command}`);
+
+                        if (!file.name) return "No command name.";
+
+                        let name = file.name.replace(".js", "");
+
+                        let des = client.commands.get(name).description;
+
+                        let obj = {
+                            cname: `\`${name}\``,
+                            des
+                        }
+
+                        return obj;
+                    });
+
+                    let dota = new Object();
+
+                    cmds.map(co => {
+                        dota = {
+                            name: `${cmds.length === 0 ? "In progress." : co.cname}`,
+                            value: co.des ? co.des : 'No Description',
+                            inline: true,
+                        }
+                        catts.push(dota)
+                    });
+
+                    cots.push(dir.toLowerCase());
+                });
+
+                console.log(cots);
+
+                const command =
+                    client.commands.get(args[0].toLowerCase()) ||
+                    client.commands.find(
+                        (c) => c.aliases && c.aliases.includes(args[0].toLowerCase())
+                    );
+
+                if (cots.includes(args[0].toLowerCase())) {
+                    const combed = new MessageEmbed()
+                        .setTitle(`${args[0].charAt(0).toUpperCase() + args[0].slice(1)} Commands`)
+                        .setDescription(`Use \`${prefix}help\` followed by a command name to get more information on a command.\nFor example: \`${prefix}help ping\`.\n\n`)
+                        .addFields(catts)
+                        .setColor(color)
+
+                    return message.lineReply(combed)
+                }
+
+                if (!command) {
+                    const embed = new MessageEmbed()
+                        .setDescription(`<:xmark:848019597907329085> **Use \`${prefix}help\` for all of my commands!**`)
+                        .setColor("RED");
+                    return message.lineReply(embed);
+                }
+
+                const embed = new MessageEmbed()
+                    .setAuthor(
+                    "Command Details",
+                    "https://i.imgur.com/o3xDQbB.jpeg")
+                    .addField(
+                        "Command:",
+                        command.name ? `\`${command.name}\`` : "No name for this command."
+                    )
+                    .addField(
+                        "Aliases:",
+                        command.aliases ?
+                        `\`${command.aliases.join("` `")}\`` :
+                        "No aliases for this command."
+                    )
+                    .addField(
+                        "Usage:",
+                        command.usage ?
+                        `\`${prefix}${command.name} ${command.usage}\`` :
+                        `\`${prefix}${command.name}\``
+                    )
+                    .addField(
+                        "Command Description:",
+                        command.description ?
+                        command.description :
+                        "No description for this command."
+                    )
+                    .setFooter(
+                        `Requested by ${message.author.tag}`,
+                        message.author.displayAvatarURL({
+                            dynamic: true
+                        })
+                    )
+                    .setTimestamp()
+                    .setColor(color);
+                return message.lineReply(embed);
+            }
         
-        const page2 = new Discord.MessageEmbed()
-            .setColor('PURPLE')
-            .setAuthor(
-                "Nobel Help",
-                "https://i.imgur.com/o3xDQbB.jpeg")
-            
-            .setDescription(`
-
-            \n<:DPSRole:843830825044803625> **Roleplay Commands [14]**
-
-            \n\`sad\` - Don't be\n\`smug\` - Nice grin bro\n\`shy\` - Introverts smh\n\`happy\` - Someone's over cloud nine\n\`hug\` - Huggies for everyone\n\`shoot\` - Bam, you ded\n\`lick\` - Kinky much?\n\`cuddle\` - Extra touchy than hug\n\`tickle\` - Please hahah stwap\n\`pat\` - Ara ara\n\`kiss\` - Ranging from french to sweet ones\n\`slap\` - Ow, that hurts\n\`dance\` - Bille Jean is not my lover\n\`laugh\` - Lolmao Rofl
-
-            \n<:blurple_image:851465590744940594>  **Image Commands [6]**
-
-            \n\`maps\` - Geography time\n\`changemymind\` - Try me\n\`drake\` - Hotline bling\n\`tweet\` - Tweet something on twitter\n\`avatar\` - Displays someone's avatar\n\`deepfry\` - Deepfries a user's profile picture
-            
-            `)
-            .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
-            .setTimestamp()
         
-        const page3 = new Discord.MessageEmbed()
-            .setColor('PURPLE')
-            .setAuthor(
-                "Nobel Help",
-                "https://i.imgur.com/o3xDQbB.jpeg")
+        }else if (!data) {
             
-            .setDescription(`
+            const prefix = "*";
 
-            \n<:settings:843041534609850370> **Moderation Commands [11]**
+            if (!args[0]) {
+                let categories = [];
 
-            \n\`setwelcome\` - Sets mentioned server to welcome new members\n\`setprefix\` - Sets typed prefix as custom prefix for server\n\`ping\` - Returns latency and API ping\n\`help\` - Displays all commands for Nobel\n\`mjl\` - Member Joined LeaderBoard\n\`userinfo\` - Information regarding a user\n\`serverinfo\` - Information regarding current server\n\`stats\` - Information regarding Nobel\n\`support\` - Link for inviting Nobel or support server\n\`invite\` - Invite Nobel to your server\n\`globalchat\` - Help on how to set up Nobel's global chat`)
-            .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
-            .setTimestamp()
-        const pages = [page1, page2, page3];
-        const emojis = ['◀', '▶'];
-        const timeout = '60000'
 
-        pagination(message, pages, emojis, timeout)
-    
-        message.react('<a:water_green_Okay:825929495164223528>')
-    }
-    
-}
+                //categories to ignore
+                let ignored = [
+                    "owner",
+                    "nsfw"
+                ];
 
+                const emo = {
+                    fun: "<:d6:843041076306640896>",
+                    moderation: "<:settings:843041534609850370>",
+                    music: "<a:799562690129035294:848019748003643392>",
+                    roleplay: "<:DPSRole:843830825044803625>",
+                    image: "<:blurple_image:851465590744940594>",
+                    nsfw: "<a:nsfw:847155010701492265>"
+
+                }
+
+                readdirSync("./commands").forEach((dir) => {
+                    if (ignored.includes(dir.toLowerCase())) return;
+                    const name = `${emo[dir.toLowerCase()]} ${dir.charAt(0).toUpperCase() + dir.substr(1).toLowerCase()}`
+                    let cats = new Object();
+
+                    cats = {
+                        name: name,
+                        value: `\`${prefix}help ${dir.toLowerCase()}\``,
+                        inline: true
+                    }
+
+
+                    categories.push(cats);
+                    //cots.push(dir.toLowerCase());
+                });
+
+                const embed = new MessageEmbed()
+                    .setTitle("Help Menu:")
+                    .setDescription(
+                        `\`\`\`js\nPrefix: ${prefix}\nParameters: <> = required, [] = optional\`\`\`\n[Invite me](https://nobel.ga)\n\nTo check out a category, use command \`${prefix}help [category]\`\n\n **Categories**`
+                    )
+                    .addFields(categories)
+                    .setFooter(
+                        `Requested by ${message.author.tag}`,
+                        message.author.displayAvatarURL({
+                            dynamic: true
+                        })
+                    )
+                    .setTimestamp()
+                    .setThumbnail(client.user.displayAvatarURL({
+                        dynamic: true
+                    }))
+                    .setColor(color);
+
+                return message.lineReply(embed);
+            } else {
+                let cots = [];
+                let catts = [];
+
+                readdirSync("./commands/").forEach((dir) => {
+                    if (dir.toLowerCase() !== args[0].toLowerCase()) return;
+                    const commands = readdirSync(`./commands/${dir}/`).filter((file) =>
+                        file.endsWith(".js")
+                    );
+
+
+                    const cmds = commands.map((command) => { 
+                        let file = require(`../../commands/${dir}/${command}`);
+
+                        if (!file.name) return "No command name.";
+
+                        let name = file.name.replace(".js", "");
+
+                        let des = client.commands.get(name).description;
+
+                        let obj = {
+                            cname: `\`${name}\``,
+                            des
+                        }
+
+                        return obj;
+                    });
+
+                    let dota = new Object();
+
+                    cmds.map(co => {
+                        dota = {
+                            name: `${cmds.length === 0 ? "In progress." : co.cname}`,
+                            value: co.des ? co.des : 'No Description',
+                            inline: true,
+                        }
+                        catts.push(dota)
+                    });
+
+                    cots.push(dir.toLowerCase());
+                });
+
+                console.log(cots);
+
+                const command =
+                    client.commands.get(args[0].toLowerCase()) ||
+                    client.commands.find(
+                        (c) => c.aliases && c.aliases.includes(args[0].toLowerCase())
+                    );
+
+                if (cots.includes(args[0].toLowerCase())) {
+                    const combed = new MessageEmbed()
+                        .setTitle(`${args[0].charAt(0).toUpperCase() + args[0].slice(1)} Commands`)
+                        .setDescription(`Use \`${prefix}help\` followed by a command name to get more information on a command.\nFor example: \`${prefix}help ping\`.\n\n`)
+                        .addFields(catts)
+                        .setColor(color)
+
+                    return message.lineReply(combed)
+                }
+
+                if (!command) {
+                    const embed = new MessageEmbed()
+                        .setDescription(`<:xmark:848019597907329085> **Use \`${prefix}help\` for all of my commands!**`)
+                        .setColor("RED");
+                    return message.lineReply(embed);
+                }
+
+                const embed = new MessageEmbed()
+                    .setAuthor(
+                    "Command Details",
+                    "https://i.imgur.com/o3xDQbB.jpeg")
+                    .addField(
+                        "Command:",
+                        command.name ? `\`${command.name}\`` : "No name for this command."
+                    )
+                    .addField(
+                        "Aliases:",
+                        command.aliases ?
+                        `\`${command.aliases.join("` `")}\`` :
+                        "No aliases for this command."
+                    )
+                    .addField(
+                        "Usage:",
+                        command.usage ?
+                        `\`${prefix}${command.name} ${command.usage}\`` :
+                        `\`${prefix}${command.name}\``
+                    )
+                    .addField(
+                        "Command Description:",
+                        command.description ?
+                        command.description :
+                        "No description for this command."
+                    )
+                    .setFooter(
+                        `Requested by ${message.author.tag}`,
+                        message.author.displayAvatarURL({
+                            dynamic: true
+                        })
+                    )
+                    .setTimestamp()
+                    .setColor(color);
+                return message.lineReply(embed);
+            }
+        }
+        
+    },
+};

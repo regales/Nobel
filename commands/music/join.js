@@ -3,6 +3,9 @@ const sendError = require("../../util/error");
 module.exports = {
   name: "join",
   aliases: ['jn'],
+  description: "Joins a voice channel",
+  usage: '',
+    
     
     run: async (client, message, args) => {
       

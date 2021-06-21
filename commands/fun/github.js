@@ -6,10 +6,8 @@ const fetch = require("node-fetch")
 module.exports = {
     name: "github",
     aliases: ["git"],
-    category: "misc",
-    usage: "Github <Name>",
-    exmaple: "Github Emoji",
-    description: `Github User Account Information!`,
+    usage: "<name>",
+    description: `Github user account information!`,
     run: async (client, message, args) => {
 
        try {

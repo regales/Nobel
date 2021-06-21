@@ -4,6 +4,8 @@ const sendError = require("../../util/error");
 module.exports = {
     name: "leave",
     aliases: ['lv'],
+    description: "Leaves a voice channel",
+    usage: '',
 
     run: async(client, message, args) => {
         let channel = message.member.voice.channel;

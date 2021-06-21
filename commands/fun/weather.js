@@ -4,6 +4,9 @@ const weather = require("weather-js");
 
 module.exports = {
     name: "weather",
+    aliases: ['weather'],
+    usage: '<city name>',
+    description: 'Weather for mentioned cities',
     run: async(client, message, args) => {
     
         weather.find({search: args.join(" "), degreeType: 'C'}, function (error, result){

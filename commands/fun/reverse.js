@@ -1,6 +1,8 @@
 module.exports = {
     name: "reverse",
     description: "Reverses the given text",
+    aliases: ['reverse'],
+    usage: '<text>',
     run: async(client, message, args) => {
         const text = args.join(" ")
         if(!text) return message.reply("<:xmark:848019597907329085> Please give something to reverse!")

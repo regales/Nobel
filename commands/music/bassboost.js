@@ -4,6 +4,8 @@ const sendError = require("../../util/error");
 module.exports = {
   name: "bassboost",
   aliases: ['bb'],
+  usage: '<number>',
+  description: 'Cheeky Breeky Uv Damke',
     
   
 

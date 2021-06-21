@@ -2,6 +2,9 @@ const Discord = require('discord.js')
 
 module.exports = {
     name: 'invite',
+    description: "Invite Nobel to your server",
+    usage: '',
+    aliases: ['invite'],
     run: async(client, message) => {
     {
         const embed = new Discord.MessageEmbed()

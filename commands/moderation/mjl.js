@@ -5,6 +5,9 @@ const { client, Message, MessageEmbed } = require('discord.js');
 
 module.exports = {
     name: 'mjl',
+    description: "Member Join LeaderBoard",
+    usage: '',
+    aliases: ['memberjoinleaderboard'],
     run: async(client, message, args) => {
         const members = message.guild.members.cache
             .filter((m) => !m.user.bot)

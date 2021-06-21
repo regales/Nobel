@@ -2,6 +2,9 @@ const Discord = require('discord.js');
 const fetch = require('node-fetch')
 module.exports = {
 name: 'drake',
+description: "Hotline Bling",
+usage: '<text1> , <text2>',
+aliases: ['drake'],
 
     run: async (client, message, args) => {
 

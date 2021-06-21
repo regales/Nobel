@@ -2,6 +2,9 @@ const Discord = require('discord.js')
 
 module.exports = {
     name: "globalchat",
+    description: "Set up Nobel Global Chat",
+    usage: '',
+    aliases: ['global'],
     run: async(client, message) => {
     {
         const embed = new Discord.MessageEmbed()

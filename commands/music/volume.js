@@ -4,6 +4,8 @@ const sendError = require("../../util/error");
 module.exports = {
   name: "volume",
   aliases: ['vol'],
+  description: "Adjusts volume a voice channel",
+  usage: '<number>',
 
   run: async(client, message, args) => {
     const channel = message.member.voice.channel;

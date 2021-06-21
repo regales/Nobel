@@ -2,6 +2,9 @@ const { Client, Message, MessageEmbed } = require('discord.js');
 const Discord = require('discord.js')
 module.exports = {
     name: 'editsnipe',
+    aliases: ['es'],
+    description: 'No edits allowed sonny',
+    usage: '',
    
     run: async (client, message, args) => {
         const msg = client.editedMessage.get(message.channel.id)

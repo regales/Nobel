@@ -24,7 +24,7 @@ module.exports = {
         const prefix = data.Prefix;
         try {
           const query = args.slice(1).join(" ");
-        if (!query) return message.channel.send(`<:xmark:848019597907329085> Please type a valid text to translate.\n\`\`Refer To ${prefix}helptranslate\`\``)
+        if (!query) return message.channel.send(`<:xmark:848019597907329085> Please type a valid text to translate.\n\`\`Refer To ${prefix}languages\`\``)
         const arg = args[0]
 
         const translated = await translate(query, {to: `${arg}`});
@@ -47,7 +47,7 @@ module.exports = {
         const prefix = "*";
         try {
           const query = args.slice(1).join(" ");
-        if (!query) return message.channel.send(`<:xmark:848019597907329085> Please type a valid text to translate.\n\`\`Refer To ${prefix}helptranslate\`\``)
+        if (!query) return message.channel.send(`<:xmark:848019597907329085> Please type a valid text to translate.\n\`\`Refer To ${prefix}languages\`\``)
         const arg = args[0]
 
         const translated = await translate(query, {to: `${arg}`});

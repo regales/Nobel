@@ -31,7 +31,7 @@ module.exports = {
                 "https://i.imgur.com/o3xDQbB.jpeg")
             .setTitle('<:tr:819825362665078784> **HELP PAGE FOR TRANSLATIONS**')
             .setDescription(`
-            ***Use***\`${fucking}translate <language> <text>\`
+            ***Use***\`${fucking} translate <language> <text>\`
 
             \`af\` - Afrikaans
             \`sq\` - Albanian
@@ -76,7 +76,7 @@ module.exports = {
                     "https://i.imgur.com/o3xDQbB.jpeg")
                 .setTitle('<:tr:819825362665078784> **HELP PAGE FOR TRANSLATIONS**')
                 .setDescription(`
-                ***Use***\`${fucking}translate <language> <text>\`
+                ***Use***\`${fucking} translate <language> <text>\`
 
                 \`gl\` - Galician
                 \`ka\` - Georgian
@@ -113,7 +113,7 @@ module.exports = {
                     "https://i.imgur.com/o3xDQbB.jpeg")
                 .setTitle('<:tr:819825362665078784> **HELP PAGE FOR TRANSLATIONS**')
                 .setDescription(`
-                ***Use***\`${fucking}translate <language> <text>\`
+                ***Use***\`${fucking} translate <language> <text>\`
 
                 \`ky\` - Kyrgyz
                 \`lo\` - Lao
@@ -156,7 +156,7 @@ module.exports = {
                     "https://i.imgur.com/o3xDQbB.jpeg")
                 .setTitle('<:tr:819825362665078784> **HELP PAGE FOR TRANSLATIONS**')
                 .setDescription(`
-                ***Use***\`${fucking}translate <language> <text>\`
+                ***Use***\`${fucking} translate <language> <text>\`
 
                 \`si\` - Sinhala
                 \`sk\` - Slovak
@@ -201,7 +201,7 @@ module.exports = {
                 "https://i.imgur.com/o3xDQbB.jpeg")
             .setTitle('<:tr:819825362665078784> **HELP PAGE FOR TRANSLATIONS**')
             .setDescription(`
-            ***Use***\`${prefix}translate <language> <text>\`
+            ***Use***\`${prefix} translate <language> <text>\`
 
             \`af\` - Afrikaans
             \`sq\` - Albanian
@@ -246,7 +246,7 @@ module.exports = {
                     "https://i.imgur.com/o3xDQbB.jpeg")
                 .setTitle('<:tr:819825362665078784> **HELP PAGE FOR TRANSLATIONS**')
                 .setDescription(`
-                ***Use***\`${prefix}translate <language> <text>\`
+                ***Use***\`${prefix} translate <language> <text>\`
 
                 \`gl\` - Galician
                 \`ka\` - Georgian
@@ -283,7 +283,7 @@ module.exports = {
                     "https://i.imgur.com/o3xDQbB.jpeg")
                 .setTitle('<:tr:819825362665078784> **HELP PAGE FOR TRANSLATIONS**')
                 .setDescription(`
-                ***Use***\`${prefix}translate <language> <text>\`
+                ***Use***\`${prefix} translate <language> <text>\`
 
                 \`ky\` - Kyrgyz
                 \`lo\` - Lao
@@ -326,7 +326,7 @@ module.exports = {
                     "https://i.imgur.com/o3xDQbB.jpeg")
                 .setTitle('<:tr:819825362665078784> **HELP PAGE FOR TRANSLATIONS**')
                 .setDescription(`
-                ***Use***\`${prefix}translate <language> <text>\`
+                ***Use***\`${prefix} translate <language> <text>\`
 
                 \`si\` - Sinhala
                 \`sk\` - Slovak

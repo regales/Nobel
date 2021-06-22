@@ -5,7 +5,7 @@ module.exports = {
     description: 'Haha, simp',
     usage: '<user>',
     aliases: ['simp'],
-run : async (client, message, args, canvas) => {
+run : async (client, message, args) => {
     const member = message.mentions.members.first() || message.member;
     if(!member)return message.channel.send('<:xmark:848019597907329085> **Please mention a user first!**')
     const avatar = await Canvas.loadImage(member.user.displayAvatarURL({ format: 'jpg' }));

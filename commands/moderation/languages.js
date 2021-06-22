@@ -12,6 +12,7 @@ module.exports = {
     cooldown: 10,
     
     run: async(client, message, args) => {
+        const prefix = require("../../models/prefix");
         const data = await prefix.findOne({
             GuildID: message.guild.id
         });
@@ -20,16 +21,17 @@ module.exports = {
       
     
         if(data) {
-            const prefix = data.Prefix;
-
+            
+            const fucking = data.Prefix
             const embed1 = new Discord.MessageEmbed()
+            
             .setColor('RANDOM')
             .setAuthor(
                 "ռօɮɛʟ",
                 "https://i.imgur.com/o3xDQbB.jpeg")
             .setTitle('<:tr:819825362665078784> **HELP PAGE FOR TRANSLATIONS**')
             .setDescription(`
-            ***Use***\`${prefix}translate <language> <text>\`
+            ***Use***\`${fucking}translate <language> <text>\`
 
             \`af\` - Afrikaans
             \`sq\` - Albanian
@@ -74,7 +76,7 @@ module.exports = {
                     "https://i.imgur.com/o3xDQbB.jpeg")
                 .setTitle('<:tr:819825362665078784> **HELP PAGE FOR TRANSLATIONS**')
                 .setDescription(`
-                ***Use***\`${prefix}translate <language> <text>\`
+                ***Use***\`${fucking}translate <language> <text>\`
 
                 \`gl\` - Galician
                 \`ka\` - Georgian
@@ -111,7 +113,7 @@ module.exports = {
                     "https://i.imgur.com/o3xDQbB.jpeg")
                 .setTitle('<:tr:819825362665078784> **HELP PAGE FOR TRANSLATIONS**')
                 .setDescription(`
-                ***Use***\`${prefix}translate <language> <text>\`
+                ***Use***\`${fucking}translate <language> <text>\`
 
                 \`ky\` - Kyrgyz
                 \`lo\` - Lao
@@ -154,7 +156,7 @@ module.exports = {
                     "https://i.imgur.com/o3xDQbB.jpeg")
                 .setTitle('<:tr:819825362665078784> **HELP PAGE FOR TRANSLATIONS**')
                 .setDescription(`
-                ***Use***\`${prefix}translate <language> <text>\`
+                ***Use***\`${fucking}translate <language> <text>\`
 
                 \`si\` - Sinhala
                 \`sk\` - Slovak

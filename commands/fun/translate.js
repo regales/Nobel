@@ -12,6 +12,7 @@ module.exports = {
    */
 
    run: async(client, message, args) => {
+        const prefix = require("../../models/prefix");
         const data = await prefix.findOne({
           GuildID: message.guild.id
       });

@@ -119,10 +119,10 @@ module.exports = {
             const serverQueue = message.client.queue.get(message.guild.id);
             if (!song) {
                 sendError(
-                    "<:xmark:848019597907329085> **Leaving The Voice Channel Because I Think There Are No Songs In The Queue.**",
+                    "<:xmark:848019597907329085> **Playlist Of Songs Has Ended**",
                     message.channel
                 );
-                message.guild.me.voice.channel.leave(); //If you want your bot stay in vc 24/7 remove this line :D
+                //message.guild.me.voice.channel.leave(); //If you want your bot stay in vc 24/7 remove this line :D
                 message.client.queue.delete(message.guild.id);
                 return;
             }

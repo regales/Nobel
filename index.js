@@ -12,6 +12,7 @@ const got = require('got');
 const config = require("./config.json");
 const prefix = require("./models/prefix");
 const { DiscordTogether } = require('discord-together');
+const no = config.no
 client.discordTogether = new DiscordTogether(client);
 require('discord-buttons')(client)
 client.config = config;

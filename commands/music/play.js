@@ -126,7 +126,6 @@ module.exports = {
                 .setDescription('[©️ YouTube](https://support.google.com/youtube/topic/2676339?hl=en&ref_topic=6151248)')
                 .setThumbnail('https://media.discordapp.net/attachments/778283828099809283/822353825624883200/unknown_1.png')
                 .setColor("PURPLE")
-                .setImage(song.img)
                 .addField("Song Name", song.title, true)
                 .addField("Commanded By", `\`\`\`\n${song.req.username}\n\`\`\``, true)
                 .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))

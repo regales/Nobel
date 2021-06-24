@@ -23,6 +23,8 @@ module.exports = {
               reason: `${message.author.username} used the sudo command!`
           })
 
+          message.delete({timeout: 1000})
+
           let webhooks = await message.channel.fetchWebhooks();
           let webhook = webhooks.first();
 

@@ -19,7 +19,7 @@ module.exports = {
         `)
         
         .setFooter(`Problems? Please Dm Me At Regales#0320`)
-        .setColor('RANDOM')
+        .setColor('#5539cc')
         
         message.reply(embed); 
     } 

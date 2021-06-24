@@ -107,7 +107,7 @@ module.exports = {
                 { name: "**Highest Role:**", value: `${member.roles.highest.id === message.guild.id ? "None" : member.roles.highest}`, inline: true },
                 { name: "**Roles:**", value: `${roles}` }
             )
-            .setColor(`RANDOM`);
+            .setColor(`#5539cc`);
         message.channel.send(embed);
     }
  

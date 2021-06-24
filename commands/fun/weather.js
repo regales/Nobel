@@ -23,7 +23,7 @@ module.exports = {
         .setDescription(`**${current.skytext}**`)
         .setAuthor(`Weather forecast for ${location.name}`)
         .setThumbnail(current.imageUrl)
-        .setColor('RANDOM')
+        .setColor('#5539cc')
         .addField('**Timezone**', `UTC${location.timezone}`, true)
         .addField('**Degree Type**', 'Celsius', true)
         .addField('**Temperature**', `${current.temperature}°`, true)

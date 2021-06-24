@@ -39,7 +39,7 @@ module.exports = {
 
                 const embed = new MessageEmbed()
                     .setAuthor('Spotify Track Info', 'https://cdn.discordapp.com/emojis/408668371039682560.png')
-                    .setColor("PURPLE")
+                    .setColor("#5539cc")
                     .setThumbnail(trackIMG)
                     .addField('Song Name', trackName, true)
                     .addField('Album', trackAlbum, true)

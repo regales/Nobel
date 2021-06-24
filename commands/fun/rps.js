@@ -5,50 +5,47 @@ module.exports = {
 	aliases: ['rps'],
 	usage: '',
 	run: async(client, message, args) => {
-		let embed = new discord.MessageEmbed()
-		.setTitle("ROCK PAPER SCISSORS ")
-		.setAuthor(
-            "ռօɮɛʟ",
-            "https://i.imgur.com/o3xDQbB.jpeg")
-		.setDescription("**React** **[**🗻 **|** ✂ **|** 📰 **]** **to play**!")
+		let embed = new Discord.MessageEmbed()
+        .setTitle("Rock Paper Scissors")
         .setColor("RANDOM")
-		.setTimestamp()
-		let msg = await message.reply(embed)
-		await msg.react("🗻")
-		await msg.react("✂")
-		await msg.react("📰")
+        .setDescription("React to play!")
+        .setFooter(`${message.author.tag}`, message.author.displayAvatarURL({ dynamic: true }));
+        let msg = await message.channel.send(embed)
+        await msg.react("🗻")
+        await msg.react("✂")
+        await msg.react("📰")
 
-		const filter = (reaction, user) => {
+        const filter = (reaction, user) => {
             return ['🗻', '✂', '📰'].includes(reaction.emoji.name) && user.id === message.author.id;
         }
 
         const choices = ['🗻', '✂', '📰']
         const me = choices[Math.floor(Math.random() * choices.length)]
-        msg.awaitReactions(filter, {max:1, time: 60000, error: ["time"]}).then(
-        	async(collected) => {
-        		const reaction = collected.first()
-        		let result = new discord.MessageEmbed()
-        		.setTitle("RESULT")
-				.setAuthor(
-					"ռօɮɛʟ",
-					"https://i.imgur.com/o3xDQbB.jpeg")
-        		.addField("Your choice", `${reaction.emoji.name}`)
-        		.addField("My choice", `${me}`)
-				.setColor("RANDOM")
-				
-			await msg.edit(result)
-        		if ((me === "🗻" && reaction.emoji.name === "✂") ||
-                (me === "📰" && reaction.emoji.name === "🗻") ||
-                (me === "✂" && reaction.emoji.name === "📰")) {
-                    message.reply("You lost!");
-            } else if (me === reaction.emoji.name) {
-                return message.reply("It's a tie!");
-            } else {
-                return message.reply("You won!");
-            }
-        })
-        .catch(collected => {
-                message.reply('<:xmark:848019597907329085> Process has been cancelled since you did not respond in time!');
+        msg.awaitReactions(filter, {max: 1, time: 60000, error: ["time"]}).then(
+            async(collected) => {
+                const reaction = collected.first()
+                let result = new Discord.MessageEmbed()
+                .setTitle("Rock Paper Scissors Result")
+                .addField("Your Choice", `${reaction.emoji.name}`)
+                .addField("Bots choice", `${me}`)
+                .setFooter(`${message.author.tag}`, message.author.displayAvatarURL({ dynamic: true }));
+                await msg.edit(result)
+
+                if((me === "🗻" && reaction.emoji.name === "✂") ||
+                (me === "✂" && reaction.emoji.name === "📰") ||
+                (me === "📰" && reaction.emoji.name === "🗻")) {
+                    message.reply("You Lost!");
+                } else if (me === reaction.emoji.name) {
+                    return message.reply("Its a tie!");
+                } else {
+                    return message.reply("You Won!");
+                }
             })
-}
+            .catch(collected => {
+                message.reply('<:xmark:848019597907329085> Process has been canceled, you failed to respond in time!').then(m => m.delete({ timeout: 100000 }))
+                msg.delete()
+            }) 
+
+    }
+
 }

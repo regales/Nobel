@@ -43,7 +43,7 @@ module.exports = {
       .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
       .setTimestamp()
 
-      .setColor('RANDOM');
+      .setColor('#5539cc');
     message.channel.send(worldClock);
   }
 }

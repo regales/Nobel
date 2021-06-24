@@ -7,7 +7,7 @@ const { MessageEmbed } = require("discord.js")
  */
 module.exports = async (text, channel) => {
     let embed = new MessageEmbed()
-    .setColor("PURPLE")
+    .setColor("#5539cc")
     .setDescription(text)
     await channel.send(embed)
 }

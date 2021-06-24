@@ -21,7 +21,7 @@ module.exports = {
                 let { word, urbanURL, definition, example, thumbsUp, thumbsDown, author } = res;
 
                 let embed = new MessageEmbed()
-                    .setColor("PURPLE")
+                    .setColor("#5539cc")
                     .setAuthor(
                         "ռօɮɛʟ",
                         "https://github.com/regales/Nobel/blob/main/assets/img/newnobelpfp.jpg?raw=true")

@@ -32,7 +32,7 @@ module.exports = {
     const embed = new MessageEmbed()
     
     
-      .setColor("PURPLE")
+      .setColor("#5539cc")
       .setAuthor(
         "𝓐𝓷𝓲𝓶𝓮",
         "https://cdn.myanimelist.net/img/sp/icon/apple-touch-icon-256.png"

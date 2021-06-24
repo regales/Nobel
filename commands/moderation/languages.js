@@ -25,7 +25,7 @@ module.exports = {
             const fucking = data.Prefix
             const embed1 = new Discord.MessageEmbed()
             
-            .setColor('RANDOM')
+            .setColor('#5539cc')
             .setAuthor(
                 "ռօɮɛʟ",
                 "https://i.imgur.com/o3xDQbB.jpeg")
@@ -70,7 +70,7 @@ module.exports = {
         
         
             const embed2 = new Discord.MessageEmbed()
-                .setColor('RANDOM')
+                .setColor('#5539cc')
                 .setAuthor(
                     "ռօɮɛʟ",
                     "https://i.imgur.com/o3xDQbB.jpeg")
@@ -107,7 +107,7 @@ module.exports = {
                 .setTimestamp()
 
             const embed3 = new Discord.MessageEmbed()
-                .setColor('RANDOM')
+                .setColor('#5539cc')
                 .setAuthor(
                     "ռօɮɛʟ",
                     "https://i.imgur.com/o3xDQbB.jpeg")
@@ -150,7 +150,7 @@ module.exports = {
                 .setTimestamp()
 
             const embed4 = new Discord.MessageEmbed()
-                .setColor('RANDOM')
+                .setColor('#5539cc')
                 .setAuthor(
                     "ռօɮɛʟ",
                     "https://i.imgur.com/o3xDQbB.jpeg")
@@ -195,7 +195,7 @@ module.exports = {
 
             const prefix = "*";
             const embed1 = new Discord.MessageEmbed()
-            .setColor('RANDOM')
+            .setColor('#5539cc')
             .setAuthor(
                 "ռօɮɛʟ",
                 "https://i.imgur.com/o3xDQbB.jpeg")
@@ -240,7 +240,7 @@ module.exports = {
         
         
             const embed2 = new Discord.MessageEmbed()
-                .setColor('RANDOM')
+                .setColor('#5539cc')
                 .setAuthor(
                     "ռօɮɛʟ",
                     "https://i.imgur.com/o3xDQbB.jpeg")
@@ -277,7 +277,7 @@ module.exports = {
                 .setTimestamp()
 
             const embed3 = new Discord.MessageEmbed()
-                .setColor('RANDOM')
+                .setColor('#5539cc')
                 .setAuthor(
                     "ռօɮɛʟ",
                     "https://i.imgur.com/o3xDQbB.jpeg")
@@ -320,7 +320,7 @@ module.exports = {
                 .setTimestamp()
 
             const embed4 = new Discord.MessageEmbed()
-                .setColor('RANDOM')
+                .setColor('#5539cc')
                 .setAuthor(
                     "ռօɮɛʟ",
                     "https://i.imgur.com/o3xDQbB.jpeg")

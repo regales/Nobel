@@ -36,7 +36,7 @@ module.exports = {
         .addField("Your Query", `\`\`\`fix\n${query}\`\`\``)
         .addField('Selected Language', `\`\`\`fix\n${arg}\`\`\``)
         .addField('Result', `\`\`\`fix\n${translated.text}\`\`\``)
-        .setColor("RANDOM")
+        .setColor("#5539cc")
         message.channel.send(embed)
 
         } catch (error) {
@@ -59,7 +59,7 @@ module.exports = {
         .addField("Your Query", `\`\`\`fix\n${query}\`\`\``)
         .addField('Selected Language', `\`\`\`fix\n${arg}\`\`\``)
         .addField('Result', `\`\`\`fix\n${translated.text}\`\`\``)
-        .setColor("RANDOM")
+        .setColor("#5539cc")
         message.channel.send(embed)
 
         } catch (error) {

@@ -57,7 +57,7 @@ module.exports = {
         
         \n**My Answer:** \n ${answers[Math.floor(Math.random() * answers.length)]}`)
 // math the answers and get the answer
-        .setColor("RANDOM");
+        .setColor("#5539cc");
 //get a random color for embed
         message.channel.send(embed)
 // send embed

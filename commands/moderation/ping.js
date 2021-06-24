@@ -23,7 +23,7 @@ module.exports = {
             .setDescription(`WebSocket ping is \`${client.ws.ping}MS\`\nMessage edit ping is \`${Math.floor(msg.createdAt - message.createdAt)}MS!\``)
             .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
             .setTimestamp()
-            .setColor('RANDOM')
+            .setColor('#5539cc')
             await message.channel.send(embed)
             msg.delete()
 

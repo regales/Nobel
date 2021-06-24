@@ -7,7 +7,7 @@ const {
     readdirSync
 } = require("fs");
 
-let color = "PURPLE"
+let color = "#5539cc"
 
 module.exports = {
     name: "help",

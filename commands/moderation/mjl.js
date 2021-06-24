@@ -34,7 +34,7 @@ module.exports = {
                         .setDescription(description)
                         .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
                         .setTimestamp()
-                        .setColor('RANDOM')
+                        .setColor('#5539cc')
                 )
             }
             ReactionPages(message, arry, true)

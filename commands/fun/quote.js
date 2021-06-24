@@ -10,7 +10,7 @@ module.exports = {
     run: async(client, message, args) => {
         const nidhish = require(`nidhishpackage`)
         const quote = await nidhish.generateQuote({
-            Color: "#ff0000"
+            Color: "#5539cc"
         })
         return message.channel.send(quote);
             }

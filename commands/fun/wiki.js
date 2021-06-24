@@ -26,7 +26,7 @@ module.exports = {
         try {
             if(response.type === 'disambiguation') { 
                 const embed = new MessageEmbed()
-                .setColor('RANDOM')
+                .setColor('#5539cc')
                 .setTitle(response.title)
                 .setURL(response.content_urls.desktop.page)
                 .setDescription([`

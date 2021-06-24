@@ -17,7 +17,7 @@ module.exports = {
         const create = message.guild.createdAt.toLocaleDateString() // Server Created Date
 
         const embed = new MessageEmbed()
-        .setColor('RANDOM')
+        .setColor('#5539cc')
         .setAuthor(`${message.guild.name} Info`, icon)
         .setThumbnail(`${icon}`)
         .addField('Server Onwer', `${guild.owner}`, true)

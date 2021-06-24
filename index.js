@@ -58,53 +58,58 @@ client.on('message',  async message  => {
     
   if(data) {
     const prefix = data.Prefix;
-    if(message.author.bot) {
+    
 
 
-    } else if (/<@!820939172491427840>|<@820939172491427840>/.test(message.content)) {
-        const embed = new Discord.MessageEmbed()
-          .setTitle("You Pinged Me! <a:WavingBlob:825931440402595840>")
-          .addFields(
-            { name: '**Prefix**', value: `\`My Custom Prefix In This Server Is ${prefix}\`` },
+    if (message.author.bot || !message.guild || message.webhookID || message.channel.type === 'dm') return;
 
-            { name: '**Default Prefix**', value: `\`My Default Prefix Is *\``},
+    if (message.content === `<@${client.user.id}>` || message.content === `<@!${client.user.id}>`) {
+
+      const embed = new Discord.MessageEmbed()
+      .setTitle("You Pinged Me! <a:WavingBlob:825931440402595840>")
+      .addFields(
+        { name: '**Prefix**', value: `\`My Custom Prefix In This Server Is ${prefix}\`` },
+
+        { name: '**Default Prefix**', value: `\`My Default Prefix Is *\``},
             
-            { name: '**Help Page**', value: `\`To Learn How To Use Me, Type ${prefix}help\``, inline: true },
+        { name: '**Help Page**', value: `\`To Learn How To Use Me, Type ${prefix}help\``, inline: true },
             
-            )
-          .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
-          .setTimestamp()
-          .setColor('RANDOM')
-          .setThumbnail('https://i.imgur.com/o3xDQbB.jpeg')
-          message.channel.send(embed)
-  }
+      )
+      .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
+      .setTimestamp()
+      .setColor('#5539cc')
+      .setThumbnail('https://i.imgur.com/o3xDQbB.jpeg')
+      message.channel.send(embed)
+    }
 
 } else if (!data) {
 
     const prefix = "*";
-    if(message.author.bot) {
-
-
-    } else if (/<@!820939172491427840>|<@820939172491427840>/.test(message.content)) {
-        const embed = new Discord.MessageEmbed()
-          .setTitle("You Pinged Me! <a:WavingBlob:825931440402595840>")
-          .addFields(
-            { name: '**Prefix**', value: `\`My Custom Prefix In This Server Is ${prefix}\`` },
-
-            { name: '**Default Prefix**', value: `\`My Default Prefix Is *\``},
-            
-            { name: '**Help Page**', value: `\`To Learn How To Use Me, Type ${prefix}help\``, inline: true },
-            
-            )
-          .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
-          .setTimestamp()
-          .setColor('RANDOM')
-          .setThumbnail('https://i.imgur.com/o3xDQbB.jpeg')
-          message.channel.send(embed)
-    }
-
     
-}
+
+
+    if (message.author.bot || !message.guild || message.webhookID || message.channel.type === 'dm') return;
+
+    if (message.content === `<@${client.user.id}>` || message.content === `<@!${client.user.id}>`) {
+
+      const embed = new Discord.MessageEmbed()
+      .setTitle("You Pinged Me! <a:WavingBlob:825931440402595840>")
+      .addFields(
+        { name: '**Prefix**', value: `\`My Custom Prefix In This Server Is ${prefix}\`` },
+
+        { name: '**Default Prefix**', value: `\`My Default Prefix Is *\``},
+            
+        { name: '**Help Page**', value: `\`To Learn How To Use Me, Type ${prefix}help\``, inline: true },
+            
+      )
+      .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
+      .setTimestamp()
+      .setColor('#5539cc')
+      .setThumbnail('https://i.imgur.com/o3xDQbB.jpeg')
+      message.channel.send(embed)
+    }
+    
+  }
 },
 
 

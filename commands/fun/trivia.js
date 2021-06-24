@@ -100,7 +100,7 @@ class Game {
                 ]                
             }
             this.question_embed = new discord.MessageEmbed()
-            .setColor('#0099ff')
+            .setColor('#5539cc')
             .setTitle(atob(this.question.results[0].question))
             .setDescription(this.answer_array)
             .setFooter('Category - ' + atob(this.question.results[0].category) + ', Difficulty - ' + atob(this.question.results[0].difficulty))
@@ -118,7 +118,7 @@ class Game {
             'B - ' + 'False'
             ]
             this.question_embed = new discord.MessageEmbed()
-            .setColor('#0099ff')
+            .setColor('#5539cc')
             .setTitle(atob(this.question.results[0].question))
             .setDescription(this.answer_array)
             .setFooter('Category - ' + atob(this.question.results[0].category) + ', Difficulty - ' + atob(this.question.results[0].difficulty))
@@ -142,7 +142,7 @@ class Game {
             if (this.input_answer == this.correct_answer) {
                 this.answer_array[this.input_answer - 1] = this.answer_array[this.input_answer - 1] + ' <a:water_green_Okay:825929495164223528>'
                 this.question_embed = new discord.MessageEmbed()
-                .setColor('#0099ff')
+                .setColor('#5539cc')
                 .setTitle(atob(this.question.results[0].question))
                 .setDescription(this.answer_array)
                 .setFooter('Category - ' + atob(this.question.results[0].category) + ', Difficulty - ' + atob(this.question.results[0].difficulty))
@@ -153,7 +153,7 @@ class Game {
             else {
                 this.answer_array[this.input_answer - 1] = this.answer_array[this.input_answer - 1] + ' <:xmark:848019597907329085>'
                 this.question_embed = new discord.MessageEmbed()
-                .setColor('#0099ff')
+                .setColor('#5539cc')
                 .setTitle(atob(this.question.results[0].question))
                 .setDescription(this.answer_array)
                 .setFooter('Category - ' + atob(this.question.results[0].category) + ', Difficulty - ' + atob(this.question.results[0].difficulty))

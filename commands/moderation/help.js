@@ -106,9 +106,10 @@ module.exports = {
                         let name = file.name.replace(".js", "");
 
                         let des = client.commands.get(name).description;
+                        let emo = client.commands.get(name).emoji;
 
                         let obj = {
-                            cname: `\`${name}\``,
+                            cname: `${emo}  \`${name}\``,
                             des
                         }
 
@@ -270,9 +271,10 @@ module.exports = {
                         let name = file.name.replace(".js", "");
 
                         let des = client.commands.get(name).description;
+                        let emo = client.commands.get(name).emoji;
 
                         let obj = {
-                            cname: `\`${name}\``,
+                            cname: `${emo}  \`${name}\``,
                             des
                         }
 

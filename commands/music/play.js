@@ -68,8 +68,8 @@ module.exports = {
             serverQueue.songs.push(song);
             let thing = new MessageEmbed()
                 .setTitle('<a:playing:799562690129035294> Song Added To Queue')
-                .setColor("PURPLE")
-                .setDescription(`${song.title} ~ Requested By ${message.author.username}`)
+                .setColor("#5539cc")
+                .setDescription(`\`**${song.title}**\` ~ Requested By \`**${message.author.username}**\``)
                 .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
                 .setTimestamp()
             return message.channel.send(thing);
@@ -123,11 +123,8 @@ module.exports = {
             dispatcher.setVolumeLogarithmic(queue.volume / 100);
             let thing = new MessageEmbed()
                 .setTitle(`<a:playing:799562690129035294> Started Playing Song`)
-                .setDescription('[©️ YouTube](https://support.google.com/youtube/topic/2676339?hl=en&ref_topic=6151248)')
-                .setThumbnail('https://media.discordapp.net/attachments/778283828099809283/822353825624883200/unknown_1.png')
-                .setColor("PURPLE")
-                .addField("Song Name", song.title, true)
-                .addField("Commanded By", `\`\`\`\n${song.req.username}\n\`\`\``, true)
+                .setDescription(`\`**${song.title}**\` ~ Requested By \`**${message.author.username}**\``)
+                .setColor("#5539cc")
                 .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
                 .setTimestamp()
             queue.textChannel.send(thing);

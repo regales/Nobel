@@ -33,7 +33,7 @@ module.exports = {
                 }
                 return message.channel.send({
                     embed: {
-                        color: "PURPLE",
+                        color: "#5539cc",
                         description: `<:ayb_yes:655678981131075594> **Playlist:** **\`${videos[0].title}\`** **Has Been Added To The Queue**`,
                     },
                 });
@@ -56,7 +56,7 @@ module.exports = {
                 }
                 let thing = new MessageEmbed()
                     .setTitle("<a:playing:799562690129035294> Playlist Added To Queue")
-                    .setColor("PURPLE")
+                    .setColor("#5539cc")
                     .setDescription(`<:ayb_yes:655678981131075594>  Playlist: **\`${songInfo.title}\`** Has Been Added \`${songInfo.videoCount}\` Video To The Queue`)
                     .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
                     .setTimestamp()
@@ -105,9 +105,8 @@ module.exports = {
                 if (playlist) return;
                 let thing = new MessageEmbed()
                     .setTitle("<a:playing:799562690129035294> Song Has Been Added To Queue")
-                    .setColor("PURPLE")
-                    .addField("Name", song.title, true)
-                    .addField("Requested By", song.req.tag, true)
+                    .setDescription(`\`**${song.title}**\` ~ Requested By \`**${message.author.username}**\``)
+                    .setColor("#5539cc")
                     .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
                     .setTimestamp()
                 return message.channel.send(thing);
@@ -152,10 +151,8 @@ module.exports = {
             dispatcher.setVolume(serverQueue.volume / 100);
             let thing = new MessageEmbed()
                 .setTitle("<a:playing:799562690129035294> Started Playing Music!")
-                .setThumbnail('https://media.discordapp.net/attachments/778283828099809283/822353825624883200/unknown_1.png')
-                .setColor("PURPLE")
-                .addField("Name", song.title, true)
-                .addField("Requested By", song.req.tag, true)
+                .setDescription(`\`**${song.title}**\` ~ Requested By \`**${message.author.username}**\``)
+                .setColor("#5539cc")
                 .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
                 .setTimestamp()
             serverQueue.textChannel.send(thing);

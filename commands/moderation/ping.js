@@ -4,6 +4,7 @@ module.exports = {
     description: "Displays Latency and Ping",
     usage: '',
     aliases: ['ping'],
+    emoji: '🏓',
     
 
 

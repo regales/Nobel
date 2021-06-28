@@ -54,6 +54,7 @@ module.exports = {
             const lyric = fullLyrics.substring(i, Math.min(fullLyrics.length, i + 2048));
             const msg = new Discord.MessageEmbed()
                 .setDescription(lyric)
+                .setColor('#5539cc')
             pages.push(msg);
         }
     }

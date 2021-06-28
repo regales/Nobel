@@ -22,7 +22,7 @@ module.exports = {
     serverQueue.connection.dispatcher.setVolumeLogarithmic(args[0] / 100);
     let xd = new MessageEmbed()
     .setDescription(`<a:playing:799562690129035294> **DJ is now bass boosting songs:** **\`${args[0]/1}/100\`**`)
-    .setColor("PURPLE")
+    .setColor("#5539cc")
     return message.channel.send(xd);
   },
 };

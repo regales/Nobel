@@ -19,7 +19,7 @@ module.exports = {
       }	    
       let xd = new MessageEmbed()
       .setDescription("⏸ Paused music!")
-      .setColor("PURPLE")
+      .setColor("#5539cc")
       .setTitle("Music paused!") 
       return message.channel.send(xd);
     }

@@ -14,7 +14,7 @@ module.exports = {
       serverQueue.connection.dispatcher.resume();
       let xd = new MessageEmbed()
       .setDescription("▶ Resumed Music!")
-      .setColor("PURPLE")
+      .setColor("#5539cc")
       return message.channel.send(xd);
     }
     return sendError("<:xmark:848019597907329085> **Im Not Playing Anything In This Server.**", message.channel);

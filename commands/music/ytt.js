@@ -19,7 +19,7 @@ module.exports = {
         if(!channel) return message.channel.send(
             new Discord.MessageEmbed()
             .setDescription("<:xmark:848019597907329085> **You must be connected to a voice channel to use this command.**")
-            .setColor("PURPLE")
+            .setColor("#5539cc")
         )
 
         fetch(`https://discord.com/api/v8/channels/${channel.id}/invites`, {
@@ -40,7 +40,7 @@ module.exports = {
             if(!invite.code) return message.channel.send(
                 new Discord.MessageEmbed()
                 .setDescription("<:xmark:848019597907329085> **I was unable to start a YT together session.**")
-                .setColor("PURPLE")
+                .setColor("#5539cc")
             )
             const bruh = new Discord.MessageEmbed()
            .setAuthor('Welcome to YouTube!' ,'https://media.discordapp.net/attachments/796358841038143488/851878274179399751/youtube.png' )

@@ -20,7 +20,7 @@ module.exports = {
     serverQueue.connection.dispatcher.setVolumeLogarithmic(args[0] / 100);
     let xd = new MessageEmbed()
     .setDescription(`<:volume:843037832658550805> **I Have Set The Volume To:** **\`${args[0]/1}/100\`**`)
-    .setColor("PURPLE")
+    .setColor("#5539cc")
     return message.channel.send(xd);
   },
 };

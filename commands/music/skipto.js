@@ -11,7 +11,7 @@ module.exports = {
     if (!args.length || isNaN(args[0]))
       return message.channel.send({
                         embed: {
-                            color: "PURPLE",
+                            color: "#5539cc",
                             description: `<:xmark:848019597907329085> **Usage:** **\`*skipto <number>\`**`
                         }
    

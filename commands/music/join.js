@@ -20,7 +20,7 @@ module.exports = {
       });
       const Discord = require("discord.js");
       const Embed = new Discord.MessageEmbed()
-      .setColor('PURPLE')
+      .setColor('#5539cc')
       .setTitle("Success")
       .setDescription("<a:803688736323665951:843036647331201046>  **Joined The Voice Channel, Use \`*play <music name>\` To Play Music!**")
       .setTimestamp();

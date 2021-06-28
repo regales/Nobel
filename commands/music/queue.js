@@ -77,7 +77,7 @@ function generateQueueEmbed(message, queue) {
     const embed = new MessageEmbed()
     .setTitle('')
     .setThumbnail(`https://media.discordapp.net/attachments/778283828099809283/822353825624883200/unknown_1.png`)
-    .setColor("PURPLE")
+    .setColor("#5539cc")
     .setDescription(`${info}`)
     .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
     .setTimestamp()

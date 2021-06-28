@@ -19,7 +19,7 @@ if(!serverQueue.connection.dispatcher)return
       serverQueue.connection.dispatcher.resume();
       let xd = new MessageEmbed()
       .setDescription("▶ Music Skipped!")
-      .setColor("PURPLE")
+      .setColor("#5539cc")
       .setTitle("Skipped!")
        
    return message.channel.send(xd).catch(err => console.log(err));

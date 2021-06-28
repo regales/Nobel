@@ -20,7 +20,7 @@ module.exports = {
         }
 
         const Embed = new MessageEmbed()
-        .setColor('PURPLE')
+        .setColor('#5539cc')
         .setTitle("Success")
         .setDescription("<a:655682046873567253:843036646915440660>  **Left The Voice Channel, Thanks For Using Me!**")
         .setTimestamp();

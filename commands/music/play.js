@@ -69,7 +69,7 @@ module.exports = {
             let thing = new MessageEmbed()
                 .setTitle('<a:playing:799562690129035294> Song Added To Queue')
                 .setColor("#5539cc")
-                .setDescription(`\`${song.title}\` \n**Requested By** **[**${message.author.id}**]**`)
+                .setDescription(`\`${song.title}\` \n**Requested By** **[**${message.author}**]**`)
                 .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
                 .setTimestamp()
             return message.channel.send(thing);
@@ -123,7 +123,7 @@ module.exports = {
             dispatcher.setVolumeLogarithmic(queue.volume / 100);
             let thing = new MessageEmbed()
                 .setTitle(`<a:playing:799562690129035294> Started Playing Song`)
-                .setDescription(`\`${song.title}\` \n**Requested By** **[**${message.author.id}**]**`)
+                .setDescription(`\`${song.title}\` \n**Requested By** **[**${message.author}**]**`)
                 .setColor("#5539cc")
                 .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
                 .setTimestamp()

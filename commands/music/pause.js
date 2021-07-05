@@ -18,9 +18,9 @@ module.exports = {
         return sendError(`<:xmark:848019597907329085> **Music Has Been Stopped And The Queue Has Been Cleared**: ${error}`, message.channel);
       }	    
       let xd = new MessageEmbed()
-      .setDescription("⏸ Paused music!")
+      .setDescription("⏸ **Paused music !**")
       .setColor("#5539cc")
-      .setTitle("Music paused!") 
+      
       return message.channel.send(xd);
     }
     return sendError("<:xmark:848019597907329085> **There Is Nothing Playing In This Server!**", message.channel);

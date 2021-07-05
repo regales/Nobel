@@ -11,6 +11,7 @@ module.exports = {
     aliases: ['pl'],
     description: "Plays a playlist of songs in a voice channel",
     usage: '<url>',
+    cooldown: 30,
 
     run: async(client, message, args) => {
         const channel = message.member.voice.channel;
@@ -105,7 +106,7 @@ module.exports = {
                 if (playlist) return;
                 let thing = new MessageEmbed()
                     .setTitle("<a:playing:799562690129035294> Song Has Been Added To Queue")
-                    .setDescription(`\`${song.title}\` \n**Requested By** **[**${message.author.id}**]**`)
+                    .setDescription(`\`${song.title}\` \n**Requested By** **[**${message.author}**]**`)
                     .setColor("#5539cc")
                     .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
                     .setTimestamp()
@@ -151,7 +152,7 @@ module.exports = {
             dispatcher.setVolume(serverQueue.volume / 100);
             let thing = new MessageEmbed()
                 .setTitle("<a:playing:799562690129035294> Started Playing Music!")
-                .setDescription(`\`${song.title}\` \n**Requested By** **[**${message.author.id}**]**`)
+                .setDescription(`\`${song.title}\` \n**Requested By** **[**${message.author}**]**`)
                 .setColor("#5539cc")
                 .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
                 .setTimestamp()

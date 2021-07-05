@@ -15,6 +15,7 @@
     "cheerio": "^1.0.0-rc.5",
     "common-tags": "^1.8.0",
     "dankmemes": "^1.0.0",
+    "dateformat": "^4.5.1",
     "discord-buttons": "^3.1.1",
     "discord-reply": "^0.1.2",
     "discord-together": "^1.1.14",

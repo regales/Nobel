@@ -13,7 +13,7 @@ module.exports = {
     let song = serverQueue.songs[0]
     let thing = new MessageEmbed()
       .setTitle("<a:playing:799562690129035294> Currently Playing")
-      .setDescription(`\`${song.title}\` \n**Requested By** **[**${song.req.id}**]**`)
+      .setDescription(`\`${song.title}\` \n**Requested By** **[**${song.req}**]**`)
       .setColor("#5539cc")
       .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
       .setTimestamp()

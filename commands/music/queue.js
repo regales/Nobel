@@ -72,6 +72,7 @@ function generateQueueEmbed(message, queue) {
     k += 10;
 
     const info = current.map((track) => `**\`${++j}\`** | \`${track.title}\``).join("\n\n");
+    const firstsong = current.map((track) => `**\`${j}\`** | \`${track.title}\``).join("\n\n");
   
     const serverQueue =message.client.queue.get(message.guild.id);
     const embed = new MessageEmbed()
@@ -81,7 +82,7 @@ function generateQueueEmbed(message, queue) {
     .setDescription(`${info}`)
     .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
     .setTimestamp()
-     if(serverQueue.songs.length === 1)embed.setDescription(`**No Queued Up Songs** - Add Next Songs By \`\`*play <song_name>\`\``)
+     if(serverQueue.songs.length === 1)embed.setDescription(`${firstsong}`)
 
     embeds.push(embed);
   }

@@ -19,7 +19,7 @@ module.exports = {
 
 
         var searchString = args.join(" ");
-        if (!searchString) return sendError("<:xmark:848019597907329085> **What To Play?** \n `*play <song name_url>` ? ", message.channel);
+        if (!searchString) return sendError("<:xmark:848019597907329085> **Usage:** \`*play <Song> | <Song URL>\`", message.channel);
         const url = args[0] ? args[0].replace(/<(.+)>/g, "$1") : "";
         var serverQueue = message.client.queue.get(message.guild.id);
 

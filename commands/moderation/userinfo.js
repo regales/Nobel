@@ -1,9 +1,9 @@
 const moment = require('moment');
 const Discord = require('discord.js');
 const DEVICES = {
-    web: "🌐",
-    desktop: "💻",
-    mobile: "📱"
+    web: "• 🌐",
+    desktop: "• 💻",
+    mobile: "• 📱"
 };
  
 const BADGES = {
@@ -23,11 +23,11 @@ const BADGES = {
 };
 
 const STATUSES = {
-    "online": `  <:online:825069525170520135>`,
-    "idle": `  <:idle:825069524201373707>`,
-    "dnd": `  <:dnd:825069525044428810>`,
-    "streaming": `  <:streaming:825070918313312286>`,
-    "offline": `  <:offline:825069524574535762>`
+    "online": `• <:online:825069525170520135>`,
+    "idle": ` • <:idle:825069524201373707>`,
+    "dnd": ` • <:dnd:825069525044428810>`,
+    "streaming": ` • <:streaming:825070918313312286>`,
+    "offline": ` • <:offline:825069524574535762>`
 };
  
 
@@ -94,18 +94,18 @@ module.exports = {
             .setAuthor(`${member.user.tag} ${userDevice}`, member.user.displayAvatarURL({ dynamic: true, size: 512 }))
             .setThumbnail(member.user.displayAvatarURL({ dynamic: true, size: 512 }))
             .addFields(
-                { name: "**User Badges:**", value: `${userFlags.length ? userFlags.map(flag => BADGES[flag]).join("") : "None"}`, inline: false },
-                { name: "**Joined Discord:**", value: `${moment(member.user.createdTimestamp).format("DD MMM YYYY")}`, inline: true },
-                { name: "**Joined Server:**", value: `${moment(member.joinedAt).format("DD MMM YYYY")}`, inline: true },
-                { name: "**Nickname:**", value: `${member.displayName}` || "None", inline: true },
-                { name: "**Discriminator:**", value: `${member.user.discriminator}`, inline: true },
-                { name: "**Bot:**", value: `${userInfo}`, inline: true },
-                { name: "**Nitro:**", value: `${hasNitro}`, inline: true },
-                { name: "**Status:**", value: `${status}${STATUSES[member.user.presence.status]}`, inline: true },
-                { name: "**User Colour:**", value: `${upperCase(member.displayHexColor)}`, inline: true },
-                { name: "**User ID:**", value: `${member.user.id}`, inline: true },
-                { name: "**Highest Role:**", value: `${member.roles.highest.id === message.guild.id ? "None" : member.roles.highest}`, inline: true },
-                { name: "**Roles:**", value: `${roles}` }
+                { name: "**•** **User Badges:**", value: `\`${userFlags.length ? userFlags.map(flag => BADGES[flag]).join("") : "None"}\``, inline: false },
+                { name: "**•** **Joined Discord:**", value: `\`${moment(member.user.createdTimestamp).format("DD MMM YYYY")}\``, inline: true },
+                { name: "**•** **Joined Server:**", value: `\`${moment(member.joinedAt).format("DD MMM YYYY")}\``, inline: true },
+                { name: "**•** **Nickname:**", value: `\`${member.displayName}\`` || "None", inline: true },
+                { name: "**•** **Discriminator:**", value: `\`${member.user.discriminator}\``, inline: true },
+                { name: "**•** **Bot:**", value: `\`${userInfo}\``, inline: true },
+                { name: "**•** **Nitro:**", value: `\`${hasNitro}\``, inline: true },
+                { name: "**•** **Status:**", value: `\`${status}${STATUSES[member.user.presence.status]}\``, inline: true },
+                { name: "**•** **User Colour:**", value: `\`${upperCase(member.displayHexColor)}\``, inline: true },
+                { name: "**•** **User ID:**", value: `\`${member.user.id}\``, inline: true },
+                { name: "**•** **Highest Role:**", value: `${member.roles.highest.id === message.guild.id ? "None" : member.roles.highest}`, inline: true },
+                { name: "**•** **Roles:**", value: `${roles}` }
             )
             .setColor(`#5539cc`);
         message.channel.send(embed);

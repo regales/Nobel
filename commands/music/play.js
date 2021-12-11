@@ -93,7 +93,7 @@ module.exports = {
                 sendError(
                     "<a:exclamationred:919234912857501716> **The Song Has Ended!**",
                     message.channel
-                ).then(message=>message.delete({timeout:"10000"/*Time until delete in milliseconds*/}))
+                ).then(message=>message.delete({timeout:"10000"/*Time until delete in milliseconds*/})).catch()
                 message.client.queue.delete(message.guild.id);
                 return;
             }
@@ -105,8 +105,8 @@ module.exports = {
                         if (queue) {
                             queue.songs.shift();
                             play(queue.songs[0]);
-                            return sendError(`<:xmark:848019597907329085> **An Unexpected Error Has Occurred.**\n**Possible Type** \`${er}\``, message.channel).then(message=>message.delete({timeout:"5000"/*Time until delete in milliseconds*/}))
-                        }
+                            return sendError(`<:xmark:848019597907329085> **An Unexpected Error Has Occurred.**\n**Possible Type** \`${er}\``, message.channel).then(message=>message.delete({timeout:"5000"/*Time until delete in milliseconds*/})).catch()
+                        } 
                     }
                 });
             }

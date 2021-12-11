@@ -71,8 +71,8 @@ function generateQueueEmbed(message, queue) {
     let j = i;
     k += 10;
 
-    const info = current.map((track) => `**\`${++j}\`** | \`${track.title}\``).join("\n\n");
-    const firstsong = current.map((track) => `**\`${j}\`** | \`${track.title}\``).join("\n\n");
+    const info = current.map((track) => `**\`${++j}\`** **•** \`${track.title}\``).join("\n\n");
+    const firstsong = current.map((track) => `**\`${j}\`** **•** \`${track.title}\``).join("\n\n");
   
     const serverQueue =message.client.queue.get(message.guild.id);
     const embed = new MessageEmbed()

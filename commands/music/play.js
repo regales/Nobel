@@ -19,7 +19,7 @@ module.exports = {
 
 
         var searchString = args.join(" ");
-        if (!searchString) return sendError("<:xmark:848019597907329085> **Usage:** **•** \`*play <Song> | <Song URL>\`", message.channel).then(msg=>msg.delete({timeout:"5000"/*Time until delete in milliseconds*/}))
+        if (!searchString) return sendError("<:xmark:848019597907329085> **Usage:** **•** \`*play <Song> | <Song URL>\`", message.channel).then(message=>message.delete({timeout:"5000"/*Time until delete in milliseconds*/}))
         const url = args[0] ? args[0].replace(/<(.+)>/g, "$1") : "";
         var serverQueue = message.client.queue.get(message.guild.id);
 
@@ -93,7 +93,7 @@ module.exports = {
                 sendError(
                     "<a:exclamationred:919234912857501716> **The Song Has Ended!**",
                     message.channel
-                ).then(msg=>msg.delete({timeout:"10000"/*Time until delete in milliseconds*/}))
+                ).then(message=>message.delete({timeout:"10000"/*Time until delete in milliseconds*/}))
                 message.client.queue.delete(message.guild.id);
                 return;
             }
@@ -105,7 +105,7 @@ module.exports = {
                         if (queue) {
                             queue.songs.shift();
                             play(queue.songs[0]);
-                            return sendError(`<:xmark:848019597907329085> **An Unexpected Error Has Occurred.**\n**Possible Type** \`${er}\``, message.channel).then(msg=>msg.delete({timeout:"5000"/*Time until delete in milliseconds*/}))
+                            return sendError(`<:xmark:848019597907329085> **An Unexpected Error Has Occurred.**\n**Possible Type** \`${er}\``, message.channel).then(message=>message.delete({timeout:"5000"/*Time until delete in milliseconds*/}))
                         }
                     }
                 });
@@ -127,7 +127,7 @@ module.exports = {
                 .setColor("#5539cc")
                 .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
                 .setTimestamp()
-            queue.textChannel.send(thing).then(msg=>msg.delete({timeout:"10000"/*Time until delete in milliseconds*/}))
+            queue.textChannel.send(thing).then(message=>message.delete({timeout:"10000"/*Time until delete in milliseconds*/}))
         };
 
         try {

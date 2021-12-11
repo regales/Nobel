@@ -12,7 +12,7 @@ module.exports = {
       return message.channel.send({
                         embed: {
                             color: "#5539cc",
-                            description: `<:xmark:848019597907329085> **Usage:** **\`*skipto <number>\`**`
+                            description: `<:xmark:848019597907329085> **Usage:** **•** **\`*skipto <number>\`**`
                         }
    
                    }).catch(console.error);
@@ -43,7 +43,7 @@ module.exports = {
     queue.textChannel.send({
                         embed: {
                             color: "GREEN",
-                            description: `${message.author} ⏭ **Skipped \`${args[0] - 1}\` Songs**`
+                            description: `${message.author} ⏭ **•** **Skipped \`${args[0] - 1}\` Songs**`
                         }
    
                    }).catch(console.error);

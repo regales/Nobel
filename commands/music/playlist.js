@@ -22,7 +22,7 @@ module.exports = {
         if (!permissions.has("CONNECT")) return sendError("<:xmark:848019597907329085> **I Cannot Connect To Your Voice Channel, Make Sure I Have The Proper Permissions!**", message.channel);
         if (!permissions.has("SPEAK")) return sendError("<:xmark:848019597907329085> **I Cannot Connect To Your Voice Channel, Make Sure I Have The Proper Permissions!**", message.channel);
 
-        if (!searchString || !url) return sendError(`<:xmark:848019597907329085> **Usage:** **•** \`*playlist <YouTube Playlist URL | Playlist Name>\``, message.channel).then(msg=>msg.delete({timeout:"5000"/*Time until delete in milliseconds*/}))
+        if (!searchString || !url) return sendError(`<:xmark:848019597907329085> **Usage:** **•** \`*playlist <YouTube Playlist URL | Playlist Name>\``, message.channel).then(message=>message.delete({timeout:"5000"/*Time until delete in milliseconds*/}))
         if (url.match(/^https?:\/\/(www.youtube.com|youtube.com)\/playlist(.*)$/)) {
             try {
                 const playlist = await ytpl(url.split("list=")[1]);
@@ -35,7 +35,7 @@ module.exports = {
                 return message.channel.send({
                     embed: {
                         color: "#5539cc",
-                        description: `<:ayb_yes:655678981131075594> **Playlist:** **\`${videos[0].title}\`** **Has Been Added To The Queue**`,
+                        description: `**•** **Playlist:** **\`${videos[0].title}\`** **Has Been Added To The Queue**`,
                     },
                 });
             } catch (error) {
@@ -58,7 +58,7 @@ module.exports = {
                 let thing = new MessageEmbed()
                     .setTitle("<a:playing:799562690129035294> Playlist Added To Queue")
                     .setColor("#5539cc")
-                    .setDescription(`<:ayb_yes:655678981131075594>  Playlist: **\`${songInfo.title}\`** Has Been Added \`${songInfo.videoCount}\` Video To The Queue`)
+                    .setDescription(`**•**  **Playlist:** **\`${songInfo.title}\`** **Has Been Added** **\`${songInfo.videoCount}\`** **Video To The Queue**`)
                     .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
                     .setTimestamp()
                 return message.channel.send(thing);
@@ -121,7 +121,7 @@ module.exports = {
                 sendError(
                     "<a:exclamationred:919234912857501716> **Playlist Of Songs Has Ended**",
                     message.channel
-                ).then(msg=>msg.delete({timeout:"10000"/*Time until delete in milliseconds*/}))
+                ).then(message=>message.delete({timeout:"10000"/*Time until delete in milliseconds*/}))
                 //message.guild.me.voice.channel.leave(); //If you want your bot stay in vc 24/7 remove this line :D
                 message.client.queue.delete(message.guild.id);
                 return;
@@ -134,7 +134,7 @@ module.exports = {
                         if (serverQueue) {
                             serverQueue.songs.shift();
                             play(guild, serverQueue.songs[0]);
-                            return sendError(`<:xmark:848019597907329085> **An Unexpected Error Has Occurred**.\n**Possible Type** \`${er}\``, message.channel).then(msg=>msg.delete({timeout:"5000"/*Time until delete in milliseconds*/}))
+                            return sendError(`<:xmark:848019597907329085> **An Unexpected Error Has Occurred**.\n**Possible Type** \`${er}\``, message.channel).then(message=>message.delete({timeout:"5000"/*Time until delete in milliseconds*/}))
                         }
                     }
                 });
@@ -156,7 +156,7 @@ module.exports = {
                 .setColor("#5539cc")
                 .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
                 .setTimestamp()
-            serverQueue.textChannel.send(thing).then(msg=>msg.delete({timeout:"10000"/*Time until delete in milliseconds*/}))
+            serverQueue.textChannel.send(thing).then(message=>message.delete({timeout:"10000"/*Time until delete in milliseconds*/}))
         }
     },
 };

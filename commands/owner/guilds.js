@@ -5,7 +5,7 @@ module.exports = {
   name: "guilds",
   aliases: ['guilds'],
   description: "Shows Guilds That Has Nobel",
-  usage: '<->',
+  usage: '',
     
   run: async (client, message, args) => {
     if (message.author.id == ownerid) {

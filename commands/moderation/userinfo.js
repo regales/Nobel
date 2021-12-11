@@ -101,7 +101,7 @@ module.exports = {
                 { name: "**•** **Discriminator:**", value: `\`${member.user.discriminator}\``, inline: true },
                 { name: "**•** **Bot:**", value: `\`${userInfo}\``, inline: true },
                 { name: "**•** **Nitro:**", value: `\`${hasNitro}\``, inline: true },
-                { name: "**•** **Status:**", value: `\`${status}${STATUSES[member.user.presence.status]}\``, inline: true },
+                { name: "**•** **Status:**", value: `\`${status}\`${STATUSES[member.user.presence.status]}`, inline: true },
                 { name: "**•** **User Colour:**", value: `\`${upperCase(member.displayHexColor)}\``, inline: true },
                 { name: "**•** **User ID:**", value: `\`${member.user.id}\``, inline: true },
                 { name: "**•** **Highest Role:**", value: `${member.roles.highest.id === message.guild.id ? "None" : member.roles.highest}`, inline: true },

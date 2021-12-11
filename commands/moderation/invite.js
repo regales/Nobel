@@ -13,7 +13,7 @@ module.exports = {
             "https://i.imgur.com/o3xDQbB.jpeg")
         
         .setDescription(
-            `<:settings:843041534609850370> [**Link For Inviting Nobel**](https://bit.ly/3tF4azp)
+            `**•** [**Link For Inviting Nobel**](https://bit.ly/3tF4azp)
 
             
         `)

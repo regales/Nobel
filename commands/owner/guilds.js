@@ -3,6 +3,9 @@ const ownerid = "623553796160618517";
 
 module.exports = {
   name: "guilds",
+  aliases: ['guilds'],
+  description: "Shows Guilds That Has Nobel",
+  usage: '<->',
     
   run: async (client, message, args) => {
     if (message.author.id == ownerid) {

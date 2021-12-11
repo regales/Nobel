@@ -29,7 +29,7 @@ module.exports = {
             .setAuthor(
                 "ռօɮɛʟ",
                 "https://i.imgur.com/o3xDQbB.jpeg")
-            .setTitle('<:tr:819825362665078784> **HELP PAGE FOR TRANSLATIONS**')
+            .setTitle('<:thinkink_translate:919049266146721822> **HELP PAGE FOR TRANSLATIONS**')
             .setDescription(`
             ***Use***\`${fucking} translate <language> <text>\`
 
@@ -74,7 +74,7 @@ module.exports = {
                 .setAuthor(
                     "ռօɮɛʟ",
                     "https://i.imgur.com/o3xDQbB.jpeg")
-                .setTitle('<:tr:819825362665078784> **HELP PAGE FOR TRANSLATIONS**')
+                .setTitle('<:thinkink_translate:919049266146721822> **HELP PAGE FOR TRANSLATIONS**')
                 .setDescription(`
                 ***Use***\`${fucking} translate <language> <text>\`
 
@@ -111,7 +111,7 @@ module.exports = {
                 .setAuthor(
                     "ռօɮɛʟ",
                     "https://i.imgur.com/o3xDQbB.jpeg")
-                .setTitle('<:tr:819825362665078784> **HELP PAGE FOR TRANSLATIONS**')
+                .setTitle('<:thinkink_translate:919049266146721822> **HELP PAGE FOR TRANSLATIONS**')
                 .setDescription(`
                 ***Use***\`${fucking} translate <language> <text>\`
 
@@ -154,7 +154,7 @@ module.exports = {
                 .setAuthor(
                     "ռօɮɛʟ",
                     "https://i.imgur.com/o3xDQbB.jpeg")
-                .setTitle('<:tr:819825362665078784> **HELP PAGE FOR TRANSLATIONS**')
+                .setTitle('<:thinkink_translate:919049266146721822> **HELP PAGE FOR TRANSLATIONS**')
                 .setDescription(`
                 ***Use***\`${fucking} translate <language> <text>\`
 
@@ -199,7 +199,7 @@ module.exports = {
             .setAuthor(
                 "ռօɮɛʟ",
                 "https://i.imgur.com/o3xDQbB.jpeg")
-            .setTitle('<:tr:819825362665078784> **HELP PAGE FOR TRANSLATIONS**')
+            .setTitle('<:thinkink_translate:919049266146721822> **HELP PAGE FOR TRANSLATIONS**')
             .setDescription(`
             ***Use***\`${prefix} translate <language> <text>\`
 
@@ -244,7 +244,7 @@ module.exports = {
                 .setAuthor(
                     "ռօɮɛʟ",
                     "https://i.imgur.com/o3xDQbB.jpeg")
-                .setTitle('<:tr:819825362665078784> **HELP PAGE FOR TRANSLATIONS**')
+                .setTitle('<:thinkink_translate:919049266146721822> **HELP PAGE FOR TRANSLATIONS**')
                 .setDescription(`
                 ***Use***\`${prefix} translate <language> <text>\`
 
@@ -281,7 +281,7 @@ module.exports = {
                 .setAuthor(
                     "ռօɮɛʟ",
                     "https://i.imgur.com/o3xDQbB.jpeg")
-                .setTitle('<:tr:819825362665078784> **HELP PAGE FOR TRANSLATIONS**')
+                .setTitle('<:thinkink_translate:919049266146721822> **HELP PAGE FOR TRANSLATIONS**')
                 .setDescription(`
                 ***Use***\`${prefix} translate <language> <text>\`
 
@@ -324,7 +324,7 @@ module.exports = {
                 .setAuthor(
                     "ռօɮɛʟ",
                     "https://i.imgur.com/o3xDQbB.jpeg")
-                .setTitle('<:tr:819825362665078784> **HELP PAGE FOR TRANSLATIONS**')
+                .setTitle('<:thinkink_translate:919049266146721822> **HELP PAGE FOR TRANSLATIONS**')
                 .setDescription(`
                 ***Use***\`${prefix} translate <language> <text>\`
 

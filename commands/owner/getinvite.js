@@ -2,6 +2,9 @@ const ownerid = "623553796160618517";
 
 module.exports = {
     name: "getinvite",
+    aliases: ['getin'],
+    description: "Gets Invites From Servers That Has Nobel",
+    usage: '<serverID>',
        
     run: async(Client, message, args) => {
         if (message.author.id === ownerid) {

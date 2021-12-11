@@ -35,8 +35,8 @@ module.exports = {
 
                 //categories to ignore
                 let ignored = [
-                    "owner",
-                    "nsfw"
+                    "owner"
+                    
                 ];
 
                 const emo = {
@@ -203,8 +203,8 @@ module.exports = {
 
                 //categories to ignore
                 let ignored = [
-                    "owner",
-                    "nsfw"
+                    "owner"
+                    
                 ];
 
                 const emo = {

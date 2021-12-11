@@ -2,6 +2,9 @@ const { MessageEmbed } = require('discord.js')
 
 module.exports = {
  name: "eval",
+ aliases: ['eval'],
+ description: "Evaluates Code",
+ usage: '<code>',
     
     run: async (client, message, args) => {
         function clean(text) {

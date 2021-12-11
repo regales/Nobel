@@ -29,7 +29,7 @@ module.exports = {
 
         const translated = await translate(query, {to: `${arg}`});
         const embed = new MessageEmbed()
-        .setTitle("<:tr:819825362665078784> Translated Successfully.")
+        .setTitle("<:thinkink_translate:919049266146721822> Translated Successfully.")
         .setAuthor(
           "ռօɮɛʟ",
           "https://i.imgur.com/o3xDQbB.jpeg")
@@ -52,7 +52,7 @@ module.exports = {
 
         const translated = await translate(query, {to: `${arg}`});
         const embed = new MessageEmbed()
-        .setTitle("<:tr:819825362665078784> Translated Successfully.")
+        .setTitle("<:thinkink_translate:919049266146721822> Translated Successfully.")
         .setAuthor(
           "ռօɮɛʟ",
           "https://i.imgur.com/o3xDQbB.jpeg")

@@ -22,7 +22,7 @@ module.exports = {
         if (!permissions.has("CONNECT")) return sendError("<:xmark:848019597907329085> **I Cannot Connect To Your Voice Channel, Make Sure I Have The Proper Permissions!**", message.channel);
         if (!permissions.has("SPEAK")) return sendError("<:xmark:848019597907329085> **I Cannot Connect To Your Voice Channel, Make Sure I Have The Proper Permissions!**", message.channel);
 
-        if (!searchString || !url) return sendError(`<:xmark:848019597907329085> **Usage:** **•** \`*playlist <YouTube Playlist URL | Playlist Name>\``, message.channel).then(message=>message.delete({timeout:"5000"/*Time until delete in milliseconds*/}))
+        if (!searchString || !url) return sendError(`<:xmark:848019597907329085> **Usage:** **•** \`*playlist <YouTube Playlist URL | Playlist Name>\``, message.channel)   
         if (url.match(/^https?:\/\/(www.youtube.com|youtube.com)\/playlist(.*)$/)) {
             try {
                 const playlist = await ytpl(url.split("list=")[1]);
@@ -63,7 +63,11 @@ module.exports = {
                     .setTimestamp()
                 return message.channel.send(thing);
             } catch (error) {
-                return sendError("<:xmark:848019597907329085> **An Unexpected Error Has Occurred**", message.channel).catch(console.error);
+                let bruh = new MessageEmbed()
+                    .setDescription(`<:xmark:848019597907329085> **An Unexpected Error Has Occurred.**\n**•** **Please Retry The Command :C**`)
+                    .setColor("#5539cc")
+                    .setTimestamp()
+                return queue.textChannel.send(bruh).then(message=>message.delete({timeout:"10000"/*Time until delete in milliseconds*/}));
             }
         }
 
@@ -134,7 +138,11 @@ module.exports = {
                         if (serverQueue) {
                             serverQueue.songs.shift();
                             play(guild, serverQueue.songs[0]);
-                            return sendError(`<:xmark:848019597907329085> **An Unexpected Error Has Occurred**.\n**Possible Type** \`${er}\``, message.channel).then(message=>message.delete({timeout:"5000"/*Time until delete in milliseconds*/}))
+                            let bruh = new MessageEmbed()
+                                .setDescription(`<:xmark:848019597907329085> **An Unexpected Error Has Occurred.**\n**•** **Please Retry The Command :c** `)
+                                .setColor("#5539cc")
+                                .setTimestamp()
+                            return queue.textChannel.send(bruh).then(message=>message.delete({timeout:"10000"/*Time until delete in milliseconds*/}));
                         }
                     }
                 });
@@ -151,7 +159,7 @@ module.exports = {
 
             dispatcher.setVolume(serverQueue.volume / 100);
             let thing = new MessageEmbed()
-                .setTitle("<a:playing:799562690129035294> Started Playing Music!")
+                .setTitle("<a:playing:799562690129035294> Started Playing Music")
                 .setDescription(`\`${song.title}\` \n**Requested By** **[**${message.author}**]**`)
                 .setColor("#5539cc")
                 .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))

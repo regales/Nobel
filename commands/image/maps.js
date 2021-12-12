@@ -14,7 +14,7 @@ run: async(client, message, args) => {
 if (!args.length) return message.lineReply("<:xmark:848019597907329085> Provide a valid location")
     const site = `https://maps.google.com/?q=${args.join("+")}`
     try {
-      const msg = await message.channel.send('<a:loading_plus:675395739949727774> **Please wait, This may take up to 10 seconds.**')
+      const msg = await message.channel.send('**•** **Please wait, This may take up to 10 seconds.**')
           msg.delete({ timeout: 5000 })
       const { body } = await fetch(
         `https://image.thum.io/get/width/1920/crop/675/noanimate/${site}`

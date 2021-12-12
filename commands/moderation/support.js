@@ -16,14 +16,14 @@ module.exports = {
 
              [Link For Support Server](https://discord.gg/Zv2haAtKyc)
             
-             [Link For Social Media Account](https://www.instagram.com/nobel.support/)
+             [Link For Social Media Account](https://twitter.com/reg_ales/)
             
              [Privacy Policy](https://bit.ly/3rsrtLv)`
 
             
         )
         
-        .setFooter(`Problems? Please Dm Me At Regales#0320`)
+        .setFooter(`Hope You Enjoy Using Nobel`)
         .setColor('#5539cc')
         
         message.reply(embed); 

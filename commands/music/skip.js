@@ -18,16 +18,15 @@ if(!serverQueue.connection.dispatcher)return
       serverQueue.playing = true;
       serverQueue.connection.dispatcher.resume();
       let xd = new MessageEmbed()
-      .setDescription("▶ **•** **Music Skipped **!")
+      .setDescription("▶ **•** **Music Skipped**")
       .setColor("#5539cc")
       
-       
-   return message.channel.send(xd).catch(err => console.log(err));
+      return message.channel.send(xd).catch(err => console.log(err));
       
     }
 
 
-       try{
+      try{
       serverQueue.connection.dispatcher.end()
       } catch (error) {
         serverQueue.voiceChannel.leave()

@@ -16,13 +16,12 @@ module.exports = {
             await message.guild.me.voice.channel.leave();
         } catch (error) {
             await message.guild.me.voice.kick(message.guild.me.id);
-            return sendError("<a:loading_plus:675395739949727774> **Trying To Leave The Voice Channel**", message.channel);
+            return sendError("**•** **Trying To Leave The Voice Channel**", message.channel);
         }
 
         const Embed = new MessageEmbed()
         .setColor('#5539cc')
-        .setTitle("Success")
-        .setDescription("<a:655682046873567253:843036646915440660>  **Left The Voice Channel, Thanks For Using Me!**")
+        .setDescription("<a:655682046873567253:843036646915440660> **•** **Left The Voice Channel, Thanks For Using Me!**")
         .setTimestamp();
         return message.channel.send(Embed).catch(() => message.channel.send("<a:655682046873567253:843036646915440660> **Left The Voice Channel**"));
     },

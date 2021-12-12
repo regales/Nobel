@@ -91,7 +91,7 @@ module.exports = {
             const queue = message.client.queue.get(message.guild.id);
             if (!song) {
                 sendError(
-                    "<a:exclamationred:919234912857501716> **The Song Has Ended!**",
+                    "<a:exclamationred:919234912857501716> **The Song Has Ended**",
                     message.channel
                 )
                 message.client.queue.delete(message.guild.id);
@@ -105,7 +105,12 @@ module.exports = {
                         if (queue) {
                             queue.songs.shift();
                             play(queue.songs[0]);
-                            return sendError(`<:xmark:848019597907329085> **An Unexpected Error Has Occurred.**\n**Possible Type** \`${er}\``, message.channel)
+                            let bruh = new MessageEmbed()
+                                .setDescription(`<:xmark:848019597907329085> **An Unexpected Error Has Occurred.**\n**•** **Please Retry The Command** `)
+                                .setColor("#5539cc")
+                                .setTimestamp()
+                            queue.textChannel.send(bruh).then(message=>message.delete({timeout:"10000"/*Time until delete in milliseconds*/}));
+                           
                         } 
                     }
                 });

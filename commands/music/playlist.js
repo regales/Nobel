@@ -58,13 +58,14 @@ module.exports = {
                 let thing = new MessageEmbed()
                     .setTitle("<a:playing:799562690129035294> Playlist Added To Queue")
                     .setColor("#5539cc")
+                    .setThumbnail('https://media.discordapp.net/attachments/796358841038143488/851878274179399751/youtube.png')
                     .setDescription(`**•**  **Playlist:** **\`${songInfo.title}\`** **Has Been Added** **\`${songInfo.videoCount}\`** **Video To The Queue**`)
                     .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
                     .setTimestamp()
                 return message.channel.send(thing);
             } catch (error) {
                 let bruh = new MessageEmbed()
-                    .setDescription(`<:xmark:848019597907329085> **An Unexpected Error Has Occurred.**\n**•** **Please Retry The Command :C**`)
+                    .setDescription(`<:xmark:848019597907329085> **An Unexpected Error Has Occurred.** **•** **Please Retry The Command :C**`)
                     .setColor("#5539cc")
                     .setTimestamp()
                 return queue.textChannel.send(bruh).then(message=>message.delete({timeout:"10000"/*Time until delete in milliseconds*/}));
@@ -111,6 +112,7 @@ module.exports = {
                 let thing = new MessageEmbed()
                     .setTitle("<a:playing:799562690129035294> Song Has Been Added To Queue")
                     .setDescription(`\`${song.title}\` \n**Requested By** **[**${message.author}**]**`)
+                    .setThumbnail('https://media.discordapp.net/attachments/796358841038143488/851878274179399751/youtube.png')
                     .setColor("#5539cc")
                     .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
                     .setTimestamp()
@@ -125,7 +127,7 @@ module.exports = {
                 sendError(
                     "<a:exclamationred:919234912857501716> **Playlist Of Songs Has Ended**",
                     message.channel
-                ).then(message=>message.delete({timeout:"10000"/*Time until delete in milliseconds*/}))
+                )
                 //message.guild.me.voice.channel.leave(); //If you want your bot stay in vc 24/7 remove this line :D
                 message.client.queue.delete(message.guild.id);
                 return;
@@ -139,7 +141,7 @@ module.exports = {
                             serverQueue.songs.shift();
                             play(guild, serverQueue.songs[0]);
                             let bruh = new MessageEmbed()
-                                .setDescription(`<:xmark:848019597907329085> **An Unexpected Error Has Occurred.**\n**•** **Please Retry The Command :c** `)
+                                .setDescription(`<:xmark:848019597907329085> **An Unexpected Error Has Occurred.** **•** **Please Retry The Command :c** `)
                                 .setColor("#5539cc")
                                 .setTimestamp()
                             return queue.textChannel.send(bruh).then(message=>message.delete({timeout:"10000"/*Time until delete in milliseconds*/}));
@@ -161,6 +163,7 @@ module.exports = {
             let thing = new MessageEmbed()
                 .setTitle("<a:playing:799562690129035294> Started Playing Music")
                 .setDescription(`\`${song.title}\` \n**Requested By** **[**${message.author}**]**`)
+                .setThumbnail('https://media.discordapp.net/attachments/796358841038143488/851878274179399751/youtube.png')
                 .setColor("#5539cc")
                 .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
                 .setTimestamp()

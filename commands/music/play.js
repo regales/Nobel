@@ -71,6 +71,7 @@ module.exports = {
                 .setColor("#5539cc")
                 .setDescription(`\`${song.title}\` \n**Requested By** **[**${message.author}**]**`)
                 .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
+                .setThumbnail('https://media.discordapp.net/attachments/796358841038143488/851878274179399751/youtube.png')
                 .setTimestamp()
             return message.channel.send(thing);
         }
@@ -106,7 +107,7 @@ module.exports = {
                             queue.songs.shift();
                             play(queue.songs[0]);
                             let bruh = new MessageEmbed()
-                                .setDescription(`<:xmark:848019597907329085> **An Unexpected Error Has Occurred.**\n**•** **Please Retry The Command** `)
+                                .setDescription(`<:xmark:848019597907329085> **An Unexpected Error Has Occurred.** **•** **Please Retry The Command** `)
                                 .setColor("#5539cc")
                                 .setTimestamp()
                             queue.textChannel.send(bruh).then(message=>message.delete({timeout:"10000"/*Time until delete in milliseconds*/}));
@@ -131,6 +132,7 @@ module.exports = {
                 .setDescription(`\`${song.title}\` \n**Requested By** **[**${message.author}**]**`)
                 .setColor("#5539cc")
                 .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
+                .setThumbnail('https://media.discordapp.net/attachments/796358841038143488/851878274179399751/youtube.png')
                 .setTimestamp()
             queue.textChannel.send(thing).then(message=>message.delete({timeout:"10000"/*Time until delete in milliseconds*/}))
         };

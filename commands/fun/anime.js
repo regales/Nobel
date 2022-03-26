@@ -1,5 +1,5 @@
 const { Client, Message, MessageEmbed } = require("discord.js");
-const { searchAnime } = require("util\anime.js");
+const { searchAnime } = require("@freezegold/anime.js");
 const { replace } = require("ffmpeg-static");
 
 

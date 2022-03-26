@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "dependencies": {
+    "@freezegold/anime.js": "^2.0.5-beta",
     "@iamtraction/google-translate": "^1.1.2",
     "@listcord/js": "^1.1.2",
     "ascii": "^1.0.0",

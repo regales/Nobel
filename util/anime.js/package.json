@@ -1,0 +1,37 @@
+{
+  "name": "@freezegold/anime.js",
+  "version": "2.0.5-beta",
+  "description": "An anime node package.",
+  "main": "index.js",
+  "scripts": {
+    "run": "node index.js",
+    "test": "node ./test/index.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/freezegr/anime.js.git"
+  },
+  "keywords": [
+    "anime",
+    "myanimelist",
+    "mal",
+    "kitsu",
+    "search",
+    "anime.js",
+    "manga",
+    "honorific",
+    "meme",
+    "nsfw"
+  ],
+  "author": "freezegr",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/freezegr/anime.js/issues"
+  },
+  "homepage": "https://github.com/freezegr/anime.js#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.5",
+    "node-fetch": "^2.6.1",
+    "random-puppy": "^1.1.0"
+  }
+}
